@@ -22,7 +22,7 @@ public class ModItems {
     public static final RegistryObject<Item> COPPER_BUCKET = ITEMS.register("copper_bucket", ()-> new BucketItem(Fluids.WATER, new Item.Properties().stacksTo(1)));
     //TODO add texture for the bucket
 
-    //Food Section(idk why i am putting a comment
+
     public static final RegistryObject<Item> RAW_TENTACLE = ITEMS.register("raw_tentacle", ()-> new Item(new Item.Properties().food(ModFoods.RAW_TENTACLE)));
     public static final RegistryObject<Item> COOKED_TENTACLE = ITEMS.register("cooked_tentacle", ()-> new Item(new Item.Properties().food(ModFoods.COOKED_TENTACLE)));
     public static final RegistryObject<Item> SEA_SOUP = ITEMS.register("sea_soup", ()-> new BowlFoodItem(new Item.Properties().stacksTo(1).food(ModFoods.SEA_SOUP)));

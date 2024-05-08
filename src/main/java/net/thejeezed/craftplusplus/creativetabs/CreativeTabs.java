@@ -30,6 +30,8 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.COPPER_HELMET.get());
                         pOutput.accept(ModItems.RAW_TENTACLE.get());
                         pOutput.accept(ModItems.NETHERITE_HORSE_ARMOR.get());
+                        pOutput.accept(ModItems.COPPER_HORSE_ARMOR.get());
+                        pOutput.accept(ModItems.SEA_SOUP.get());
                     })
                     .build());
 

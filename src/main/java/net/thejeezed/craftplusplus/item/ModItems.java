@@ -44,6 +44,7 @@ public class ModItems {
 
     //HORSE ARMOR
     public static final RegistryObject<Item> NETHERITE_HORSE_ARMOR = ITEMS.register("netherite_horse_armor", () -> new HorseArmorItem(15, new ResourceLocation(MOD_ID, "textures/entity/horse/armor/horse_armor_netherite.png"), new Item.Properties().stacksTo(1).fireResistant()));
+    public static final RegistryObject<Item> COPPER_HORSE_ARMOR = ITEMS.register("copper_horse_armor", () -> new HorseArmorItem(4, new ResourceLocation(MOD_ID, "textures/entity/horse/armor/horse_armor_copper.png"), new Item.Properties().stacksTo(1).fireResistant()));
 
         public static void register(IEventBus eventBus) {
             ITEMS.register(eventBus);

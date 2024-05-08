@@ -16,6 +16,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.thejeezed.craftplusplus.block.ModBlocks;
 import net.thejeezed.craftplusplus.creativetabs.CreativeTabs;
 import net.thejeezed.craftplusplus.item.ModItems;
+import net.thejeezed.craftplusplus.loot.ModLootModifiers;
 import org.slf4j.Logger;
 
 @Mod(CraftPlusPlus.MOD_ID)
@@ -29,6 +30,7 @@ public class CraftPlusPlus {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         CreativeTabs.register(modEventBus);
+        ModLootModifiers.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);

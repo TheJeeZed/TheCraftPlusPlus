@@ -28,6 +28,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.COPPER_LEGGINGS.get());
                         pOutput.accept(ModItems.COPPER_CHESTPLATE.get());
                         pOutput.accept(ModItems.COPPER_HELMET.get());
+                        pOutput.accept(ModItems.RAW_TENTACLE.get());
                     })
                     .build());
 

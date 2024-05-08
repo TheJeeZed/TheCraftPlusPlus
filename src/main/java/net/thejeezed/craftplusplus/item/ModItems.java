@@ -1,5 +1,6 @@
 package net.thejeezed.craftplusplus.item;
 
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -10,9 +11,11 @@ import net.thejeezed.craftplusplus.CraftPlusPlus;
 import net.thejeezed.craftplusplus.enums.tools.ToolStats;
 import net.thejeezed.craftplusplus.item.custom.armor.CopperArmor;
 
+import static net.thejeezed.craftplusplus.CraftPlusPlus.MOD_ID;
+
 public class ModItems {
         public static final DeferredRegister<Item> ITEMS =
-                DeferredRegister.create(ForgeRegistries.ITEMS, CraftPlusPlus.MOD_ID);
+                DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
 
     public static final RegistryObject<Item> ITEM_HERE = ITEMS.register("item_here", ()-> new Item(new Item.Properties()));
 
@@ -40,9 +43,9 @@ public class ModItems {
     //TODO need textures for all, then remind me and ill add the trims
 
     //HORSE ARMOR
-    public static final RegistryObject<Item> NETHERITE_HORSE_ARMOR = ITEMS.register("netherite_horse_armor", ()-> new HorseArmorItem(15, "netherite",  (new Item.Properties()).stacksTo(1).fireResistant()));
+    public static final RegistryObject<Item> NETHERITE_HORSE_ARMOR = ITEMS.register("netherite_horse_armor", () -> new HorseArmorItem(15, new ResourceLocation(MOD_ID, "textures/entity/horse/armor/horse_armor_netherite.png"), new Item.Properties().stacksTo(1).fireResistant()));
 
-    public static void register(IEventBus eventBus) {
-        ITEMS.register(eventBus);
-    }
+        public static void register(IEventBus eventBus) {
+            ITEMS.register(eventBus);
+        }
 }

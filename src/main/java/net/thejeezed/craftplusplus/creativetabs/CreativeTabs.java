@@ -19,6 +19,7 @@ public class CreativeTabs {
                     .title(Component.translatable("creativetab.craft_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.COPPER_BUCKET.get());
+                        pOutput.accept(ModItems.COPPER_WATER_BUCKET.get());
                         pOutput.accept(ModItems.COPPER_SWORD.get());
                         pOutput.accept(ModItems.COPPER_AXE.get());
                         pOutput.accept(ModItems.COPPER_PICKAXE.get());

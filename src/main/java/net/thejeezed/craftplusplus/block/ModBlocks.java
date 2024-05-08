@@ -15,7 +15,7 @@ import net.thejeezed.craftplusplus.item.ModItems;
 
 import java.util.function.Supplier;
 
-public class CPBlocks
+public class ModBlocks
 {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, CraftPlusPlus.MOD_ID);

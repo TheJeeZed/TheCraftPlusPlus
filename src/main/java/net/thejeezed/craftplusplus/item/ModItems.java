@@ -9,6 +9,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.thejeezed.craftplusplus.enums.tools.ToolStats;
 import net.thejeezed.craftplusplus.item.custom.armor.CopperArmor;
+import net.thejeezed.craftplusplus.item.custom.item.CopperBucketItem;
 
 import static net.thejeezed.craftplusplus.CraftPlusPlus.MOD_ID;
 
@@ -16,10 +17,9 @@ public class ModItems {
         public static final DeferredRegister<Item> ITEMS =
                 DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
 
-    public static final RegistryObject<Item> ITEM_HERE = ITEMS.register("item_here", ()-> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> COPPER_BUCKET = ITEMS.register("copper_bucket", ()-> new BucketItem(Fluids.EMPTY, new Item.Properties().stacksTo(1)));
-    public static final RegistryObject<Item> COPPER_WATER_BUCKET = ITEMS.register("copper_water_bucket", ()-> new BucketItem(Fluids.WATER, new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> COPPER_BUCKET = ITEMS.register("copper_bucket", ()-> new CopperBucketItem(Fluids.EMPTY, new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> COPPER_WATER_BUCKET = ITEMS.register("copper_water_bucket", ()-> new CopperBucketItem(Fluids.WATER, new Item.Properties().craftRemainder(COPPER_BUCKET.get()).stacksTo(1)));
     //TODO add texture for the bucket
 
 

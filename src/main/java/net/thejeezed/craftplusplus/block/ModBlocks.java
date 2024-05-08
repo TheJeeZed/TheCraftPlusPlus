@@ -22,10 +22,10 @@ public class ModBlocks
 
 
     public static final RegistryObject<Block> CHARCOAL_BLOCK = registerBlock("charcoal_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.COAL_BLOCK).destroyTime(3)), null); // TODO: ADD CUSTOM TAB HERE
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.COAL_BLOCK).destroyTime(3)), null); // TODO: ADD CUSTOM TAB HERE; THIS IS WHAT BROKE MY COMMIT!
 
     public static final RegistryObject<Block> COMPRESSED_COPPER = registerBlock("compressed_copper",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).destroyTime(3)), null); // TODO: ADD CUSTOM TAB HERE
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).destroyTime(3)), null); // TODO: ADD CUSTOM TAB HERE; THIS IS WHAT BROKE MY COMMIT!
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab)

@@ -2,7 +2,6 @@ package net.thejeezed.craftplusplus;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -53,6 +52,33 @@ public class CraftPlusPlus {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
         {
             event.accept(ModBlocks.COMPRESSED_COPPER);
+        }
+
+        if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS)
+        {
+            event.accept(ModItems.RAW_TENTACLE);
+            event.accept(ModItems.COOKED_TENTACLE);
+            event.accept(ModItems.SEA_SOUP);
+        }
+
+        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES)
+        {
+            event.accept(ModItems.COPPER_SHOVEL);
+            event.accept(ModItems.COPPER_PICKAXE);
+            event.accept(ModItems.COPPER_AXE);
+            event.accept(ModItems.COPPER_HOE);
+            event.accept(ModItems.COPPER_BUCKET);
+            event.accept(ModItems.COPPER_WATER_BUCKET);
+        }
+
+        if (event.getTabKey() == CreativeModeTabs.COMBAT)
+        {
+            event.accept(ModItems.COPPER_SWORD);
+            event.accept(ModItems.COPPER_AXE);
+            event.accept(ModItems.COPPER_HELMET);
+            event.accept(ModItems.COPPER_CHESTPLATE);
+            event.accept(ModItems.COPPER_LEGGINGS);
+            event.accept(ModItems.COPPER_BOOTS);
         }
     }
 

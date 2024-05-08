@@ -1,4 +1,8 @@
 {
+  "item.craftplusplus.raw_tentacle": "Raw Squid Tentacle",
+  "item.craftplusplus.cooked_tentacle": "Cooked Squid Tentacle",
+  "item.craftplusplus.sea_soup": "Soup Of The Seas",
+
   "block.craftplusplus.charcoal_block": "Block of Charcoal",
   "block.craftplusplus.compressed_copper": "Compressed Copper"
 }

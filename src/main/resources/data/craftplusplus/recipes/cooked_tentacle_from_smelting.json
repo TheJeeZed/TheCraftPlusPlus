@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "ingredient": {
+    "item": "craftplusplus:raw_tentacle"
+  },
+  "result": "craftplusplus:cooked_tentacle"
+}

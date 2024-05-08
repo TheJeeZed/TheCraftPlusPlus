@@ -13,7 +13,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.thejeezed.craftplusplus.block.CPBlocks;
+import net.thejeezed.craftplusplus.block.ModBlocks;
 import net.thejeezed.craftplusplus.creativetabs.CreativeTabs;
 import net.thejeezed.craftplusplus.item.ModItems;
 import org.slf4j.Logger;
@@ -27,7 +27,7 @@ public class CraftPlusPlus {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
-        CPBlocks.register(modEventBus);
+        ModBlocks.register(modEventBus);
         CreativeTabs.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
@@ -44,19 +44,19 @@ public class CraftPlusPlus {
     {
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS)
         {
-            event.accept(CPBlocks.CHARCOAL_BLOCK);
+            event.accept(ModBlocks.CHARCOAL_BLOCK);
         }
 
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
         {
-            event.accept(CPBlocks.COMPRESSED_COPPER);
+            event.accept(ModBlocks.COMPRESSED_COPPER);
         }
     }
 
     @SubscribeEvent
     public void onFuelBurnTimeEvent(FurnaceFuelBurnTimeEvent event)
     {
-        if (event.getItemStack().getItem() == CPBlocks.CHARCOAL_BLOCK.get().asItem())
+        if (event.getItemStack().getItem() == ModBlocks.CHARCOAL_BLOCK.get().asItem())
         {
             event.setBurnTime(16000);
         }

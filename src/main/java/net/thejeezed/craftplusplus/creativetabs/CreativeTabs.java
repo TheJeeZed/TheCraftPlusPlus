@@ -24,6 +24,10 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.COPPER_PICKAXE.get());
                         pOutput.accept(ModItems.COPPER_SHOVEL.get());
                         pOutput.accept(ModItems.COPPER_HOE.get());
+                        pOutput.accept(ModItems.COPPER_BOOTS.get());
+                        pOutput.accept(ModItems.COPPER_LEGGINGS.get());
+                        pOutput.accept(ModItems.COPPER_CHESTPLATE.get());
+                        pOutput.accept(ModItems.COPPER_HELMET.get());
                     })
                     .build());
 

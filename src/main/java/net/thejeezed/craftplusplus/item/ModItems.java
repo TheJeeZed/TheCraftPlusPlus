@@ -8,6 +8,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.thejeezed.craftplusplus.CraftPlusPlus;
 import net.thejeezed.craftplusplus.enums.tools.ToolStats;
+import net.thejeezed.craftplusplus.item.custom.armor.CopperArmor;
 
 public class ModItems {
         public static final DeferredRegister<Item> ITEMS =
@@ -30,6 +31,14 @@ public class ModItems {
     public static final RegistryObject<Item> COPPER_SHOVEL = ITEMS.register("copper_shovel", ()-> new ShovelItem(ToolStats.COPPER,1.5F,-3.0F, new Item.Properties()));
     public static final RegistryObject<Item> COPPER_HOE = ITEMS.register("copper_hoe", ()-> new HoeItem(ToolStats.COPPER,-2,-1.0F, new Item.Properties()));
     //TODO need textures for all of the tools
+
+    //COPPER ARMOR
+    public static final RegistryObject<Item> COPPER_HELMET = ITEMS.register("copper_helmet", () -> CopperArmor.getInstance(ArmorItem.Type.HELMET));
+    public static final RegistryObject<Item> COPPER_CHESTPLATE = ITEMS.register("copper_chestplate", () -> CopperArmor.getInstance(ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> COPPER_LEGGINGS = ITEMS.register("copper_leggings", () -> CopperArmor.getInstance(ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> COPPER_BOOTS = ITEMS.register("copper_boots", () -> CopperArmor.getInstance(ArmorItem.Type.BOOTS));
+    //TODO need textures for all, then remind me and ill add the trims
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

@@ -26,8 +26,6 @@ public class CraftPlusPlus {
 
         CPItems.register(modEventBus);
 
-        CreativeTabs.register(modEventBus);
-
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
     }

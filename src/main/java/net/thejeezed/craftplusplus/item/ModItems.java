@@ -39,6 +39,9 @@ public class ModItems {
     public static final RegistryObject<Item> COPPER_BOOTS = ITEMS.register("copper_boots", () -> CopperArmor.getInstance(ArmorItem.Type.BOOTS));
     //TODO need textures for all, then remind me and ill add the trims
 
+    //HORSE ARMOR
+    public static final RegistryObject<Item> NETHERITE_HORSE_ARMOR = ITEMS.register("netherite_horse_armor", ()-> new HorseArmorItem(15, "netherite",  (new Item.Properties()).stacksTo(1).fireResistant()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

@@ -18,10 +18,8 @@ public class ModItems {
                 DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
 
 
-    public static final RegistryObject<Item> COPPER_BUCKET = ITEMS.register("copper_bucket", ()-> new CopperBucketItem(Fluids.EMPTY, new Item.Properties().stacksTo(16)));
-    public static final RegistryObject<Item> COPPER_WATER_BUCKET = ITEMS.register("copper_water_bucket", ()-> new CopperBucketItem(Fluids.WATER, new Item.Properties().craftRemainder(COPPER_BUCKET.get()).stacksTo(1)));
-    //TODO add texture for the bucket
-
+    public static final RegistryObject<Item> COPPER_BUCKET = ITEMS.register("copper_bucket", ()-> new CopperBucketItem(()-> Fluids.EMPTY, new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> COPPER_WATER_BUCKET = ITEMS.register("copper_water_bucket", ()-> new CopperBucketItem(()-> Fluids.WATER, new Item.Properties().craftRemainder(COPPER_BUCKET.get()).stacksTo(1)));
 
     public static final RegistryObject<Item> RAW_TENTACLE = ITEMS.register("raw_tentacle", ()-> new Item(new Item.Properties().food(ModFoods.RAW_TENTACLE)));
     public static final RegistryObject<Item> COOKED_TENTACLE = ITEMS.register("cooked_tentacle", ()-> new Item(new Item.Properties().food(ModFoods.COOKED_TENTACLE)));
@@ -33,7 +31,6 @@ public class ModItems {
     public static final RegistryObject<Item> COPPER_PICKAXE = ITEMS.register("copper_pickaxe", ()-> new PickaxeItem(ToolStats.COPPER,1,-2.8F, new Item.Properties()));
     public static final RegistryObject<Item> COPPER_SHOVEL = ITEMS.register("copper_shovel", ()-> new ShovelItem(ToolStats.COPPER,1.5F,-3.0F, new Item.Properties()));
     public static final RegistryObject<Item> COPPER_HOE = ITEMS.register("copper_hoe", ()-> new HoeItem(ToolStats.COPPER,-2,-1.0F, new Item.Properties()));
-    //TODO need textures for all of the tools
 
     //COPPER ARMOR
     public static final RegistryObject<Item> COPPER_HELMET = ITEMS.register("copper_helmet", () -> CopperArmor.getInstance(ArmorItem.Type.HELMET));

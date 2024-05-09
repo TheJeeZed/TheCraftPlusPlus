@@ -50,7 +50,6 @@ import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.TemptGoal;
 import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
-import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
@@ -91,8 +90,8 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
     @Nullable
     private PanicGoal panicGoal;
 
-    public StraferEntity(EntityType<? extends net.minecraft.world.entity.monster.Strider> pEntityType, Level pLevel) {
-        super(pEntityType, pLevel);
+    public StraferEntity(EntityType<StraferEntity> straferEntity, Level level) {
+        super(straferEntity,level);
         this.steering = new ItemBasedSteering(this.entityData, DATA_BOOST_TIME, DATA_SADDLE_ID);
         this.blocksBuilding = true;
         this.setPathfindingMalus(BlockPathTypes.WATER, 1.0F);

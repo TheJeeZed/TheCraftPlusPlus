@@ -1,6 +1,7 @@
 package net.thejeezed.craftplusplus;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -18,6 +19,7 @@ import net.thejeezed.craftplusplus.creativetabs.CreativeTabs;
 import net.thejeezed.craftplusplus.entity.ModEntities;
 import net.thejeezed.craftplusplus.item.ModItems;
 import net.thejeezed.craftplusplus.loot.ModLootModifiers;
+import net.thejeezed.craftplusplus.mob.client.StraferRenderer;
 import org.slf4j.Logger;
 
 @Mod(CraftPlusPlus.MOD_ID)
@@ -100,6 +102,7 @@ public class CraftPlusPlus {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            EntityRenderers.register(ModEntities.STRAFER.get(), StraferRenderer::new);
         }
     }
 }

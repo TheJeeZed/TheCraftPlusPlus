@@ -35,7 +35,6 @@ import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fluids.capability.wrappers.FluidBucketWrapper;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.thejeezed.craftplusplus.item.ItemUtils;
 import net.thejeezed.craftplusplus.item.ModItems;
 
@@ -52,13 +51,6 @@ public class CopperBucketItem extends Item implements DispensibleContainerItem
         super(builder);
         this.content = null;
         this.fluidSupplier = supplier;
-    }
-
-    @Deprecated
-    public CopperBucketItem(Fluid pContent, Item.Properties pProperties) {
-        super(pProperties);
-        this.content = pContent;
-        this.fluidSupplier = ForgeRegistries.FLUIDS.getDelegateOrThrow(pContent);
     }
 
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
@@ -83,8 +75,7 @@ public class CopperBucketItem extends Item implements DispensibleContainerItem
                     {
                         return InteractionResultHolder.fail(itemstack);
                     } else {
-                        if (blockstate1.getBlock() instanceof BucketPickup) {
-                            BucketPickup bucketpickup = (BucketPickup)blockstate1.getBlock();
+                        if (blockstate1.getBlock() instanceof BucketPickup bucketpickup) {
                             ItemStack itemstack1 = bucketpickup.pickupBlock(pLevel, blockpos, blockstate1);
                             if (!itemstack1.isEmpty()) {
                                 pPlayer.awardStat(Stats.ITEM_USED.get(this));
@@ -100,7 +91,6 @@ public class CopperBucketItem extends Item implements DispensibleContainerItem
                                 return InteractionResultHolder.sidedSuccess(itemstack2, pLevel.isClientSide());
                             }
                         }
-
                         return InteractionResultHolder.fail(itemstack);
                     }
                 } else {

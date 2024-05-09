@@ -22,6 +22,7 @@ public class ModItems {
     //COPPER BUCKET
     public static final RegistryObject<Item> COPPER_BUCKET = ITEMS.register("copper_bucket", ()-> new CopperBucketItem(()-> Fluids.EMPTY, new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> COPPER_WATER_BUCKET = ITEMS.register("copper_water_bucket", ()-> new CopperBucketItem(()-> Fluids.WATER, new Item.Properties().craftRemainder(COPPER_BUCKET.get()).stacksTo(1)));
+    public static final RegistryObject<Item> COPPER_MILK_BUCKET = ITEMS.register("copper_milk_bucket", ()-> new MilkBucketItem(new Item.Properties().craftRemainder(COPPER_BUCKET.get()).stacksTo(2)));
 
     public static final RegistryObject<Item> RAW_TENTACLE = ITEMS.register("raw_tentacle", ()-> new Item(new Item.Properties().food(ModFoods.RAW_TENTACLE)));
     public static final RegistryObject<Item> COOKED_TENTACLE = ITEMS.register("cooked_tentacle", ()-> new Item(new Item.Properties().food(ModFoods.COOKED_TENTACLE)));

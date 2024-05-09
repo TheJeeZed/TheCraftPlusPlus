@@ -71,6 +71,7 @@ public class CraftPlusPlus {
             event.accept(ModItems.COPPER_AXE);
             event.accept(ModItems.COPPER_HOE);
             event.accept(ModItems.COPPER_BUCKET);
+            event.accept(ModItems.COPPER_MILK_BUCKET);
             event.accept(ModItems.COPPER_WATER_BUCKET);
         }
 

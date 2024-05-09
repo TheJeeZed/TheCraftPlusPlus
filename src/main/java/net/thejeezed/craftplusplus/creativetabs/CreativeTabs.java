@@ -23,6 +23,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.COMPRESSED_COPPER.get());
                         pOutput.accept(ModItems.COPPER_BUCKET.get());
                         pOutput.accept(ModItems.COPPER_WATER_BUCKET.get());
+                        pOutput.accept(ModItems.COPPER_MILK_BUCKET.get());
                         pOutput.accept(ModItems.COPPER_SHOVEL.get());
                         pOutput.accept(ModItems.COPPER_PICKAXE.get());
                         pOutput.accept(ModItems.COPPER_AXE.get());

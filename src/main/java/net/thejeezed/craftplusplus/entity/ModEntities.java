@@ -1,5 +1,6 @@
 package net.thejeezed.craftplusplus.entity;
 
+import net.minecraft.client.renderer.entity.StriderRenderer;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;

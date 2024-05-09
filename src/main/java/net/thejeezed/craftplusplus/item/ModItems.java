@@ -3,10 +3,12 @@ package net.thejeezed.craftplusplus.item;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.thejeezed.craftplusplus.entity.ModEntities;
 import net.thejeezed.craftplusplus.enums.tools.ToolStats;
 import net.thejeezed.craftplusplus.item.custom.armor.CopperArmor;
 import net.thejeezed.craftplusplus.item.custom.item.CopperBucketItem;
@@ -42,6 +44,9 @@ public class ModItems {
     //HORSE ARMOR
     public static final RegistryObject<Item> NETHERITE_HORSE_ARMOR = ITEMS.register("netherite_horse_armor", () -> new HorseArmorItem(15, new ResourceLocation(MOD_ID, "textures/entity/horse/armor/horse_armor_netherite.png"), new Item.Properties().stacksTo(1).fireResistant()));
     public static final RegistryObject<Item> COPPER_HORSE_ARMOR = ITEMS.register("copper_horse_armor", () -> new HorseArmorItem(4, new ResourceLocation(MOD_ID, "textures/entity/horse/armor/horse_armor_copper.png"), new Item.Properties().stacksTo(1).fireResistant()));
+
+    //SPAWN EGGS
+    public static final RegistryObject<ForgeSpawnEggItem> STRAFER_SPAWN_EGG = ITEMS.register("strafer_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.STRAFER, 0x34dbeb, 0xFFFFFF, new Item.Properties()));
 
         public static void register(IEventBus eventBus) {
             ITEMS.register(eventBus);

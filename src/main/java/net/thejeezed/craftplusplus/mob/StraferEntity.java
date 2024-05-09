@@ -105,7 +105,7 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
 
         do {
             $$5.move(Direction.UP);
-        } while(pLevel.getFluidState($$5).is(FluidTags.LAVA));
+        } while(pLevel.getFluidState($$5).is(FluidTags.WATER));
 
         return pLevel.getBlockState($$5).isAir();
     }
@@ -181,7 +181,7 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
     }
 
     public boolean canStandOnFluid(FluidState pFluidState) {
-        return pFluidState.is(FluidTags.LAVA);
+        return pFluidState.is(FluidTags.WATER);
     }
 
     public double getPassengersRidingOffset() {
@@ -237,7 +237,7 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
                     }
 
                     $$8 = (BlockPos)var17.next();
-                } while(this.level().getFluidState($$8).is(FluidTags.LAVA));
+                } while(this.level().getFluidState($$8).is(FluidTags.WATER));
 
                 $$9 = this.level().getBlockFloorHeight($$8);
             } while(!DismountHelper.isBlockFloorValid($$9));
@@ -276,7 +276,7 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
     }
 
     protected void playStepSound(BlockPos pPos, BlockState pBlock) {
-        this.playSound(this.isInLava() ? SoundEvents.STRIDER_STEP_LAVA : SoundEvents.STRIDER_STEP, 1.0F, 1.0F);
+        this.playSound(this.isInWater() ? SoundEvents.STRIDER_STEP_LAVA : SoundEvents.STRIDER_STEP, 1.0F, 1.0F);
     }
 
     public boolean boost() {
@@ -285,7 +285,7 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
 
     protected void checkFallDamage(double pY, boolean pOnGround, BlockState pState, BlockPos pPos) {
         this.checkInsideBlocks();
-        if (this.isInLava()) {
+        if (this.isInWater()) {
             this.resetFallDistance();
         } else {
             super.checkFallDamage(pY, pOnGround, pState, pPos);
@@ -305,7 +305,7 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
             label36: {
                 BlockState $$0 = this.level().getBlockState(this.blockPosition());
                 BlockState $$1 = this.getBlockStateOnLegacy();
-                $$2 = $$0.is(BlockTags.STRIDER_WARM_BLOCKS) || $$1.is(BlockTags.STRIDER_WARM_BLOCKS) || this.getFluidHeight(FluidTags.LAVA) > 0.0;
+                $$2 = $$0.is(BlockTags.STRIDER_WARM_BLOCKS) || $$1.is(BlockTags.STRIDER_WARM_BLOCKS) || this.getFluidHeight(FluidTags.WATER) > 0.0;
                 Entity var6 = this.getVehicle();
                 if (var6 instanceof net.minecraft.world.entity.monster.Strider) {
                     net.minecraft.world.entity.monster.Strider $$3 = (net.minecraft.world.entity.monster.Strider)var6;
@@ -340,9 +340,9 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
     }
 
     private void floatStrider() {
-        if (this.isInLava()) {
+        if (this.isInWater()) {
             CollisionContext $$0 = CollisionContext.of(this);
-            if ($$0.isAbove(LiquidBlock.STABLE_SHAPE, this.blockPosition(), true) && !this.level().getFluidState(this.blockPosition().above()).is(FluidTags.LAVA)) {
+            if ($$0.isAbove(LiquidBlock.STABLE_SHAPE, this.blockPosition(), true) && !this.level().getFluidState(this.blockPosition().above()).is(FluidTags.WATER)) {
                 this.setOnGround(true);
             } else {
                 this.setDeltaMovement(this.getDeltaMovement().scale(0.5).add(0.0, 0.05, 0.0));
@@ -368,7 +368,7 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
     }
 
     protected boolean canAddPassenger(Entity pPassenger) {
-        return !this.isVehicle() && !this.isEyeInFluid(FluidTags.LAVA);
+        return !this.isVehicle() && !this.isEyeInFluid(FluidTags.WATER);
     }
 
     public boolean isSensitiveToWater() {
@@ -381,10 +381,10 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
 
 
     public float getWalkTargetValue(BlockPos pPos, LevelReader pLevel) {
-        if (pLevel.getBlockState(pPos).getFluidState().is(FluidTags.LAVA)) {
+        if (pLevel.getBlockState(pPos).getFluidState().is(FluidTags.WATER)) {
             return 10.0F;
         } else {
-            return this.isInLava() ? Float.NEGATIVE_INFINITY : 0.0F;
+            return this.isInWater() ? Float.NEGATIVE_INFINITY : 0.0F;
         }
     }
 
@@ -488,11 +488,11 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
         }
 
         public boolean canContinueToUse() {
-            return !this.strider.isInLava() && this.isValidTarget(this.strider.level(), this.blockPos);
+            return !this.strider.isInWater() && this.isValidTarget(this.strider.level(), this.blockPos);
         }
 
         public boolean canUse() {
-            return !this.strider.isInLava() && super.canUse();
+            return !this.strider.isInWater() && super.canUse();
         }
 
         public boolean shouldRecalculatePath() {
@@ -500,7 +500,7 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
         }
 
         protected boolean isValidTarget(LevelReader pLevel, BlockPos pPos) {
-            return pLevel.getBlockState(pPos).is(Blocks.LAVA) && pLevel.getBlockState(pPos.above()).isPathfindable(pLevel, pPos, PathComputationType.LAND);
+            return pLevel.getBlockState(pPos).is(Blocks.WATER) && pLevel.getBlockState(pPos.above()).isPathfindable(pLevel, pPos, PathComputationType.LAND);
         }
     }
 
@@ -516,11 +516,11 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
         }
 
         protected boolean hasValidPathType(BlockPathTypes pPathType) {
-            return pPathType != BlockPathTypes.LAVA && pPathType != BlockPathTypes.DAMAGE_FIRE && pPathType != BlockPathTypes.DANGER_FIRE ? super.hasValidPathType(pPathType) : true;
+            return pPathType != BlockPathTypes.WATER && pPathType != BlockPathTypes.DAMAGE_FIRE && pPathType != BlockPathTypes.DANGER_FIRE ? super.hasValidPathType(pPathType) : true;
         }
 
         public boolean isStableDestination(BlockPos pPos) {
-            return this.level.getBlockState(pPos).is(Blocks.LAVA) || super.isStableDestination(pPos);
+            return this.level.getBlockState(pPos).is(Blocks.WATER) || super.isStableDestination(pPos);
         }
     }
 }

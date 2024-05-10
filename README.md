@@ -15,6 +15,6 @@ Optional Dependencies:
 [**TheJeeZed**](https://github.com/TheJeeZed) Dev/Owner <br>
 
 # Contributors
-**GF 👀** - Textures/Models
-**-Ghoul-** - Textures/Models
-**カテル** - Textures/Models
+**GF 👀** - Textures/Models <br>
+**-Ghoul-** - Textures/Models <br>
+**カテル** - Textures/Models <br>

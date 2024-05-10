@@ -8,6 +8,8 @@ We have a [Discord](https://discord.gg/xCfJzUMKkC) Where you can chat with the d
 Optional Dependencies:
 - None
 
+# Conrtibuting
+If you feel like Contributing to our mod, there are many ways to do so. Check CONTRIBUTING.MD
 
 # Development
 [**luhcartimods**](https://github.com/luhcartimods) Lead Dev/Textures <br>

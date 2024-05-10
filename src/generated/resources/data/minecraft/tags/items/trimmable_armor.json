@@ -3,6 +3,9 @@
     "craftplusplus:copper_helmet",
     "craftplusplus:copper_chestplate",
     "craftplusplus:copper_leggings",
-    "craftplusplus:copper_boots"
+    "craftplusplus:copper_boots",
+    "craftplusplus:turtle_shell_chestplate",
+    "craftplusplus:turtle_shell_leggings",
+    "craftplusplus:turtle_shell_boots"
   ]
 }

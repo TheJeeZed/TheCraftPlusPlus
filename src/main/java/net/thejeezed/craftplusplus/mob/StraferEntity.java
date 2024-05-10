@@ -73,6 +73,7 @@ import net.minecraft.world.level.pathfinder.WalkNodeEvaluator;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.thejeezed.craftplusplus.tags.ModBlockTags;
 
 public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
     private static final UUID SUFFOCATING_MODIFIER_UUID = UUID.fromString("9e362924-01de-4ddd-a2b2-d0f7a405a174");
@@ -94,13 +95,13 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
         super(straferEntity,level);
         this.steering = new ItemBasedSteering(this.entityData, DATA_BOOST_TIME, DATA_SADDLE_ID);
         this.blocksBuilding = true;
-        this.setPathfindingMalus(BlockPathTypes.WATER, 1.0F);
+        this.setPathfindingMalus(BlockPathTypes.WATER, 0.0F);
         this.setPathfindingMalus(BlockPathTypes.LAVA, -1.0F);
         this.setPathfindingMalus(BlockPathTypes.DANGER_FIRE, -1.0F);
         this.setPathfindingMalus(BlockPathTypes.DAMAGE_FIRE, -1.0F);
     }
 
-    public static boolean checkStriderSpawnRules(EntityType<net.minecraft.world.entity.monster.Strider> pStrider, LevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
+    public static boolean checkStriderSpawnRules(EntityType<StraferEntity> pStrider, LevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
         BlockPos.MutableBlockPos $$5 = pPos.mutable();
 
         do {
@@ -161,7 +162,7 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
         this.goalSelector.addGoal(7, new RandomStrollGoal(this, 1.0, 60));
         this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
-        this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, net.minecraft.world.entity.monster.Strider.class, 8.0F));
+        this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, StraferEntity.class, 8.0F));
     }
 
     public void setSuffocating(boolean pSuffocating) {
@@ -305,10 +306,10 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
             label36: {
                 BlockState $$0 = this.level().getBlockState(this.blockPosition());
                 BlockState $$1 = this.getBlockStateOnLegacy();
-                $$2 = $$0.is(BlockTags.STRIDER_WARM_BLOCKS) || $$1.is(BlockTags.STRIDER_WARM_BLOCKS) || this.getFluidHeight(FluidTags.WATER) > 0.0;
+                $$2 = $$0.is(ModBlockTags.STRAFER_WARM_BLOCKS) || $$1.is(BlockTags.STRIDER_WARM_BLOCKS) || this.getFluidHeight(FluidTags.WATER) > 0.0;
                 Entity var6 = this.getVehicle();
-                if (var6 instanceof net.minecraft.world.entity.monster.Strider) {
-                    net.minecraft.world.entity.monster.Strider $$3 = (net.minecraft.world.entity.monster.Strider)var6;
+                if (var6 instanceof StraferEntity) {
+                    StraferEntity $$3 = (StraferEntity)var6;
                     if ($$3.isSuffocating()) {
                         var10000 = true;
                         break label36;
@@ -475,12 +476,12 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
         DATA_SADDLE_ID = SynchedEntityData.defineId(net.minecraft.world.entity.monster.Strider.class, EntityDataSerializers.BOOLEAN);
     }
 
-    public static class StriderGoToLavaGoal extends MoveToBlockGoal {
-        private final net.minecraft.world.entity.monster.Strider strider;
+    public static class StraferGoToWaterGoal extends MoveToBlockGoal {
+        private final StraferEntity strafer;
 
-        StriderGoToLavaGoal(net.minecraft.world.entity.monster.Strider pStrider, double pSpeedModifier) {
-            super(pStrider, pSpeedModifier, 8, 2);
-            this.strider = pStrider;
+        StraferGoToWaterGoal(StraferEntity pStrafer, double pSpeedModifier) {
+            super(pStrafer, pSpeedModifier, 8, 2);
+            this.strafer = pStrafer;
         }
 
         public BlockPos getMoveToTarget() {
@@ -488,11 +489,11 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
         }
 
         public boolean canContinueToUse() {
-            return !this.strider.isInWater() && this.isValidTarget(this.strider.level(), this.blockPos);
+            return !this.strafer.isInWater() && this.isValidTarget(this.strafer.level(), this.blockPos);
         }
 
         public boolean canUse() {
-            return !this.strider.isInWater() && super.canUse();
+            return !this.strafer.isInWater() && super.canUse();
         }
 
         public boolean shouldRecalculatePath() {
@@ -504,8 +505,8 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
         }
     }
 
-    public static class StriderPathNavigation extends GroundPathNavigation {
-        StriderPathNavigation(net.minecraft.world.entity.monster.Strider pStrider, Level pLevel) {
+    public static class StraferPathNavigation extends GroundPathNavigation {
+        StraferPathNavigation(net.minecraft.world.entity.monster.Strider pStrider, Level pLevel) {
             super(pStrider, pLevel);
         }
 

@@ -35,7 +35,6 @@ import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fluids.capability.wrappers.FluidBucketWrapper;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.thejeezed.craftplusplus.item.ItemUtils;
 import net.thejeezed.craftplusplus.item.ModItems;
 
@@ -52,13 +51,6 @@ public class CopperBucketItem extends Item implements DispensibleContainerItem
         super(builder);
         this.content = null;
         this.fluidSupplier = supplier;
-    }
-
-    @Deprecated
-    public CopperBucketItem(Fluid pContent, Item.Properties pProperties) {
-        super(pProperties);
-        this.content = pContent;
-        this.fluidSupplier = ForgeRegistries.FLUIDS.getDelegateOrThrow(pContent);
     }
 
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
@@ -79,25 +71,28 @@ public class CopperBucketItem extends Item implements DispensibleContainerItem
                 BlockState blockstate1;
                 if (this.content == Fluids.EMPTY) {
                     blockstate1 = pLevel.getBlockState(blockpos);
-                    if (blockstate1.getBlock() instanceof BucketPickup) {
-                        BucketPickup bucketpickup = (BucketPickup)blockstate1.getBlock();
-                        ItemStack itemstack1 = bucketpickup.pickupBlock(pLevel, blockpos, blockstate1);
-                        if (!itemstack1.isEmpty()) {
-                            pPlayer.awardStat(Stats.ITEM_USED.get(this));
-                            bucketpickup.getPickupSound(blockstate1).ifPresent((p_150709_) -> {
-                                pPlayer.playSound(p_150709_, 1.0F, 1.0F);
-                            });
-                            pLevel.gameEvent(pPlayer, GameEvent.FLUID_PICKUP, blockpos);
-                            ItemStack itemstack2 = ItemUtils.createFilledResult(itemstack, pPlayer, itemstack1, ModItems.COPPER_WATER_BUCKET.get(), true);
-                            if (!pLevel.isClientSide) {
-                                CriteriaTriggers.FILLED_BUCKET.trigger((ServerPlayer)pPlayer, itemstack1);
+                    if (blockstate1.getFluidState().is(Fluids.LAVA))
+                    {
+                        return InteractionResultHolder.fail(itemstack);
+                    } else {
+                        if (blockstate1.getBlock() instanceof BucketPickup bucketpickup) {
+                            ItemStack itemstack1 = bucketpickup.pickupBlock(pLevel, blockpos, blockstate1);
+                            if (!itemstack1.isEmpty()) {
+                                pPlayer.awardStat(Stats.ITEM_USED.get(this));
+                                bucketpickup.getPickupSound(blockstate1).ifPresent((p_150709_) -> {
+                                    pPlayer.playSound(p_150709_, 1.0F, 1.0F);
+                                });
+                                pLevel.gameEvent(pPlayer, GameEvent.FLUID_PICKUP, blockpos);
+                                ItemStack itemstack2 = ItemUtils.createFilledResult(itemstack, pPlayer, itemstack1, ModItems.COPPER_WATER_BUCKET.get(), true);
+                                if (!pLevel.isClientSide) {
+                                    CriteriaTriggers.FILLED_BUCKET.trigger((ServerPlayer)pPlayer, itemstack1);
+                                }
+
+                                return InteractionResultHolder.sidedSuccess(itemstack2, pLevel.isClientSide());
                             }
-
-                            return InteractionResultHolder.sidedSuccess(itemstack2, pLevel.isClientSide());
                         }
+                        return InteractionResultHolder.fail(itemstack);
                     }
-
-                    return InteractionResultHolder.fail(itemstack);
                 } else {
                     blockstate1 = pLevel.getBlockState(blockpos);
                     BlockPos blockpos2 = this.canBlockContainFluid(pLevel, blockpos, blockstate1) ? blockpos : blockpos1;

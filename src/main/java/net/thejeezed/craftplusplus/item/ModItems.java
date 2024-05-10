@@ -1,6 +1,7 @@
 package net.thejeezed.craftplusplus.item;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -36,12 +37,19 @@ public class ModItems {
     public static final RegistryObject<Item> COPPER_SHOVEL = ITEMS.register("copper_shovel", ()-> new ShovelItem(ToolStats.COPPER,1.5F,-3.0F, new Item.Properties()));
     public static final RegistryObject<Item> COPPER_HOE = ITEMS.register("copper_hoe", ()-> new HoeItem(ToolStats.COPPER,-2,-1.0F, new Item.Properties()));
 
+    //THINGS FOR STRAFER
+    public static final RegistryObject<Item> SUGARCANE_ON_A_STICK = ITEMS.register("sugarcane_on_a_stick", ()-> new FoodOnAStickItem(new Item.Properties().durability(25), EntityType.PIG, 7));
+
     //COPPER ARMOR
     public static final RegistryObject<Item> COPPER_HELMET = ITEMS.register("copper_helmet", () -> CopperArmor.getInstance(ArmorItem.Type.HELMET));
     public static final RegistryObject<Item> COPPER_CHESTPLATE = ITEMS.register("copper_chestplate", () -> CopperArmor.getInstance(ArmorItem.Type.CHESTPLATE));
     public static final RegistryObject<Item> COPPER_LEGGINGS = ITEMS.register("copper_leggings", () -> CopperArmor.getInstance(ArmorItem.Type.LEGGINGS));
     public static final RegistryObject<Item> COPPER_BOOTS = ITEMS.register("copper_boots", () -> CopperArmor.getInstance(ArmorItem.Type.BOOTS));
-    //TODO need textures for all, then remind me and ill add the trims
+
+    //TURTLE
+    public static final RegistryObject<Item> TURTLE_SHELL_CHESTPLATE = ITEMS.register("turtle_shell_chestplate", () -> new ArmorItem(ArmorMaterials.TURTLE, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> TURTLE_SHELL_LEGGINGS = ITEMS.register("turtle_shell_leggings", () -> new ArmorItem(ArmorMaterials.TURTLE, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> TURTLE_SHELL_BOOTS = ITEMS.register("turtle_shell_boots", () -> new ArmorItem(ArmorMaterials.TURTLE, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     //HORSE ARMOR
     public static final RegistryObject<Item> NETHERITE_HORSE_ARMOR = ITEMS.register("netherite_horse_armor", () -> new HorseArmorItem(15, new ResourceLocation(MOD_ID, "textures/entity/horse/armor/horse_armor_netherite.png"), new Item.Properties().stacksTo(1).fireResistant()));
@@ -58,3 +66,4 @@ public class ModItems {
             ITEMS.register(eventBus);
         }
 }
+

@@ -373,7 +373,7 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
     }
 
     public boolean isSensitiveToWater() {
-        return true;
+        return false;
     }
 
     public boolean isOnFire() {

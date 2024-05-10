@@ -1,5 +1,5 @@
 {
-  "block.craftplusplus.charcoal_block": "Block of Charcoal",
+  "block.craftplusplus.charcoal_block": "Block Aus Holzkohle",
   "block.craftplusplus.compressed_copper": "Compressed Copper",
   "creativetab.craft_tab": "Craft++",
   "item.craftplusplus.cooked_tentacle": "Cooked Squid Tentacle",
@@ -18,5 +18,8 @@
   "item.craftplusplus.netherite_horse_armor": "Netherite Horse Armor",
   "item.craftplusplus.raw_tentacle": "Raw Squid Tentacle",
   "item.craftplusplus.sea_soup": "Soup Of The Seas",
-  "item.projectshadow.strafer_spawn_egg": "Strafer Spawn Egg"
+  "item.craftplusplus.strafer_spawn_egg": "Strafer Spawn Egg",
+  "item.craftplusplus.turtle_shell_boots": "Turtle Shell Boots",
+  "item.craftplusplus.turtle_shell_chestplate": "Turtle Shell Chestplate",
+  "item.craftplusplus.turtle_shell_leggings": "Turtle Shell Leggings"
 }

@@ -12,6 +12,7 @@ import net.thejeezed.craftplusplus.entity.ModEntities;
 import net.thejeezed.craftplusplus.enums.tools.ToolStats;
 import net.thejeezed.craftplusplus.item.custom.armor.CopperArmor;
 import net.thejeezed.craftplusplus.item.custom.item.CopperBucketItem;
+import net.thejeezed.craftplusplus.item.custom.item.MagicMirrorItem;
 
 import static net.thejeezed.craftplusplus.CraftPlusPlus.MOD_ID;
 
@@ -49,7 +50,11 @@ public class ModItems {
     //SPAWN EGGS
     public static final RegistryObject<ForgeSpawnEggItem> STRAFER_SPAWN_EGG = ITEMS.register("strafer_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.STRAFER, 0x34dbeb, 0xFFFFFF, new Item.Properties()));
 
-        public static void register(IEventBus eventBus) {
+    //MAGIC MIRROR
+    public static final RegistryObject<Item> MAGIC_MIRROR = ITEMS.register("magic_mirror",
+            ()-> new MagicMirrorItem(3, new Item.Properties())); // TODO maybe delete this defaultDurability item property I don't know what you want to do with this item.
+
+    public static void register(IEventBus eventBus) {
             ITEMS.register(eventBus);
         }
 }

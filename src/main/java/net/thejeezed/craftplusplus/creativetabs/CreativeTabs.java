@@ -39,6 +39,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.RAW_TENTACLE.get());
                         pOutput.accept(ModItems.COOKED_TENTACLE.get());
                         pOutput.accept(ModItems.STRAFER_SPAWN_EGG.get());
+                        pOutput.accept(ModItems.MAGIC_MIRROR.get());
                     })
                     .build());
 

@@ -1,6 +1,5 @@
 package net.thejeezed.craftplusplus.entity;
 
-import net.minecraft.client.renderer.entity.StriderRenderer;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -17,6 +16,8 @@ public class ModEntities {
     public static final RegistryObject<EntityType<StraferEntity>> STRAFER =
             ENTITY_TYPES.register("strafer", () -> EntityType.Builder.of(StraferEntity::new, MobCategory.CREATURE)
                     .sized(0.9f, 1.7f).build("strafer"));
+
+
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

@@ -12,7 +12,10 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.animal.Cow;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DispensibleContainerItem;
 import net.minecraft.world.item.Item;
@@ -112,6 +115,21 @@ public class CopperBucketItem extends Item implements DispensibleContainerItem
                 return InteractionResultHolder.fail(itemstack);
             }
         }
+    }
+
+    @Override
+    public InteractionResult interactLivingEntity(ItemStack itemStack, Player pPlayer, LivingEntity pLivingEntity, InteractionHand pHand)
+    {
+        if (pLivingEntity instanceof Cow cow && !cow.isBaby()) // wouldn't want to milk a baby yeesh.
+        {
+            pPlayer.playSound(SoundEvents.COW_MILK, 1.0F, 1.0F);
+            ItemStack milk_bucket = ItemUtils.createFilledResult(itemStack, pPlayer, null, ModItems.COPPER_MILK_BUCKET.get(), false);
+            pPlayer.setItemInHand(pHand, milk_bucket);
+            pPlayer.awardStat(Stats.ITEM_USED.get(this));
+            return InteractionResult.sidedSuccess(cow.level().isClientSide());
+        }
+
+        return super.interactLivingEntity(itemStack, pPlayer, pLivingEntity, pHand);
     }
 
     public static ItemStack getEmptySuccessItem(ItemStack pBucketStack, Player pPlayer) {

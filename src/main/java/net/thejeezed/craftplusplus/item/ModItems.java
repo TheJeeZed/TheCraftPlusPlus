@@ -1,6 +1,7 @@
 package net.thejeezed.craftplusplus.item;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -36,6 +37,9 @@ public class ModItems {
     public static final RegistryObject<Item> COPPER_SHOVEL = ITEMS.register("copper_shovel", ()-> new ShovelItem(ToolStats.COPPER,1.5F,-3.0F, new Item.Properties()));
     public static final RegistryObject<Item> COPPER_HOE = ITEMS.register("copper_hoe", ()-> new HoeItem(ToolStats.COPPER,-2,-1.0F, new Item.Properties()));
 
+    //THINGS FOR STRAFER
+    public static final RegistryObject<Item> SUGARCANE_ON_A_STICK = ITEMS.register("sugarcane_on_a_stick", ()-> new FoodOnAStickItem(new Item.Properties().durability(25), EntityType.PIG, 7));
+
     //COPPER ARMOR
     public static final RegistryObject<Item> COPPER_HELMET = ITEMS.register("copper_helmet", () -> CopperArmor.getInstance(ArmorItem.Type.HELMET));
     public static final RegistryObject<Item> COPPER_CHESTPLATE = ITEMS.register("copper_chestplate", () -> CopperArmor.getInstance(ArmorItem.Type.CHESTPLATE));
@@ -62,3 +66,4 @@ public class ModItems {
             ITEMS.register(eventBus);
         }
 }
+

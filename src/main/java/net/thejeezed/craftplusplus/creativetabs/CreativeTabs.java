@@ -43,6 +43,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.TURTLE_SHELL_CHESTPLATE.get());
                         pOutput.accept(ModItems.TURTLE_SHELL_LEGGINGS.get());
                         pOutput.accept(ModItems.TURTLE_SHELL_BOOTS.get());
+                        pOutput.accept(ModItems.SUGARCANE_ON_A_STICK.get());
                     })
                     .build());
 

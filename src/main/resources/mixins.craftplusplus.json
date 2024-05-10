@@ -1,15 +1,12 @@
 {
   "required": true,
-  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_17",
   "package": "net.thejeezed.craftplusplus.mixin",
-  "compatibilityLevel": "JAVA_8",
-  "refmap": "mixins.craftplusplus.refmap.json",
-  "mixins": [
-    "CowMixin"
-  ],
-  "client": [
-  ],
+  "refmap": "mixins.thejeezed.refmap.json",
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "mixins": [
+    "CowMixin"
+  ]
 }

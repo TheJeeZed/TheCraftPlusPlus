@@ -70,6 +70,24 @@ public class ItemUtils
         }
     }
 
+    public static ItemStack createMilkResult(ItemStack pEmptyStack, Player pPlayer, Item item, boolean pPreventDuplicates) {
+        boolean $$4 = pPlayer.getAbilities().instabuild;
+        ItemStack pFilledStack = new ItemStack(item);
+        if (pPreventDuplicates && $$4) {
+            if (!pPlayer.getInventory().contains(pFilledStack)) {
+                pPlayer.getInventory().add(pFilledStack);
+            }
+        } else {
+            if (!$$4) {
+                pEmptyStack.shrink(1);
+            }
+            if (!pPlayer.addItem(pFilledStack)) {
+                pPlayer.drop(pFilledStack, false);
+            }
+        }
+        return pEmptyStack;
+    }
+
     public static void onContainerDestroyed(ItemEntity pItemEntity, Stream<ItemStack> pContainerContents) {
         Level $$2 = pItemEntity.level();
         if (!$$2.isClientSide) {

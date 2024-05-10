@@ -30,6 +30,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(COPPER_CHESTPLATE);
         trimmedArmorItem(COPPER_LEGGINGS);
         trimmedArmorItem(COPPER_BOOTS);
+        trimmedArmorItem(TURTLE_SHELL_CHESTPLATE);
+        trimmedArmorItem(TURTLE_SHELL_LEGGINGS);
+        trimmedArmorItem(TURTLE_SHELL_BOOTS);
     }
 
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {

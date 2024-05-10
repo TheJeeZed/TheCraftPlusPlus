@@ -24,6 +24,9 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(ModItems.COPPER_HELMET.get(),
                        ModItems.COPPER_CHESTPLATE.get(),
                         ModItems.COPPER_LEGGINGS.get(),
-                        ModItems.COPPER_BOOTS.get());
+                        ModItems.COPPER_BOOTS.get(),
+                        ModItems.TURTLE_SHELL_CHESTPLATE.get(),
+                        ModItems.TURTLE_SHELL_LEGGINGS.get(),
+                        ModItems.TURTLE_SHELL_BOOTS.get());
     }
 }

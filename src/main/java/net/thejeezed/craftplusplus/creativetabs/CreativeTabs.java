@@ -40,6 +40,9 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.COOKED_TENTACLE.get());
                         pOutput.accept(ModItems.STRAFER_SPAWN_EGG.get());
                         pOutput.accept(ModItems.MAGIC_MIRROR.get());
+                        pOutput.accept(ModItems.TURTLE_SHELL_CHESTPLATE.get());
+                        pOutput.accept(ModItems.TURTLE_SHELL_LEGGINGS.get());
+                        pOutput.accept(ModItems.TURTLE_SHELL_BOOTS.get());
                     })
                     .build());
 

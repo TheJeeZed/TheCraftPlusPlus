@@ -9,7 +9,7 @@ Optional Dependencies:
 - None
 
 # Conrtibuting
-If you feel like Contributing to our mod, there are many ways to do so. Check CONTRIBUTING.MD
+If you feel like Contributing to our mod, there are many ways to do so. Look at [here](CONTRIBUTING.md)
 
 # Development
 [**luhcartimods**](https://github.com/luhcartimods) Lead Dev/Textures <br>

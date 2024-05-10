@@ -52,7 +52,7 @@ public class ModItems {
 
     //MAGIC MIRROR
     public static final RegistryObject<Item> MAGIC_MIRROR = ITEMS.register("magic_mirror",
-            ()-> new MagicMirrorItem(3, new Item.Properties())); // TODO maybe delete this defaultDurability item property I don't know what you want to do with this item.
+            ()-> new MagicMirrorItem(new Item.Properties().durability(3).defaultDurability(3)));
 
     public static void register(IEventBus eventBus) {
             ITEMS.register(eventBus);

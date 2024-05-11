@@ -61,6 +61,9 @@ public class ModItems {
     //MAGIC MIRROR
     public static final RegistryObject<Item> MAGIC_MIRROR = ITEMS.register("magic_mirror", ()-> new MagicMirrorItem(new Item.Properties().durability(3).defaultDurability(3)));
 
+    //ORES
+    public static final RegistryObject<Item> SULPHUR_CHUNK = ITEMS.register("sulphur_chunk", () -> new Item(new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
             ITEMS.register(eventBus);
         }

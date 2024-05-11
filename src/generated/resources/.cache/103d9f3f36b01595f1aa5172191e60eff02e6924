@@ -1,0 +1,4 @@
+// 1.20.1	2024-05-11T11:20:04.9193878	Registries
+d5696ea55ea647f93e2b7ed9df7f4bffaadb6fcf data/craftplusplus/forge/biome_modifier/add_sulphur_ore.json
+a85d46f8588c277772d21680e0530b2f5eb50b2c data/craftplusplus/worldgen/configured_feature/sulphur_ore.json
+1c381814fe1fe3588d0cc24907652cf14a283187 data/craftplusplus/worldgen/placed_feature/sulphur_ore_placed.json

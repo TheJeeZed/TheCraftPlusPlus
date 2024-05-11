@@ -456,7 +456,7 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
         } else {
             RandomSource $$5 = pLevel.getRandom();
             if ($$5.nextInt(30) == 0) {
-                Mob $$6 = (Mob)EntityType.ZOMBIFIED_PIGLIN.create(pLevel.getLevel());
+                Mob $$6 = (Mob)EntityType.DROWNED.create(pLevel.getLevel());
                 if ($$6 != null) {
                     pSpawnData = this.spawnJockey(pLevel, pDifficulty, $$6, new Zombie.ZombieGroupData(Zombie.getSpawnAsBabyOdds($$5), false));
                     $$6.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.WARPED_FUNGUS_ON_A_STICK));

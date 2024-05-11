@@ -145,4 +145,3 @@ public class ModItemModelProvider extends ItemModelProvider {
                 new ResourceLocation(MOD_ID,"item/" + item.getId().getPath()));
     }
 }
-}

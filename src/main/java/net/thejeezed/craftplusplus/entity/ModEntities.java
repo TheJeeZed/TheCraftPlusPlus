@@ -15,7 +15,7 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<StraferEntity>> STRAFER =
             ENTITY_TYPES.register("strafer", () -> EntityType.Builder.of(StraferEntity::new, MobCategory.CREATURE)
-                    .sized(0.9f, 1.7f).build("strafer"));
+                    .sized(0.7f, 1.5f).build("strafer"));
 
 
 

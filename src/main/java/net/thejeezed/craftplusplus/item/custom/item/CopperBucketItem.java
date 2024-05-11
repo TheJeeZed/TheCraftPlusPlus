@@ -38,8 +38,10 @@ import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fluids.capability.wrappers.FluidBucketWrapper;
+import net.thejeezed.craftplusplus.client.gui.MessageRenderer;
 import net.thejeezed.craftplusplus.item.ItemUtils;
 import net.thejeezed.craftplusplus.item.ModItems;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
@@ -118,13 +120,15 @@ public class CopperBucketItem extends Item implements DispensibleContainerItem
     }
 
     @Override
-    public InteractionResult interactLivingEntity(ItemStack itemStack, Player pPlayer, LivingEntity pLivingEntity, InteractionHand pHand)
-    {
-        if (pLivingEntity instanceof Cow cow && !cow.isBaby()) // wouldn't want to milk a baby yeesh.
-        {
+    public @NotNull InteractionResult interactLivingEntity(@NotNull ItemStack itemStack, @NotNull Player pPlayer, @NotNull LivingEntity pLivingEntity, @NotNull InteractionHand pHand) {
+        if (pLivingEntity instanceof Cow cow && !cow.isBaby()) {
             pPlayer.playSound(SoundEvents.COW_MILK, 1.0F, 1.0F);
-            ItemStack milk_bucket = ItemUtils.createFilledResult(itemStack, pPlayer, null, ModItems.COPPER_MILK_BUCKET.get(), false);
-            pPlayer.setItemInHand(pHand, milk_bucket);
+            ItemStack milk_bucket = ItemUtils.createMilkResult(itemStack, pPlayer, ModItems.COPPER_MILK_BUCKET.get(), false);
+            if (!pPlayer.addItem(milk_bucket)) {
+                pPlayer.drop(milk_bucket, false);
+            } else {
+                MessageRenderer.renderMessage("message.copper_bucket.milked");
+            }
             pPlayer.awardStat(Stats.ITEM_USED.get(this));
             return InteractionResult.sidedSuccess(cow.level().isClientSide());
         }
@@ -136,7 +140,7 @@ public class CopperBucketItem extends Item implements DispensibleContainerItem
         return !pPlayer.getAbilities().instabuild ? new ItemStack(ModItems.COPPER_BUCKET.get()) : pBucketStack;
     }
 
-    public void checkExtraContent(@Nullable Player pPlayer, Level pLevel, ItemStack pContainerStack, BlockPos pPos) {
+    public void checkExtraContent(@Nullable Player pPlayer, @NotNull Level pLevel, @NotNull ItemStack pContainerStack, @NotNull BlockPos pPos) {
     }
 
     @Override

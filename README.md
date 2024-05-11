@@ -8,7 +8,7 @@ We have a [Discord](https://discord.gg/xCfJzUMKkC) Where you can chat with the d
 Optional Dependencies:
 - None
 
-# Conrtibuting
+# Contributing
 If you feel like Contributing to our mod, there are many ways to do so. Look [here](CONTRIBUTING.md)
 
 # Development

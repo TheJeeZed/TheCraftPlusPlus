@@ -7,8 +7,14 @@ assignees: ''
 
 ---
 
+**Versions**
+MC Version: 
+Forge Version: 
+Mod Version: 
+OS: 
+
 **Describe the bug**
-Be very specific about everything. Version of the mod. Version of Minecraft. Version Of Forge. Any Other Mods Installed? Please be as specific as possible
+Be very specific about what happened
 
 **To Reproduce**
 Steps to reproduce the behavior:

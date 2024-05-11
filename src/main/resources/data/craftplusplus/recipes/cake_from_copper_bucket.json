@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "SES",
+        "WWW"
+    ],
+    "key": {
+        "#": {
+            "item": "craftplusplus:copper_milk_bucket",
+            "count": "2"
+        },
+        "S": {
+            "item": "minecraft:sugar"
+        },
+        "E": {
+            "item": "minecraft:egg"
+        },
+        "W": {
+            "item": "minecraft:wheat"
+        }
+    },
+    "result": {
+        "item": "minecraft:cake",
+        "count": 1
+    }
+}

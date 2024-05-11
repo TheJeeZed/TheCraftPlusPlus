@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "craftplusplus:compressed_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "craftplusplus:sulphur_chunk"
+  }
+}

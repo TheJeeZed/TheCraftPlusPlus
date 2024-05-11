@@ -1,6 +1,7 @@
 package net.thejeezed.craftplusplus.datagen;
 
 import net.minecraft.core.HolderLookup;
+import net.thejeezed.craftplusplus.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
@@ -19,8 +20,13 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-        this.tag(ItemTags.TRIMMABLE_ARMOR);
-                //.add(ModItems.COPPER_HELMET.get(),
-                       // ModItems.COPPER_CHESTPLATE.get(),
+        this.tag(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.COPPER_HELMET.get(),
+                       ModItems.COPPER_CHESTPLATE.get(),
+                        ModItems.COPPER_LEGGINGS.get(),
+                        ModItems.COPPER_BOOTS.get(),
+                        ModItems.TURTLE_SHELL_CHESTPLATE.get(),
+                        ModItems.TURTLE_SHELL_LEGGINGS.get(),
+                        ModItems.TURTLE_SHELL_BOOTS.get());
     }
 }

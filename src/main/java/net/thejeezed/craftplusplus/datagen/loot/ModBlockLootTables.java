@@ -14,6 +14,7 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
+import net.thejeezed.craftplusplus.item.ModItems;
 
 import java.util.Set;
 
@@ -28,6 +29,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     protected void generate() {
         this.dropSelf(ModBlocks.CHARCOAL_BLOCK.get());
         this.dropSelf(ModBlocks.COMPRESSED_COPPER.get());
+        this.add(ModBlocks.SULPHUR_ORE.get(),
+                block -> createCopperLikeOreDrops(ModBlocks.SULPHUR_ORE.get(), ModItems.SULPHUR_CHUNK.get()));
     }
 
     protected LootTable.Builder createCopperLikeOreDrops(Block pBlock, Item item) {

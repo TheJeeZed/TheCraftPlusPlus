@@ -31,6 +31,9 @@ public class ModBlocks
     public static final RegistryObject<Block> COMPRESSED_SULPHUR = registerBlock("compressed_sulphur",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS).destroyTime(3)), null);
 
+    public static final RegistryObject<Block> SULPHUR_BLOCK = registerBlock("sulphur_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS).destroyTime(3)), null);
+
     public static final RegistryObject<Block> SULPHUR_ORE = registerBlock("sulphur_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3, 6)), null);
 
 

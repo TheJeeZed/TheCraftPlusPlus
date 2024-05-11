@@ -46,6 +46,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.SUGARCANE_ON_A_STICK.get());
                         pOutput.accept(ModBlocks.SULPHUR_ORE.get());
                         pOutput.accept(ModBlocks.COMPRESSED_SULPHUR.get());
+                        pOutput.accept(ModBlocks.SULPHUR_BLOCK.get());
                     })
                     .build());
 

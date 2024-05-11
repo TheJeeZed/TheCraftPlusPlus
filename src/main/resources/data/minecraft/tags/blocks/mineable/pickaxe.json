@@ -1,5 +1,8 @@
 {
   "values": [
-    "craftplusplus:compressed_copper"
+    "craftplusplus:compressed_copper",
+    "craftplusplus:compressed_sulphur",
+    "craftplusplus:charcoal_block",
+    "craftplusplus:sulphur_ore"
   ]
 }

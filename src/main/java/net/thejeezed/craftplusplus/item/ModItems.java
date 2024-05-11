@@ -59,8 +59,7 @@ public class ModItems {
     public static final RegistryObject<ForgeSpawnEggItem> STRAFER_SPAWN_EGG = ITEMS.register("strafer_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.STRAFER, 0x34dbeb, 0xFFFFFF, new Item.Properties()));
 
     //MAGIC MIRROR
-    public static final RegistryObject<Item> MAGIC_MIRROR = ITEMS.register("magic_mirror",
-            ()-> new MagicMirrorItem(new Item.Properties().durability(3).defaultDurability(3)));
+    public static final RegistryObject<Item> MAGIC_MIRROR = ITEMS.register("magic_mirror", ()-> new MagicMirrorItem(new Item.Properties().durability(3).defaultDurability(3)));
 
     public static void register(IEventBus eventBus) {
             ITEMS.register(eventBus);

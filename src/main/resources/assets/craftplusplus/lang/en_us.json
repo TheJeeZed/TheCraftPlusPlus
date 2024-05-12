@@ -27,6 +27,19 @@
   "block.craftplusplus.compressed_copper": "Compressed Copper",
   "block.craftplusplus.compressed_sulphur": "Compressed Sulphur",
   "block.craftplusplus.sulphur_ore": "Sulphur Ore",
-  "block.craftplusplus.sulphur_ore": "Sulphur Block",
+  "block.craftplusplus.sulphur_block": "Sulphur Block",
+  "block.craftplusplus.amethyst_stairs": "Amethyst Stairs",
+  "block.craftplusplus.amethyst_slab": "Amethyst Slab",
+  "block.craftplusplus.amethyst_wall": "Amethyst Wall",
+  "block.craftplusplus.amethyst_brick": "Amethyst Brick",
+  "block.craftplusplus.amethyst_brick_stairs": "Amethyst Brick Stairs",
+  "block.craftplusplus.amethyst_brick_slab": "Amethyst Brick Slab",
+  "block.craftplusplus.amethyst_brick_wall": "Amethyst Brick Wall",
+  "block.craftplusplus.smooth_amethyst": "Smooth Amethyst",
+  "block.craftplusplus.smooth_amethyst_stairs": "Smooth Amethyst Stairs",
+  "block.craftplusplus.smooth_amethyst_slab": "Smooth Amethyst Slab",
+  "block.craftplusplus.smooth_amethyst_wall": "Smooth Amethyst Wall",
+
+
   "creativetab.craft_tab": "Craft++"
 }

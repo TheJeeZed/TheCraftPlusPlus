@@ -9,6 +9,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.minecraft.world.item.armortrim.TrimMaterials;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -16,10 +17,12 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.thejeezed.craftplusplus.CraftPlusPlus;
+import net.thejeezed.craftplusplus.block.ModBlocks;
 
 import java.util.LinkedHashMap;
 
 import static net.thejeezed.craftplusplus.CraftPlusPlus.MOD_ID;
+import static net.thejeezed.craftplusplus.block.ModBlocks.*;
 import static net.thejeezed.craftplusplus.item.ModItems.*;
 
 public class ModItemModelProvider extends ItemModelProvider {
@@ -38,9 +41,21 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(TURTLE_SHELL_LEGGINGS);
         trimmedArmorItem(TURTLE_SHELL_BOOTS);
 
+        evenSimplerBlockItem(ModBlocks.AMETHYST_SLAB);
+        evenSimplerBlockItem(ModBlocks.AMETHYST_BRICK_SLAB);
+        evenSimplerBlockItem(ModBlocks.SMOOTH_AMETHYST_SLAB);
+        evenSimplerBlockItem(ModBlocks.AMETHYST_STAIRS);
+        evenSimplerBlockItem(ModBlocks.AMETHYST_BRICK_STAIRS);
+        evenSimplerBlockItem(ModBlocks.SMOOTH_AMETHYST_STAIRS);
+
+        wallItem(AMETHYST_WALL, ModBlocks.AMETHYST_BRICK);
+        wallItem(AMETHYST_BRICK_WALL, ModBlocks.AMETHYST_BRICK);
+        wallItem(SMOOTH_AMETHYST_WALL, SMOOTH_AMETHYST);
+
+
         //trimmedArmorItem for trims
         //simpleItem for a simple item. This will make it generated
-        //evenSimplerBlockItem this is for blocks to make a item model.
+        //evenSimplerBlockItem this is for blocks to make an item model.
         //trapdoorItem for trapdoors
         //fenceItem for fences
         //buttonItem for buttons

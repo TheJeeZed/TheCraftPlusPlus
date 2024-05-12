@@ -2,9 +2,11 @@ package net.thejeezed.craftplusplus.datagen;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.thejeezed.craftplusplus.CraftPlusPlus;
+import net.thejeezed.craftplusplus.block.ModBlocks;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -16,7 +18,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-       // this.tag(ModTags.Blocks.COPPERS)
-                //.add(ModBlocks.COPPER_THING.get()).addTag(Tags.Blocks.ORES);
+        this.tag(BlockTags.WALLS)
+                .add(ModBlocks.AMETHYST_WALL.get(),
+                     ModBlocks.SMOOTH_AMETHYST_WALL.get(),
+                     ModBlocks.AMETHYST_BRICK_WALL.get());
     }
 }

@@ -36,26 +36,36 @@ public class ModBlocks
 
     //Amethyst TileSet
     public static final RegistryObject<Block> AMETHYST_STAIRS = registerBlock("amethyst_stairs",
-            () -> new StairBlock(() -> Blocks.AMETHYST_BLOCK.defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST).strength(1f).requiresCorrectToolForDrops()),null);
+            () -> new StairBlock(() -> ModBlocks.AMETHYST_BRICK.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST).strength(1f).requiresCorrectToolForDrops()),null);
+
     public static final RegistryObject<Block> AMETHYST_SLAB = registerBlock("amethyst_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST).strength(1f).requiresCorrectToolForDrops()), null);
+
     public static final RegistryObject<Block> AMETHYST_WALL = registerBlock("amethyst_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST).strength(1f).requiresCorrectToolForDrops()), null);
+
     public static final RegistryObject<Block> AMETHYST_BRICK = registerBlock("amethyst_brick",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST).strength(1f).requiresCorrectToolForDrops()), null);
+
     public static final RegistryObject<Block> AMETHYST_BRICK_STAIRS = registerBlock("amethyst_brick_stairs",
             () -> new StairBlock(() -> ModBlocks.AMETHYST_BRICK.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST).strength(1f).requiresCorrectToolForDrops()),null);
+
     public static final RegistryObject<Block> AMETHYST_BRICK_SLAB = registerBlock("amethyst_brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST).strength(1f).requiresCorrectToolForDrops()), null);
+
     public static final RegistryObject<Block> AMETHYST_BRICK_WALL = registerBlock("amethyst_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST).strength(1f).requiresCorrectToolForDrops()), null);
+
     public static final RegistryObject<Block> SMOOTH_AMETHYST = registerBlock("smooth_amethyst",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST).strength(1f).requiresCorrectToolForDrops()), null);
+
     public static final RegistryObject<Block> SMOOTH_AMETHYST_STAIRS = registerBlock("smooth_amethyst_stairs",
             () -> new StairBlock(() -> ModBlocks.SMOOTH_AMETHYST.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST).strength(1f).requiresCorrectToolForDrops()),null);
-    public static final RegistryObject<Block> SMOOTH_AMETHYST_SLAB = registerBlock("sapphire_block_slab",
+
+    public static final RegistryObject<Block> SMOOTH_AMETHYST_SLAB = registerBlock("smooth_amethyst_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST).strength(1f).requiresCorrectToolForDrops()), null);
-    public static final RegistryObject<Block> SMOOTH_AMETHYST_WALL = registerBlock("sapphire_block_wall",
+
+    public static final RegistryObject<Block> SMOOTH_AMETHYST_WALL = registerBlock("smooth_amethyst_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST).strength(1f).requiresCorrectToolForDrops()), null);
 
 

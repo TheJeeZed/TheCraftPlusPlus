@@ -11,8 +11,11 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.thejeezed.craftplusplus.CraftPlusPlus;
+import net.thejeezed.craftplusplus.block.ModBlocks;
 
 import java.util.function.Function;
+
+import static net.thejeezed.craftplusplus.block.ModBlocks.*;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -24,41 +27,20 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        //blockWithItem(ModBlocks.BLOCK_HERE);
-    }
+        blockWithItem(ModBlocks.SMOOTH_AMETHYST);
+        blockWithItem(ModBlocks.AMETHYST_BRICK);
 
-    private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
-        simpleBlock(blockRegistryObject.get(),
-                models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
-    }
+        slabBlock(((SlabBlock) ModBlocks.AMETHYST_SLAB.get()), blockTexture(Blocks.AMETHYST_BLOCK), blockTexture(Blocks.AMETHYST_BLOCK));
+        slabBlock(((SlabBlock) ModBlocks.AMETHYST_BRICK_SLAB.get()), blockTexture(ModBlocks.AMETHYST_BRICK.get()), blockTexture(ModBlocks.AMETHYST_BRICK.get()));
+        slabBlock(((SlabBlock) ModBlocks.SMOOTH_AMETHYST_SLAB.get()), blockTexture(ModBlocks.SMOOTH_AMETHYST.get()), blockTexture(ModBlocks.SMOOTH_AMETHYST.get()));
 
-    public void hangingSignBlock(Block signBlock, Block wallSignBlock, ResourceLocation texture) {
-        ModelFile sign = models().sign(name(signBlock), texture);
-        hangingSignBlock(signBlock, wallSignBlock, sign);
-    }
+        stairsBlock(((StairBlock) ModBlocks.AMETHYST_STAIRS.get()), blockTexture(Blocks.AMETHYST_BLOCK));
+        stairsBlock(((StairBlock) ModBlocks.AMETHYST_BRICK_STAIRS.get()), blockTexture(ModBlocks.AMETHYST_BRICK.get()));
+        stairsBlock(((StairBlock) ModBlocks.SMOOTH_AMETHYST_STAIRS.get()), blockTexture(ModBlocks.SMOOTH_AMETHYST.get()));
 
-    public void hangingSignBlock(Block signBlock, Block wallSignBlock, ModelFile sign) {
-        simpleBlock(signBlock, sign);
-        simpleBlock(wallSignBlock, sign);
-    }
-
-    private String name(Block block) {
-        return key(block).getPath();
-    }
-
-    private ResourceLocation key(Block block) {
-        return ForgeRegistries.BLOCKS.getKey(block);
-    }
-
-    private void leavesBlock(RegistryObject<Block> blockRegistryObject) {
-        simpleBlockWithItem(blockRegistryObject.get(),
-                models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), new ResourceLocation("minecraft:block/leaves"),
-                        "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
-    }
-
-    private void blockItem(RegistryObject<Block> blockRegistryObject) {
-        simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile(CraftPlusPlus.MOD_ID +
-                ":block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath()));
+        wallBlock(((WallBlock) AMETHYST_WALL.get()), blockTexture(Blocks.AMETHYST_BLOCK));
+        wallBlock(((WallBlock) AMETHYST_BRICK_WALL.get()), blockTexture(ModBlocks.AMETHYST_BRICK.get()));
+        wallBlock(((WallBlock) SMOOTH_AMETHYST_WALL.get()), blockTexture(SMOOTH_AMETHYST.get()));
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "craftplusplus:block/amethyst_brick"
+  }
+}

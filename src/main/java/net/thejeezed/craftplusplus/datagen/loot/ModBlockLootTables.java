@@ -31,6 +31,19 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.COMPRESSED_COPPER.get());
         this.add(ModBlocks.SULPHUR_ORE.get(),
                 block -> createCopperLikeOreDrops(ModBlocks.SULPHUR_ORE.get(), ModItems.SULPHUR_CHUNK.get()));
+        this.dropSelf(ModBlocks.COMPRESSED_SULPHUR.get());
+        this.dropSelf(ModBlocks.SULPHUR_BLOCK.get());
+        this.dropSelf(ModBlocks.AMETHYST_STAIRS.get());
+        this.dropSelf(ModBlocks.AMETHYST_SLAB.get());
+        this.dropSelf(ModBlocks.AMETHYST_WALL.get());
+        this.dropSelf(ModBlocks.AMETHYST_BRICK.get());
+        this.dropSelf(ModBlocks.AMETHYST_BRICK_STAIRS.get());
+        this.dropSelf(ModBlocks.AMETHYST_BRICK_SLAB.get());
+        this.dropSelf(ModBlocks.AMETHYST_BRICK_WALL.get());
+        this.dropSelf(ModBlocks.SMOOTH_AMETHYST.get());
+        this.dropSelf(ModBlocks.SMOOTH_AMETHYST_STAIRS.get());
+        this.dropSelf(ModBlocks.SMOOTH_AMETHYST_SLAB.get());
+        this.dropSelf(ModBlocks.SMOOTH_AMETHYST_WALL.get());
     }
 
     protected LootTable.Builder createCopperLikeOreDrops(Block pBlock, Item item) {

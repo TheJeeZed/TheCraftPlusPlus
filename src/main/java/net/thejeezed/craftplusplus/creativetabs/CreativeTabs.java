@@ -47,6 +47,17 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.SULPHUR_ORE.get());
                         pOutput.accept(ModBlocks.COMPRESSED_SULPHUR.get());
                         pOutput.accept(ModBlocks.SULPHUR_BLOCK.get());
+                        pOutput.accept(ModBlocks.AMETHYST_STAIRS.get());
+                        pOutput.accept(ModBlocks.AMETHYST_SLAB.get());
+                        pOutput.accept(ModBlocks.AMETHYST_WALL.get());
+                        pOutput.accept(ModBlocks.AMETHYST_BRICK.get());
+                        pOutput.accept(ModBlocks.AMETHYST_BRICK_STAIRS.get());
+                        pOutput.accept(ModBlocks.AMETHYST_BRICK_SLAB.get());
+                        pOutput.accept(ModBlocks.AMETHYST_BRICK_WALL.get());
+                        pOutput.accept(ModBlocks.SMOOTH_AMETHYST.get());
+                        pOutput.accept(ModBlocks.SMOOTH_AMETHYST_STAIRS.get());
+                        pOutput.accept(ModBlocks.SMOOTH_AMETHYST_SLAB.get());
+                        pOutput.accept(ModBlocks.SMOOTH_AMETHYST_WALL.get());
                     })
                     .build());
 

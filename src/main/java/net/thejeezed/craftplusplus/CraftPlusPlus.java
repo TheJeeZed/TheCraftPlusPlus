@@ -20,8 +20,8 @@ import net.thejeezed.craftplusplus.entity.ModEntities;
 import net.thejeezed.craftplusplus.item.ModItems;
 import net.thejeezed.craftplusplus.loot.ModLootModifiers;
 import net.thejeezed.craftplusplus.mob.client.StraferRenderer;
+import net.thejeezed.craftplusplus.mob.client.SulphurZombieRenderer;
 import org.slf4j.Logger;
-     //kateru was here 11-5-2024 c: *sneaky sneaky
 
 @Mod(CraftPlusPlus.MOD_ID)
 public class CraftPlusPlus {
@@ -106,6 +106,7 @@ public class CraftPlusPlus {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(ModEntities.STRAFER.get(), StraferRenderer::new);
+            EntityRenderers.register(ModEntities.SULPHUR_ZOMBIE.get(), SulphurZombieRenderer::new);
         }
     }
 }

@@ -48,4 +48,64 @@ public class ModAnimationDefinitions {
                 ))
                 .build();
     }
+    public class sulphurAnimations {
+        public static final AnimationDefinition IDLE = AnimationDefinition.Builder.withLength(2f).looping()
+                .addAnimation("head",
+                        new AnimationChannel(AnimationChannel.Targets.ROTATION,
+                                new Keyframe(0f, KeyframeAnimations.degreeVec(2.5f, 0f, 0f),
+                                        AnimationChannel.Interpolations.LINEAR),
+                                new Keyframe(1f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
+                                        AnimationChannel.Interpolations.LINEAR),
+                                new Keyframe(2f, KeyframeAnimations.degreeVec(2.5f, 0f, 0f),
+                                        AnimationChannel.Interpolations.LINEAR)))
+                .addAnimation("rightArm",
+                        new AnimationChannel(AnimationChannel.Targets.ROTATION,
+                                new Keyframe(0f, KeyframeAnimations.degreeVec(-92.5f, 0f, 0f),
+                                        AnimationChannel.Interpolations.LINEAR),
+                                new Keyframe(1f, KeyframeAnimations.degreeVec(-90f, 0f, 0f),
+                                        AnimationChannel.Interpolations.LINEAR),
+                                new Keyframe(2f, KeyframeAnimations.degreeVec(-92.5f, 0f, 0f),
+                                        AnimationChannel.Interpolations.LINEAR)))
+                .addAnimation("leftArm",
+                        new AnimationChannel(AnimationChannel.Targets.ROTATION,
+                                new Keyframe(0f, KeyframeAnimations.degreeVec(-92.5f, 0f, 0f),
+                                        AnimationChannel.Interpolations.LINEAR),
+                                new Keyframe(1f, KeyframeAnimations.degreeVec(-90f, 0f, 0f),
+                                        AnimationChannel.Interpolations.LINEAR),
+                                new Keyframe(2f, KeyframeAnimations.degreeVec(-92.5f, 0f, 0f),
+                                        AnimationChannel.Interpolations.LINEAR))).build();
+        public static final AnimationDefinition MOVING = AnimationDefinition.Builder.withLength(2f).looping()
+                .addAnimation("rightArm",
+                        new AnimationChannel(AnimationChannel.Targets.ROTATION,
+                                new Keyframe(0f, KeyframeAnimations.degreeVec(-92.5f, 0f, 0f),
+                                        AnimationChannel.Interpolations.LINEAR),
+                                new Keyframe(1f, KeyframeAnimations.degreeVec(-85f, 0f, 0f),
+                                        AnimationChannel.Interpolations.LINEAR),
+                                new Keyframe(2f, KeyframeAnimations.degreeVec(-92.5f, 0f, 0f),
+                                        AnimationChannel.Interpolations.LINEAR)))
+                .addAnimation("leftArm",
+                        new AnimationChannel(AnimationChannel.Targets.ROTATION,
+                                new Keyframe(0f, KeyframeAnimations.degreeVec(-85f, 0f, 0f),
+                                        AnimationChannel.Interpolations.LINEAR),
+                                new Keyframe(1f, KeyframeAnimations.degreeVec(-92.5f, 0f, 0f),
+                                        AnimationChannel.Interpolations.LINEAR),
+                                new Keyframe(2f, KeyframeAnimations.degreeVec(-85f, 0f, 0f),
+                                        AnimationChannel.Interpolations.LINEAR)))
+                .addAnimation("rightLeg",
+                        new AnimationChannel(AnimationChannel.Targets.ROTATION,
+                                new Keyframe(0f, KeyframeAnimations.degreeVec(20f, 0f, 0f),
+                                        AnimationChannel.Interpolations.LINEAR),
+                                new Keyframe(1f, KeyframeAnimations.degreeVec(-20f, 0f, 0f),
+                                        AnimationChannel.Interpolations.LINEAR),
+                                new Keyframe(2f, KeyframeAnimations.degreeVec(20f, 0f, 0f),
+                                        AnimationChannel.Interpolations.LINEAR)))
+                .addAnimation("leftLeg",
+                        new AnimationChannel(AnimationChannel.Targets.ROTATION,
+                                new Keyframe(0f, KeyframeAnimations.degreeVec(-20f, 0f, 0f),
+                                        AnimationChannel.Interpolations.LINEAR),
+                                new Keyframe(1f, KeyframeAnimations.degreeVec(20f, 0f, 0f),
+                                        AnimationChannel.Interpolations.LINEAR),
+                                new Keyframe(2f, KeyframeAnimations.degreeVec(-20f, 0f, 0f),
+                                        AnimationChannel.Interpolations.LINEAR))).build();
+    }
 }

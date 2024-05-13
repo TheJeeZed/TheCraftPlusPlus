@@ -18,6 +18,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.thejeezed.craftplusplus.CraftPlusPlus;
 import net.thejeezed.craftplusplus.block.ModBlocks;
+import net.thejeezed.craftplusplus.item.ModItems;
 
 import java.util.LinkedHashMap;
 
@@ -51,6 +52,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         wallItem(AMETHYST_WALL, ModBlocks.AMETHYST_BRICK);
         wallItem(AMETHYST_BRICK_WALL, ModBlocks.AMETHYST_BRICK);
         wallItem(SMOOTH_AMETHYST_WALL, SMOOTH_AMETHYST);
+
+        simpleItem(COTTON_SEEDS);
 
 
         //trimmedArmorItem for trims

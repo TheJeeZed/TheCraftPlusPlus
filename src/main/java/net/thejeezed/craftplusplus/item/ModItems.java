@@ -9,6 +9,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.thejeezed.craftplusplus.block.ModBlocks;
 import net.thejeezed.craftplusplus.entity.ModEntities;
 import net.thejeezed.craftplusplus.enums.tools.ToolStats;
 import net.thejeezed.craftplusplus.item.custom.armor.CopperArmor;
@@ -61,6 +62,10 @@ public class ModItems {
 
     //MAGIC MIRROR
     public static final RegistryObject<Item> MAGIC_MIRROR = ITEMS.register("magic_mirror", ()-> new MagicMirrorItem(new Item.Properties().durability(3).defaultDurability(3)));
+
+    //COTTON
+    public static final RegistryObject<Item> COTTON_SEEDS = ITEMS.register("cotton_seeds", ()-> new ItemNameBlockItem(ModBlocks.COTTON_CROP.get(),new Item.Properties()));
+    public static final RegistryObject<Item> COTTON = ITEMS.register("cotton", () -> new Item(new Item.Properties()));
 
     //ORES
     public static final RegistryObject<Item> SULPHUR_CHUNK = ITEMS.register("sulphur_chunk", () -> new Item(new Item.Properties()));

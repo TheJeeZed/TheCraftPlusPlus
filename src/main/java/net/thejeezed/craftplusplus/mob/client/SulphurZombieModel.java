@@ -59,8 +59,8 @@ public class SulphurZombieModel<T extends Entity> extends HierarchicalModel<T> {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
 		this.applyHeadRotation(netHeadYaw, headPitch, ageInTicks);
 
-		this.animateWalk(ModAnimationDefinitions.sulphurAnimations.MOVING, limbSwing, limbSwingAmount, 2f, 2.5f);
-		this.animate(((SulphurZombieEntity) entity).idleAnimationState, ModAnimationDefinitions.sulphurAnimations.IDLE, ageInTicks, 1f);
+		this.animateWalk(ModAnimationDefinitions.sulphurAnimations.Moving, limbSwing, limbSwingAmount, 2f, 2.5f);
+		this.animate(((SulphurZombieEntity) entity).idleAnimationState, ModAnimationDefinitions.sulphurAnimations.Idle, ageInTicks, 1f);
 	}
 
 	private void applyHeadRotation(float pNetHeadYaw, float pHeadPitch, float pAgeInTicks) {

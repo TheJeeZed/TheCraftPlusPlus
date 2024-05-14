@@ -4,7 +4,7 @@
   "cookingtime": 200,
   "experience": 0.1,
   "ingredient": {
-    "item": "minecraft:amethyst"
+    "item": "minecraft:amethyst_block"
   },
   "result": "craftplusplus:smooth_amethyst"
 }

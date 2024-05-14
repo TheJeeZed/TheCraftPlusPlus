@@ -25,6 +25,7 @@
   "item.craftplusplus.sulphur_chunk": "Sulphur Chunk",
   "item.craftplusplus.cotton_seeds": "Cotton Seeds",
   "item.craftplusplus.cotton": "Cotton",
+  "item.craftplusplus.copper_milk_bucket": "Copper Milk Bucket",
 
   "block.craftplusplus.charcoal_block": "Block of Charcoal",
   "block.craftplusplus.compressed_copper": "Compressed Copper",
@@ -43,6 +44,7 @@
   "block.craftplusplus.smooth_amethyst_slab": "Smooth Amethyst Slab",
   "block.craftplusplus.smooth_amethyst_wall": "Smooth Amethyst Wall",
 
+  "entity.craftplusplus.strafer": "Strafer",
 
   "creativetab.craft_tab": "Craft++"
 }

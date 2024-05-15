@@ -12,9 +12,10 @@ Optional Dependencies:
 If you feel like Contributing to our mod, there are many ways to do so. Look [here](CONTRIBUTING.md)
 
 # Development
+[**TheJeeZed**](https://github.com/TheJeeZed) Dev/Owner <br>
 [**luhcartimods**](https://github.com/luhcartimods) Lead Dev/Textures <br>
 [**AvacadoWizard120**](https://github.com/AvacadoWizard120) Lead Dev <br>
-[**TheJeeZed**](https://github.com/TheJeeZed) Dev/Owner <br>
+[**wolfieboy09**](https://github.com/wolfieboy09) Dev <br>
 
 # Contributors
 **GF 👀** - Textures/Models <br>

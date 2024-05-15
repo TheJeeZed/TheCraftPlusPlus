@@ -20,7 +20,7 @@ public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
     protected void start() {
         add("raw_tentacle_from_squid", new AddItemModifier(new LootItemCondition[] {
                 new LootTableIdCondition.Builder(new ResourceLocation("entities/squid")).build(),LootItemRandomChanceCondition.randomChance(0.90f).build() }, ModItems.RAW_TENTACLE.get()));
-        add("string_from_strafer", new AddItemModifier(new LootItemCondition[] {
+        add("string_from_strafer.json", new AddItemModifier(new LootItemCondition[] {
                 new LootTableIdCondition.Builder(new ResourceLocation("entities/strafer")).build(),LootItemRandomChanceCondition.randomChance(1f).build() }, Items.STRING));
     }
 }

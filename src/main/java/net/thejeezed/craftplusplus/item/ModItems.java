@@ -39,7 +39,7 @@ public class ModItems {
     public static final RegistryObject<Item> COPPER_HOE = ITEMS.register("copper_hoe", ()-> new HoeItem(ToolStats.COPPER,-2,-1.0F, new Item.Properties()));
 
     //THINGS FOR STRAFER
-    public static final RegistryObject<Item> SUGARCANE_ON_A_STICK = ITEMS.register("sugarcane_on_a_stick", ()-> new FoodOnAStickItem(new Item.Properties().durability(25), EntityType.PIG, 7));
+    public static final RegistryObject<Item> SUGARCANE_ON_A_STICK = ITEMS.register("sugarcane_on_a_stick", ()-> new Item((new Item.Properties())));
 
     //COPPER ARMOR
     public static final RegistryObject<Item> COPPER_HELMET = ITEMS.register("copper_helmet", () -> CopperArmor.getInstance(ArmorItem.Type.HELMET));

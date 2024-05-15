@@ -62,6 +62,7 @@ import net.minecraft.world.level.pathfinder.WalkNodeEvaluator;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.thejeezed.craftplusplus.item.ModItems;
 import net.thejeezed.craftplusplus.tags.ModBlockTags;
 
 public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
@@ -170,6 +171,7 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
         this.panicGoal = new PanicGoal(this, 1.65);
         this.goalSelector.addGoal(1, this.panicGoal);
         this.goalSelector.addGoal(2, new BreedGoal(this, 1.0));
+        this.goalSelector.addGoal(4, new TemptGoal(this, 1.2, Ingredient.of(new ItemLike[]{ModItems.SUGARCANE_ON_A_STICK.get()}), false));
         this.temptGoal = new TemptGoal(this, 1.4, TEMPT_ITEMS, false);
         this.goalSelector.addGoal(3, this.temptGoal);
         this.goalSelector.addGoal(5, new FollowParentGoal(this, 1.0));
@@ -213,7 +215,7 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
     public LivingEntity getControllingPassenger() {
         Entity var2 = this.getFirstPassenger();
         if (var2 instanceof Player $$0) {
-            if ($$0.getMainHandItem().is(Items.WARPED_FUNGUS_ON_A_STICK) || $$0.getOffhandItem().is(Items.WARPED_FUNGUS_ON_A_STICK)) {
+            if ($$0.getMainHandItem().is(ModItems.SUGARCANE_ON_A_STICK.get()) || $$0.getOffhandItem().is(ModItems.SUGARCANE_ON_A_STICK.get())) {
                 return $$0;
             }
         }
@@ -459,7 +461,7 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
                 Mob $$6 = (Mob)EntityType.DROWNED.create(pLevel.getLevel());
                 if ($$6 != null) {
                     pSpawnData = this.spawnJockey(pLevel, pDifficulty, $$6, new Zombie.ZombieGroupData(Zombie.getSpawnAsBabyOdds($$5), false));
-                    $$6.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.WARPED_FUNGUS_ON_A_STICK));
+                    $$6.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.SUGARCANE_ON_A_STICK.get()));
                     this.equipSaddle((SoundSource)null);
                 }
             } else if ($$5.nextInt(10) == 0) {
@@ -485,11 +487,11 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
 
     static {
         SUFFOCATING_MODIFIER = new AttributeModifier(SUFFOCATING_MODIFIER_UUID, "Strider suffocating modifier", -0.3400000035762787, Operation.MULTIPLY_BASE);
-        FOOD_ITEMS = Ingredient.of(new ItemLike[]{Items.WARPED_FUNGUS});
-        TEMPT_ITEMS = Ingredient.of(new ItemLike[]{Items.WARPED_FUNGUS, Items.WARPED_FUNGUS_ON_A_STICK});
-        DATA_BOOST_TIME = SynchedEntityData.defineId(net.minecraft.world.entity.monster.Strider.class, EntityDataSerializers.INT);
-        DATA_SUFFOCATING = SynchedEntityData.defineId(net.minecraft.world.entity.monster.Strider.class, EntityDataSerializers.BOOLEAN);
-        DATA_SADDLE_ID = SynchedEntityData.defineId(net.minecraft.world.entity.monster.Strider.class, EntityDataSerializers.BOOLEAN);
+        FOOD_ITEMS = Ingredient.of(new ItemLike[]{Items.SUGAR_CANE});
+        TEMPT_ITEMS = Ingredient.of(new ItemLike[]{Items.SUGAR_CANE, ModItems.SUGARCANE_ON_A_STICK.get()});
+        DATA_BOOST_TIME = SynchedEntityData.defineId(StraferEntity.class, EntityDataSerializers.INT);
+        DATA_SUFFOCATING = SynchedEntityData.defineId(StraferEntity.class, EntityDataSerializers.BOOLEAN);
+        DATA_SADDLE_ID = SynchedEntityData.defineId(StraferEntity.class, EntityDataSerializers.BOOLEAN);
     }
 
     public static class StraferGoToWaterGoal extends MoveToBlockGoal {
@@ -522,7 +524,7 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
     }
 
     public static class StraferPathNavigation extends GroundPathNavigation {
-        StraferPathNavigation(net.minecraft.world.entity.monster.Strider pStrider, Level pLevel) {
+        StraferPathNavigation(StraferEntity pStrider, Level pLevel) {
             super(pStrider, pLevel);
         }
 

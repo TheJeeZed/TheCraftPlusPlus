@@ -21,6 +21,7 @@ import net.thejeezed.craftplusplus.item.ModItems;
 import net.thejeezed.craftplusplus.loot.ModLootModifiers;
 import net.thejeezed.craftplusplus.mob.client.StraferRenderer;
 import net.thejeezed.craftplusplus.mob.client.SulphurZombieRenderer;
+import net.thejeezed.craftplusplus.util.ModEntitySpawn;
 import org.slf4j.Logger;
 
 @Mod(CraftPlusPlus.MOD_ID)
@@ -36,6 +37,7 @@ public class CraftPlusPlus {
         CreativeTabs.register(modEventBus);
         ModLootModifiers.register(modEventBus);
         ModEntities.register(modEventBus);
+        ModEntitySpawn.SERIALIZER.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);

@@ -19,8 +19,8 @@ public class ModEntities {
                     .sized(0.7f, 1.5f).build("strafer"));
 
     public static final RegistryObject<EntityType<SulphurZombieEntity>> SULPHUR_ZOMBIE =
-            ENTITY_TYPES.register("sulphur_zombie_spawn_egg.json", () -> EntityType.Builder.of(SulphurZombieEntity::new, MobCategory.CREATURE)
-                    .sized(0.7f, 1.5f).build("sulphur_zombie_spawn_egg.json"));
+            ENTITY_TYPES.register("sulphur_zombie", () -> EntityType.Builder.of(SulphurZombieEntity::new, MobCategory.MONSTER)
+                    .sized(0.7f, 1.5f).build("sulphur_zombie"));
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
     }

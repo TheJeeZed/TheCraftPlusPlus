@@ -171,12 +171,12 @@ public class SulphurZombieEntity extends Monster {
         return super.getExperienceReward();
     }
 
-    public void setBaby(boolean pChildZombie) {
-        this.getEntityData().set(DATA_BABY_ID, pChildZombie);
+    public void setBaby(boolean pChildSulphurZombie) {
+        this.getEntityData().set(DATA_BABY_ID, pChildSulphurZombie);
         if (this.level() != null && !this.level().isClientSide) {
             AttributeInstance attributeinstance = this.getAttribute(Attributes.MOVEMENT_SPEED);
             attributeinstance.removeModifier(SPEED_MODIFIER_BABY);
-            if (pChildZombie) {
+            if (pChildSulphurZombie) {
                 attributeinstance.addTransientModifier(SPEED_MODIFIER_BABY);
             }
         }
@@ -187,7 +187,6 @@ public class SulphurZombieEntity extends Monster {
         if (DATA_BABY_ID.equals(pKey)) {
             this.refreshDimensions();
         }
-
         super.onSyncedDataUpdated(pKey);
     }
 

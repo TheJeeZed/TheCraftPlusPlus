@@ -467,7 +467,7 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
                     this.equipSaddle((SoundSource)null);
                 }
             } else if ($$5.nextInt(10) == 0) {
-                AgeableMob $$7 = (AgeableMob)EntityType.STRIDER.create(pLevel.getLevel());
+                AgeableMob $$7 = (AgeableMob)ModEntities.STRAFER.get().create(pLevel.getLevel());
                 if ($$7 != null) {
                     $$7.setAge(-24000);
                     pSpawnData = this.spawnJockey(pLevel, pDifficulty, $$7, (SpawnGroupData)null);

@@ -12,7 +12,7 @@ Optional Dependencies:
 If you feel like Contributing to our mod, there are many ways to do so. Look [here](CONTRIBUTING.md)
 
 # Development
-[**TheJeeZed**](https://github.com/TheJeeZed) Dev/Owner <br>
+[**TheJeeZed**](https://github.com/TheJeeZed) Did absolute fucking nothing also does admin abuse, not a lovely fellow <br>
 [**luhcartimods**](https://github.com/luhcartimods) Lead Dev/Textures <br>
 [**AvacadoWizard120**](https://github.com/AvacadoWizard120) Lead Dev <br>
 [**wolfieboy09**](https://github.com/wolfieboy09) Dev <br>

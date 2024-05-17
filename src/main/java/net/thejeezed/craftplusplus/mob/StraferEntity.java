@@ -62,6 +62,8 @@ import net.minecraft.world.level.pathfinder.WalkNodeEvaluator;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.thejeezed.craftplusplus.entity.ModEntities;
+import net.thejeezed.craftplusplus.item.ModFoods;
 import net.thejeezed.craftplusplus.item.ModItems;
 import net.thejeezed.craftplusplus.tags.ModBlockTags;
 
@@ -408,8 +410,8 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
     }
 
     @Nullable
-    public net.minecraft.world.entity.monster.Strider getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
-        return (net.minecraft.world.entity.monster.Strider)EntityType.STRIDER.create(pLevel);
+    public StraferEntity getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
+        return (StraferEntity) ModEntities.STRAFER.get().create(pLevel);
     }
 
     public boolean isFood(ItemStack pStack) {

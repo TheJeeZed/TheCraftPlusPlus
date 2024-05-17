@@ -21,3 +21,4 @@ If you feel like Contributing to our mod, there are many ways to do so. Look [he
 **GF 👀** - Textures/Models <br>
 **-Ghoul-** - Textures/Models <br>
 **カテル** - Textures/Models <br>
+**MaxF1v3** - Textures/Models <br>

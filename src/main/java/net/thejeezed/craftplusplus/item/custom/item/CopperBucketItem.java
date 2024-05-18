@@ -39,8 +39,8 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fluids.capability.wrappers.FluidBucketWrapper;
 import net.thejeezed.craftplusplus.client.gui.MessageRenderer;
-import net.thejeezed.craftplusplus.item.ItemUtils;
-import net.thejeezed.craftplusplus.item.ModItems;
+import net.thejeezed.craftplusplus.util.ItemUtils;
+import net.thejeezed.craftplusplus.init.ModItems;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;

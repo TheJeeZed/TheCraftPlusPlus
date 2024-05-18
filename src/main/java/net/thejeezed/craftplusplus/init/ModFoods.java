@@ -1,4 +1,4 @@
-package net.thejeezed.craftplusplus.item;
+package net.thejeezed.craftplusplus.init;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;

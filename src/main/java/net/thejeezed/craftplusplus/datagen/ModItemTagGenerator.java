@@ -1,7 +1,7 @@
 package net.thejeezed.craftplusplus.datagen;
 
 import net.minecraft.core.HolderLookup;
-import net.thejeezed.craftplusplus.item.ModItems;
+import net.thejeezed.craftplusplus.init.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;

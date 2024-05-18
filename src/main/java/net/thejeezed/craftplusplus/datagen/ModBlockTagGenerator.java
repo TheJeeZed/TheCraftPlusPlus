@@ -6,7 +6,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.thejeezed.craftplusplus.CraftPlusPlus;
-import net.thejeezed.craftplusplus.block.ModBlocks;
+import net.thejeezed.craftplusplus.init.ModBlocks;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;

@@ -6,17 +6,15 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
-import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.thejeezed.craftplusplus.CraftPlusPlus;
-import net.thejeezed.craftplusplus.block.ModBlocks;
+import net.thejeezed.craftplusplus.init.ModBlocks;
 import net.thejeezed.craftplusplus.block.crops.CottonCropBlock;
 
 import java.util.function.Function;
 
-import static net.thejeezed.craftplusplus.block.ModBlocks.*;
+import static net.thejeezed.craftplusplus.init.ModBlocks.*;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {

@@ -1,7 +1,6 @@
-package net.thejeezed.craftplusplus.item;
+package net.thejeezed.craftplusplus.init;
 
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -9,9 +8,10 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.thejeezed.craftplusplus.block.ModBlocks;
+import net.thejeezed.craftplusplus.init.ModBlocks;
 import net.thejeezed.craftplusplus.entity.ModEntities;
 import net.thejeezed.craftplusplus.enums.tools.ToolStats;
+import net.thejeezed.craftplusplus.init.ModFoods;
 import net.thejeezed.craftplusplus.item.custom.armor.CopperArmor;
 import net.thejeezed.craftplusplus.item.custom.item.CopperBucketItem;
 import net.thejeezed.craftplusplus.item.custom.item.MagicMirrorItem;

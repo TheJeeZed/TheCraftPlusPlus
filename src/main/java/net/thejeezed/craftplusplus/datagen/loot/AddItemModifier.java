@@ -1,4 +1,4 @@
-package net.thejeezed.craftplusplus.loot;
+package net.thejeezed.craftplusplus.datagen.loot;
 
 import com.google.common.base.Suppliers;
 import com.mojang.serialization.Codec;

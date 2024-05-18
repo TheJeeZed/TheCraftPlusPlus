@@ -1,18 +1,16 @@
-package net.thejeezed.craftplusplus.block;
+package net.thejeezed.craftplusplus.init;
 
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.thejeezed.craftplusplus.CraftPlusPlus;
 import net.thejeezed.craftplusplus.block.crops.CottonCropBlock;
-import net.thejeezed.craftplusplus.item.ModItems;
 
 import java.util.function.Supplier;
 

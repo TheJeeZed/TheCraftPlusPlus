@@ -1,4 +1,4 @@
-package net.thejeezed.craftplusplus.item;
+package net.thejeezed.craftplusplus.util;
 
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;

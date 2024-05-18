@@ -8,8 +8,8 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCon
 import net.minecraftforge.common.data.GlobalLootModifierProvider;
 import net.minecraftforge.common.loot.LootTableIdCondition;
 import net.thejeezed.craftplusplus.CraftPlusPlus;
-import net.thejeezed.craftplusplus.item.ModItems;
-import net.thejeezed.craftplusplus.loot.AddItemModifier;
+import net.thejeezed.craftplusplus.init.ModItems;
+import net.thejeezed.craftplusplus.datagen.loot.AddItemModifier;
 
 public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
     public ModGlobalLootModifiersProvider(PackOutput output) {

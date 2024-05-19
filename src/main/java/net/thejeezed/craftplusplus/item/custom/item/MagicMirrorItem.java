@@ -1,49 +1,69 @@
 package net.thejeezed.craftplusplus.item.custom.item;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import net.thejeezed.craftplusplus.client.gui.MessageRenderer;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Optional;
 
 public class MagicMirrorItem extends Item {
     public MagicMirrorItem(Properties pProperties) {
         super(pProperties);
     }
 
-    public @NotNull InteractionResult useOn(UseOnContext pContext) {
-        Player player = pContext.getPlayer();
-        if (player == null) {
-            return InteractionResult.FAIL;
-        }
-        try {
-            if (player instanceof ServerPlayer serverPlayer) {
-                MessageRenderer.renderMessage("Is instance of server player");
-                BlockPos spawnpoint = serverPlayer.getRespawnPosition();
-                if (serverPlayer.isPassenger()) {
-                    MessageRenderer.renderMessage("Is Riding"); // TODO: MessageRenderer calls are for debugging and should be removed when we build.
-                    serverPlayer.stopRiding();
-                } else {
-                    MessageRenderer.renderMessage("Not Riding");
-                }
-                assert spawnpoint != null;
-                double x = spawnpoint.getX();
-                double y = spawnpoint.getY();
-                double z = spawnpoint.getZ();
-                serverPlayer.teleportTo(x, y, z);
-                serverPlayer.setDeltaMovement(0, 0, 0);
-                serverPlayer.getCooldowns().addCooldown(this, 6000); // 5 Minutes - This will add a cooldown for all Magic Mirrors in the inventory, not just the item you used.
-                pContext.getItemInHand().hurtAndBreak(1, serverPlayer, (player1) -> player1.broadcastBreakEvent(pContext.getHand()));
-                MessageRenderer.renderMessage(String.valueOf(pContext.getItemInHand().getDamageValue()));
-                return InteractionResult.CONSUME_PARTIAL;
+    @Override
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, @NotNull Player player, @NotNull InteractionHand pUsedHand) {
+        if (!pLevel.isClientSide && player instanceof ServerPlayer serverPlayer) {
+            ServerLevel world = (ServerLevel) pLevel;
+            if (!player.getAbilities().instabuild){
+                player.getCooldowns().addCooldown(this, 1200);
             }
-        } catch (Exception e) {
-            // Log the exception or handle it properly
-            return InteractionResult.FAIL;
+
+            if (serverPlayer.getRespawnPosition() != null) {
+                Optional<Vec3> respawnPosition = Player.findRespawnPositionAndUseSpawnBlock(
+                        world,
+                        serverPlayer.getRespawnPosition(),
+                        serverPlayer.getYRot(),
+                        serverPlayer.isRespawnForced(),
+                        true
+                );
+
+                if (respawnPosition.isPresent()) {
+                    ServerLevel respawnWorld = world.getServer().getLevel(serverPlayer.getRespawnDimension());
+
+                    if (respawnWorld != null) {
+                        serverPlayer.teleportTo(
+                                respawnWorld,
+                                respawnPosition.get().x,
+                                respawnPosition.get().y,
+                                respawnPosition.get().z,
+                                serverPlayer.getYRot(),
+                                serverPlayer.getXRot()
+                        );
+
+                        serverPlayer.getCooldowns().addCooldown(this, 200);
+                        player.getItemInHand(pUsedHand).hurtAndBreak(1, player,
+                                player1 -> player.broadcastBreakEvent(player.getUsedItemHand()));
+                    }
+                } else {
+                    serverPlayer.displayClientMessage(Component.translatable("magic_mirror.craftplusplus.failure_to_teleport"), false);
+                }
+            } else {
+                serverPlayer.displayClientMessage(Component.translatable("magic_mirror.craftplusplus.failure_to_teleport"), false);
+            }
         }
-        return InteractionResult.PASS;
+        return super.use(pLevel, player, pUsedHand);
     }
 }

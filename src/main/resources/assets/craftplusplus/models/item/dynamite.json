@@ -1,0 +1,18 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "craftplusplus:item/dynamite_3d"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "craftplusplus:item/dynamite_2d"
+    },
+    "ground": {
+      "parent": "craftplusplus:item/dynamite_3d"
+    },
+    "fixed": {
+      "parent": "craftplusplus:item/dynamite_3d"
+    }
+  }
+}

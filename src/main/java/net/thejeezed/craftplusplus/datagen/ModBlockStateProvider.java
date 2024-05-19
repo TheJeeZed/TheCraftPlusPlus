@@ -22,7 +22,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     //Adds blockstates
-    //If you want for Crops or other blocks ask @luhcarti hell add it
+    //If you want for Crops or other blocks ask @luhcarti he'll add it
 
     @Override
     protected void registerStatesAndModels() {
@@ -41,19 +41,27 @@ public class ModBlockStateProvider extends BlockStateProvider {
         wallBlock(((WallBlock) AMETHYST_BRICK_WALL.get()), blockTexture(ModBlocks.AMETHYST_BRICK.get()));
         wallBlock(((WallBlock) SMOOTH_AMETHYST_WALL.get()), blockTexture(SMOOTH_AMETHYST.get()));
 
-        makeCottonCrop((CropBlock)COTTON_CROP.get(), "cotton_stage", "cotton_stage");
+        makeCottonCrop((BushBlock)COTTON_CROP.get(), "cotton_stage", "cotton_stage");
     }
 
-    public void makeCottonCrop(CropBlock block, String modelName, String textureName) {
+    public void makeCottonCrop(BushBlock block, String modelName, String textureName) {
         Function<BlockState, ConfiguredModel[]> function = state -> cottonStates(state, block, modelName, textureName);
 
         getVariantBuilder(block).forAllStates(function);
     }
 
-    private ConfiguredModel[] cottonStates(BlockState state, CropBlock block, String modelName, String textureName) {
+    private ConfiguredModel[] cottonStates(BlockState state, BushBlock block, String modelName, String textureName) {
         ConfiguredModel[] models = new ConfiguredModel[1];
-        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((CottonCropBlock) block).getAgeProperty()),
-                new ResourceLocation(CraftPlusPlus.MOD_ID, "block/" + textureName + state.getValue(((CottonCropBlock) block).getAgeProperty()))).renderType("cutout"));
+        int age = state.getValue(CottonCropBlock.AGE);
+        boolean picked = state.getValue(CottonCropBlock.PICKED);
+
+        if (picked) {
+            models[0] = new ConfiguredModel(models().crop(modelName + "8",
+                    new ResourceLocation(CraftPlusPlus.MOD_ID, "block/cotton_stage8")).renderType("cutout"));
+        } else {
+            models[0] = new ConfiguredModel(models().crop(modelName + age,
+                    new ResourceLocation(CraftPlusPlus.MOD_ID, "block/" + textureName + age)).renderType("cutout"));
+        }
 
         return models;
     }

@@ -14,6 +14,7 @@ import net.thejeezed.craftplusplus.enums.tools.ToolStats;
 import net.thejeezed.craftplusplus.init.ModFoods;
 import net.thejeezed.craftplusplus.item.custom.armor.CopperArmor;
 import net.thejeezed.craftplusplus.item.custom.item.CopperBucketItem;
+import net.thejeezed.craftplusplus.item.custom.item.DynamiteItem;
 import net.thejeezed.craftplusplus.item.custom.item.MagicMirrorItem;
 
 import static net.thejeezed.craftplusplus.CraftPlusPlus.MOD_ID;
@@ -66,6 +67,9 @@ public class ModItems {
     //COTTON
     public static final RegistryObject<Item> COTTON_SEEDS = ITEMS.register("cotton_seeds", ()-> new ItemNameBlockItem(ModBlocks.COTTON_CROP.get(),new Item.Properties()));
     public static final RegistryObject<Item> COTTON = ITEMS.register("cotton", () -> new Item(new Item.Properties()));
+
+    //NLE CHOPPA
+    public static final RegistryObject<Item> DYNAMITE = ITEMS.register("dynamite", () -> new DynamiteItem(new Item.Properties()));
 
     //ORES
     public static final RegistryObject<Item> SULPHUR_CHUNK = ITEMS.register("sulphur_chunk", () -> new Item(new Item.Properties()));

@@ -21,6 +21,7 @@ import net.thejeezed.craftplusplus.init.ModItems;
 import net.thejeezed.craftplusplus.datagen.loot.ModLootModifiers;
 import net.thejeezed.craftplusplus.mob.client.StraferRenderer;
 import net.thejeezed.craftplusplus.mob.client.SulphurZombieRenderer;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.thejeezed.craftplusplus.util.ModEntitySpawn;
 import org.slf4j.Logger;
 
@@ -109,6 +110,7 @@ public class CraftPlusPlus {
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(ModEntities.STRAFER.get(), StraferRenderer::new);
             EntityRenderers.register(ModEntities.SULPHUR_ZOMBIE.get(), SulphurZombieRenderer::new);
+            EntityRenderers.register(ModEntities.DYNAMITE_PROJECTILE.get(), ThrownItemRenderer::new);
         }
     }
 }

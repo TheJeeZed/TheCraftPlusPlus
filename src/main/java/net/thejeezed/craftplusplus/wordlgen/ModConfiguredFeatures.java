@@ -18,9 +18,9 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> SULPHUR_ORE_KEY = registerKey("sulphur_ore");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
-        RuleTest netherrackReplacables = new BlockMatchTest(Blocks.NETHERRACK);
+        RuleTest nether_rack_Replaceable = new BlockMatchTest(Blocks.NETHERRACK);
 
-        register(context, SULPHUR_ORE_KEY, Feature.ORE, new OreConfiguration(netherrackReplacables,
+        register(context, SULPHUR_ORE_KEY, Feature.ORE, new OreConfiguration(nether_rack_Replaceable,
                 ModBlocks.SULPHUR_ORE.get().defaultBlockState(), 9));
     }
 

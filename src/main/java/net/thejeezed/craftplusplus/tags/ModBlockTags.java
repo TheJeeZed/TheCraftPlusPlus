@@ -4,6 +4,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
+import org.jetbrains.annotations.NotNull;
 
 public class ModBlockTags
 {
@@ -15,11 +16,11 @@ public class ModBlockTags
     private ModBlockTags() {
     }
 
-    private static TagKey<Block> create(String pName) {
+    private static @NotNull TagKey<Block> create(String pName) {
         return TagKey.create(Registries.BLOCK, new ResourceLocation(pName));
     }
 
-    public static TagKey<Block> create(ResourceLocation name) {
+    public static @NotNull TagKey<Block> create(ResourceLocation name) {
         return TagKey.create(Registries.BLOCK, name);
     }
 }

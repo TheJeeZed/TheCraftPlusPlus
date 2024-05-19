@@ -11,6 +11,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.thejeezed.craftplusplus.CraftPlusPlus;
 import net.thejeezed.craftplusplus.init.ModBlocks;
 import net.thejeezed.craftplusplus.block.crops.CottonCropBlock;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
 
@@ -50,7 +51,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         getVariantBuilder(block).forAllStates(function);
     }
 
-    private ConfiguredModel[] cottonStates(BlockState state, BushBlock block, String modelName, String textureName) {
+    private ConfiguredModel @NotNull [] cottonStates(@NotNull BlockState state, BushBlock block, String modelName, String textureName) {
         ConfiguredModel[] models = new ConfiguredModel[1];
         int age = state.getValue(CottonCropBlock.AGE);
         boolean picked = state.getValue(CottonCropBlock.PICKED);

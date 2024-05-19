@@ -37,10 +37,8 @@ public class CottonCropBlock extends BushBlock implements BonemealableBlock {
     }
 
 
-
-
-    public @NotNull InteractionResult use(BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull Player pPlayer, @NotNull InteractionHand pHand, @NotNull BlockHitResult pHit) {
-        int i = (Integer)pState.getValue(AGE);
+    public @NotNull InteractionResult use(@NotNull BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull Player pPlayer, @NotNull InteractionHand pHand, @NotNull BlockHitResult pHit) {
+        int i = pState.getValue(AGE);
 
         boolean flag = i == MAX_AGE;
 
@@ -48,7 +46,7 @@ public class CottonCropBlock extends BushBlock implements BonemealableBlock {
             return InteractionResult.FAIL;
         } else if (flag) {
             popResource(pLevel, pPos, new ItemStack(ModItems.COTTON.get(), 1 + pLevel.random.nextInt(6)));
-            pLevel.playSound((Player) null, pPos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + pLevel.random.nextFloat() * 0.4F);
+            pLevel.playSound(null, pPos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + pLevel.random.nextFloat() * 0.4F);
             pLevel.setBlock(pPos, pState.setValue(AGE, 6).setValue(PICKED, true), 2);
             return InteractionResult.SUCCESS;
         } else {
@@ -71,14 +69,14 @@ public class CottonCropBlock extends BushBlock implements BonemealableBlock {
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
+    protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> pBuilder) {
         pBuilder.add(AGE);
         pBuilder.add(PICKED);
     }
 
     @Override
-    public boolean isValidBonemealTarget(@NotNull LevelReader levelReader, @NotNull BlockPos blockPos, BlockState blockState, boolean b) {
-        return (Integer)blockState.getValue(AGE) < MAX_AGE;
+    public boolean isValidBonemealTarget(@NotNull LevelReader levelReader, @NotNull BlockPos blockPos, @NotNull BlockState blockState, boolean b) {
+        return blockState.getValue(AGE) < MAX_AGE;
     }
 
     @Override
@@ -87,8 +85,8 @@ public class CottonCropBlock extends BushBlock implements BonemealableBlock {
     }
 
     @Override
-    public void performBonemeal(ServerLevel serverLevel, @NotNull RandomSource randomSource, @NotNull BlockPos blockPos, BlockState blockState) {
-        int i = Math.min(MAX_AGE, (Integer)blockState.getValue(AGE) + 1);
-        serverLevel.setBlock(blockPos, (BlockState)blockState.setValue(AGE, i), 2);
+    public void performBonemeal(@NotNull ServerLevel serverLevel, @NotNull RandomSource randomSource, @NotNull BlockPos blockPos, @NotNull BlockState blockState) {
+        int i = Math.min(MAX_AGE, blockState.getValue(AGE) + 1);
+        serverLevel.setBlock(blockPos, blockState.setValue(AGE, i), 2);
     }
 }

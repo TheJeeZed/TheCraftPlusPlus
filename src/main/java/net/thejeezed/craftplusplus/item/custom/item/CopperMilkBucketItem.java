@@ -16,8 +16,7 @@ import net.thejeezed.craftplusplus.init.ModItems;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class CopperMilkBucketItem extends Item
-{
+public class CopperMilkBucketItem extends Item {
     private static final int DRINK_DURATION = 32;
 
     public CopperMilkBucketItem(Item.Properties pProperties) {
@@ -41,9 +40,7 @@ public class CopperMilkBucketItem extends Item
         return pStack.isEmpty() ? new ItemStack(ModItems.COPPER_BUCKET.get()) : pStack;
     }
 
-    public int getUseDuration(@NotNull ItemStack pStack) {
-        return 32;
-    }
+    public int getUseDuration(@NotNull ItemStack pStack) { return DRINK_DURATION; }
 
     public @NotNull UseAnim getUseAnimation(@NotNull ItemStack pStack) {
         return UseAnim.DRINK;

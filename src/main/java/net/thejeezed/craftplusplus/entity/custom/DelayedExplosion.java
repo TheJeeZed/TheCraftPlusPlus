@@ -5,6 +5,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import org.jetbrains.annotations.NotNull;
 
 public class DelayedExplosion {
     private final ServerLevel serverLevel;
@@ -21,7 +22,7 @@ public class DelayedExplosion {
     }
 
     @SubscribeEvent
-    public void onTick(TickEvent.ServerTickEvent event) {
+    public void onTick(@NotNull TickEvent.ServerTickEvent event) {
         if (event.phase == TickEvent.Phase.END) {
             ticks++;
             if (ticks >= 60) {

@@ -7,20 +7,21 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.stream.Stream;
 
-public class ItemUtils
-{
+public class ItemUtils {
     public ItemUtils() {
     }
 
-    public static InteractionResultHolder<ItemStack> startUsingInstantly(Level pLevel, Player pPlayer, InteractionHand pHand) {
+    public static @NotNull InteractionResultHolder<ItemStack> startUsingInstantly(Level pLevel, @NotNull Player pPlayer, InteractionHand pHand) {
         pPlayer.startUsingItem(pHand);
         return InteractionResultHolder.consume(pPlayer.getItemInHand(pHand));
     }
 
-    public static ItemStack createFilledResult(ItemStack pEmptyStack, Player pPlayer, ItemStack pFilledStack, boolean pPreventDuplicates) {
+    public static ItemStack createFilledResult(ItemStack pEmptyStack, @NotNull Player pPlayer, ItemStack pFilledStack, boolean pPreventDuplicates) {
         boolean $$4 = pPlayer.getAbilities().instabuild;
         if (pPreventDuplicates && $$4) {
             if (!pPlayer.getInventory().contains(pFilledStack)) {
@@ -45,7 +46,7 @@ public class ItemUtils
         }
     }
 
-    public static ItemStack createFilledResult(ItemStack pEmptyStack, Player pPlayer, ItemStack pFilledStack, Item item, boolean pPreventDuplicates) {
+    public static ItemStack createFilledResult(ItemStack pEmptyStack, @NotNull Player pPlayer, ItemStack pFilledStack, Item item, boolean pPreventDuplicates) {
         boolean $$4 = pPlayer.getAbilities().instabuild;
         if (pPreventDuplicates && $$4) {
             if (!pPlayer.getInventory().contains(pFilledStack)) {
@@ -70,7 +71,8 @@ public class ItemUtils
         }
     }
 
-    public static ItemStack createMilkResult(ItemStack pEmptyStack, Player pPlayer, Item item, boolean pPreventDuplicates) {
+    @Contract("_, _, _, _ -> param1")
+    public static ItemStack createMilkResult(ItemStack pEmptyStack, @NotNull Player pPlayer, Item item, boolean pPreventDuplicates) {
         boolean $$4 = pPlayer.getAbilities().instabuild;
         ItemStack pFilledStack = new ItemStack(item);
         if (pPreventDuplicates && $$4) {
@@ -88,7 +90,7 @@ public class ItemUtils
         return pEmptyStack;
     }
 
-    public static void onContainerDestroyed(ItemEntity pItemEntity, Stream<ItemStack> pContainerContents) {
+    public static void onContainerDestroyed(@NotNull ItemEntity pItemEntity, Stream<ItemStack> pContainerContents) {
         Level $$2 = pItemEntity.level();
         if (!$$2.isClientSide) {
             pContainerContents.forEach((p_289504_) -> {

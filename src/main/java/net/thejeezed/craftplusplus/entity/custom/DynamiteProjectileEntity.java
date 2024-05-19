@@ -7,22 +7,16 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.ClipContext;
-import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
-import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.thejeezed.craftplusplus.entity.ModEntities;
 import net.thejeezed.craftplusplus.init.ModItems;
+import org.jetbrains.annotations.NotNull;
 
 public class DynamiteProjectileEntity extends ThrowableItemProjectile {
-    private Level level;
+    private final Level level;
 
     public DynamiteProjectileEntity(EntityType<? extends ThrowableItemProjectile> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -40,12 +34,12 @@ public class DynamiteProjectileEntity extends ThrowableItemProjectile {
     }
 
     @Override
-    protected Item getDefaultItem() {
+    protected @NotNull Item getDefaultItem() {
         return ModItems.DYNAMITE.get();
     }
 
     @Override
-    protected void onHitBlock(BlockHitResult pResult) {
+    protected void onHitBlock(@NotNull BlockHitResult pResult) {
         super.onHitBlock(pResult);
         BlockPos hitPos = pResult.getBlockPos();
         if (!this.level.isClientSide && this.level instanceof ServerLevel serverLevel) {
@@ -55,7 +49,7 @@ public class DynamiteProjectileEntity extends ThrowableItemProjectile {
     }
 
     @Override
-    protected void onHitEntity(EntityHitResult pResult) {
+    protected void onHitEntity(@NotNull EntityHitResult pResult) {
         super.onHitEntity(pResult);
         Entity entity = pResult.getEntity();
         double hitX = entity.getX();

@@ -23,6 +23,7 @@ import net.thejeezed.craftplusplus.mob.client.StraferRenderer;
 import net.thejeezed.craftplusplus.mob.client.SulphurZombieRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.thejeezed.craftplusplus.util.ModEntitySpawn;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
 @Mod(CraftPlusPlus.MOD_ID)
@@ -92,16 +93,12 @@ public class CraftPlusPlus {
     }
 
     @SubscribeEvent
-    public void onFuelBurnTimeEvent(FurnaceFuelBurnTimeEvent event)
+    public void onFuelBurnTimeEvent(@NotNull FurnaceFuelBurnTimeEvent event)
     {
         if (event.getItemStack().getItem() == ModBlocks.CHARCOAL_BLOCK.get().asItem())
         {
             event.setBurnTime(16000);
         }
-    }
-
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
     }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)

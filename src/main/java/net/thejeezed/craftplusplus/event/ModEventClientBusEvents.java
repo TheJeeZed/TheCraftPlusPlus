@@ -9,11 +9,12 @@ import net.thejeezed.craftplusplus.CraftPlusPlus;
 import net.thejeezed.craftplusplus.client.layers.ModModelLayers;
 import net.thejeezed.craftplusplus.mob.client.StraferModel;
 import net.thejeezed.craftplusplus.mob.client.SulphurZombieModel;
+import org.jetbrains.annotations.NotNull;
 
 @Mod.EventBusSubscriber(modid = CraftPlusPlus.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModEventClientBusEvents {
     @SubscribeEvent
-    public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
+    public static void registerLayer(EntityRenderersEvent.@NotNull RegisterLayerDefinitions event) {
         event.registerLayerDefinition(ModModelLayers.STRAFER_LAYER, StraferModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SULPHUR_ZOMBIE_LAYER, SulphurZombieModel::createBodyLayer);
     }

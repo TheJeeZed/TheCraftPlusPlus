@@ -46,5 +46,7 @@
 
   "entity.craftplusplus.strafer": "Strafer",
 
-  "creativetab.craft_tab": "Craft++"
+  "creativetab.craft_tab": "Craft++",
+
+  "magic_mirror.craftplusplus.failure_to_teleport": "Your home is missing, obstructed, or in another dimension"
 }

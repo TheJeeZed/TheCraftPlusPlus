@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 @Mod.EventBusSubscriber(modid = CraftPlusPlus.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModEventClientBusEvents {
     @SubscribeEvent
-    public static void registerLayer(EntityRenderersEvent.@NotNull RegisterLayerDefinitions event) {
+    public static void registerLayer(@NotNull EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(ModModelLayers.STRAFER_LAYER, StraferModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.SULPHUR_ZOMBIE_LAYER, SulphurZombieModel::createBodyLayer);
     }

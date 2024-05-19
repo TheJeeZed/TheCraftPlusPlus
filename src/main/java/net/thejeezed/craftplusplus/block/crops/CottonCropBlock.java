@@ -69,7 +69,7 @@ public class CottonCropBlock extends BushBlock implements BonemealableBlock {
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> pBuilder) {
+    protected void createBlockStateDefinition(@NotNull StateDefinition.Builder<Block, BlockState> pBuilder) {
         pBuilder.add(AGE);
         pBuilder.add(PICKED);
     }

@@ -61,6 +61,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.SMOOTH_AMETHYST_SLAB.get());
                         pOutput.accept(ModBlocks.SMOOTH_AMETHYST_WALL.get());
                         pOutput.accept(ModItems.SULPHUR_CHUNK.get());
+                        pOutput.accept(ModItems.COTTON.get());
                     })
                     .build());
 

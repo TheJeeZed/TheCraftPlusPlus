@@ -29,6 +29,7 @@ public class MagicMirrorItem extends Item {
                 } else {
                     MessageRenderer.renderMessage("Not Riding");
                 }
+                assert spawnpoint != null;
                 double x = spawnpoint.getX();
                 double y = spawnpoint.getY();
                 double z = spawnpoint.getZ();

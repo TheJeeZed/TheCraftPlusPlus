@@ -2,6 +2,7 @@ package net.thejeezed.craftplusplus.init;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -14,6 +15,7 @@ import net.thejeezed.craftplusplus.enums.tools.ToolStats;
 import net.thejeezed.craftplusplus.init.ModFoods;
 import net.thejeezed.craftplusplus.item.custom.armor.CopperArmor;
 import net.thejeezed.craftplusplus.item.custom.item.CopperBucketItem;
+import net.thejeezed.craftplusplus.item.custom.item.CopperMilkBucketItem;
 import net.thejeezed.craftplusplus.item.custom.item.DynamiteItem;
 import net.thejeezed.craftplusplus.item.custom.item.MagicMirrorItem;
 
@@ -26,7 +28,7 @@ public class ModItems {
     //COPPER BUCKET
     public static final RegistryObject<Item> COPPER_BUCKET = ITEMS.register("copper_bucket", ()-> new CopperBucketItem(()-> Fluids.EMPTY, new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> COPPER_WATER_BUCKET = ITEMS.register("copper_water_bucket", ()-> new CopperBucketItem(()-> Fluids.WATER, new Item.Properties().craftRemainder(COPPER_BUCKET.get()).stacksTo(1)));
-    public static final RegistryObject<Item> COPPER_MILK_BUCKET = ITEMS.register("copper_milk_bucket", ()-> new MilkBucketItem(new Item.Properties().craftRemainder(COPPER_BUCKET.get()).stacksTo(2)));
+    public static final RegistryObject<Item> COPPER_MILK_BUCKET = ITEMS.register("copper_milk_bucket", ()-> new CopperMilkBucketItem((new Item.Properties()).craftRemainder(COPPER_BUCKET.get()).stacksTo(2)));
 
     public static final RegistryObject<Item> RAW_TENTACLE = ITEMS.register("raw_tentacle", ()-> new Item(new Item.Properties().food(ModFoods.RAW_TENTACLE)));
     public static final RegistryObject<Item> COOKED_TENTACLE = ITEMS.register("cooked_tentacle", ()-> new Item(new Item.Properties().food(ModFoods.COOKED_TENTACLE)));

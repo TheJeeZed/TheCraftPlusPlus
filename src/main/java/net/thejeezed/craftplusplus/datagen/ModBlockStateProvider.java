@@ -53,11 +53,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private ConfiguredModel[] cottonStates(BlockState state, BushBlock block, String modelName, String textureName) {
         ConfiguredModel[] models = new ConfiguredModel[1];
         int age = state.getValue(CottonCropBlock.AGE);
+        int max_age = 7;
+        int picked_age = 8;
         boolean picked = state.getValue(CottonCropBlock.PICKED);
 
         if (picked) {
-            models[0] = new ConfiguredModel(models().crop(modelName + "8",
-                    new ResourceLocation(CraftPlusPlus.MOD_ID, "block/cotton_stage8")).renderType("cutout"));
+            models[0] = new ConfiguredModel(models().crop(modelName + max_age,
+                    new ResourceLocation(CraftPlusPlus.MOD_ID, "block/" + textureName + picked_age)).renderType("cutout"));
         } else {
             models[0] = new ConfiguredModel(models().crop(modelName + age,
                     new ResourceLocation(CraftPlusPlus.MOD_ID, "block/" + textureName + age)).renderType("cutout"));

@@ -10,7 +10,6 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
@@ -21,7 +20,9 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraftforge.common.ForgeHooks;
 import net.thejeezed.craftplusplus.block.state.properties.ModBlockStateProperties;
 import net.thejeezed.craftplusplus.init.ModItems;
 import org.jetbrains.annotations.NotNull;
@@ -56,18 +57,13 @@ public class CottonCropBlock extends BushBlock implements BonemealableBlock {
         }
     }
 
-
-    protected @NotNull ItemLike getBaseSeedId() {
-        return ModItems.COTTON_SEEDS.get();
-    }
-
-
-    public @NotNull IntegerProperty getAgeProperty() {
-        return AGE;
-    }
-
-    public int getMaxAge() {
-        return MAX_AGE;
+    public void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
+        int i = (Integer)pState.getValue(AGE);
+        if (i < 7 && pLevel.getRawBrightness(pPos.above(), 0) >= 9 && ForgeHooks.onCropsGrowPre(pLevel, pPos, pState, pRandom.nextInt(20) == 0)) {
+            pLevel.setBlock(pPos, pState.setValue(AGE, i + 1), 2);
+            pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pState));
+            ForgeHooks.onCropsGrowPost(pLevel, pPos, pState);
+        }
     }
 
     @Override
@@ -90,5 +86,9 @@ public class CottonCropBlock extends BushBlock implements BonemealableBlock {
     public void performBonemeal(ServerLevel serverLevel, @NotNull RandomSource randomSource, @NotNull BlockPos blockPos, BlockState blockState) {
         int i = Math.min(MAX_AGE, (Integer)blockState.getValue(AGE) + 1);
         serverLevel.setBlock(blockPos, (BlockState)blockState.setValue(AGE, i), 2);
+    }
+
+    public boolean isRandomlyTicking(BlockState pState) {
+        return (Integer)pState.getValue(AGE) < MAX_AGE;
     }
 }

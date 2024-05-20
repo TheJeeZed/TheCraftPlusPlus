@@ -17,6 +17,9 @@ import org.jetbrains.annotations.NotNull;
 
 public class DynamiteProjectileEntity extends ThrowableItemProjectile {
     private final Level level;
+    private int ticksLived = 0;
+    private boolean hasExploded = false;
+    private boolean explosionRegistered = false;
 
     public DynamiteProjectileEntity(EntityType<? extends ThrowableItemProjectile> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -43,8 +46,9 @@ public class DynamiteProjectileEntity extends ThrowableItemProjectile {
     protected void onHitBlock(@NotNull BlockHitResult pResult) {
         super.onHitBlock(pResult);
         BlockPos hitPos = pResult.getBlockPos();
-        if (!this.level.isClientSide && this.level instanceof ServerLevel serverLevel) {
+        if (!this.level.isClientSide && this.level instanceof ServerLevel serverLevel && !explosionRegistered) {
             MinecraftForge.EVENT_BUS.register(new DelayedExplosion(serverLevel, hitPos.getX(), hitPos.getY(), hitPos.getZ(), this));
+            explosionRegistered = true;
         }
         this.setDeltaMovement(0, 0, 0);
     }
@@ -56,9 +60,26 @@ public class DynamiteProjectileEntity extends ThrowableItemProjectile {
         double hitX = entity.getX();
         double hitY = entity.getY();
         double hitZ = entity.getZ();
-        if (!this.level.isClientSide && this.level instanceof ServerLevel serverLevel) {
+        if (!this.level.isClientSide && this.level instanceof ServerLevel serverLevel && !explosionRegistered) {
             MinecraftForge.EVENT_BUS.register(new DelayedExplosion(serverLevel, hitX, hitY, hitZ, this));
+            explosionRegistered = true;
         }
         this.setDeltaMovement(0, 0, 0);
+    }
+
+    @Override
+    public void baseTick() {
+        super.baseTick();
+        this.ticksLived++;
+        if (!this.level.isClientSide && this.level instanceof ServerLevel serverLevel) {
+            if (this.ticksLived >= 60 && !this.hasExploded) {
+                double x = this.getX();
+                double y = this.getY();
+                double z = this.getZ();
+                serverLevel.explode(null, x, y, z, 2.0F, Level.ExplosionInteraction.TNT);
+                this.hasExploded = true;
+                this.discard();
+            }
+        }
     }
 }

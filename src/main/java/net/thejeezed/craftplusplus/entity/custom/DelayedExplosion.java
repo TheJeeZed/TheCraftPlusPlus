@@ -25,7 +25,7 @@ public class DelayedExplosion {
         if (event.phase == TickEvent.Phase.END) {
             ticks++;
             if (ticks >= 60) {
-                serverLevel.explode(null, x, y, z, 3.0F, Level.ExplosionInteraction.TNT);
+                serverLevel.explode(null, x, y, z, 2.0F, Level.ExplosionInteraction.TNT);
                 MinecraftForge.EVENT_BUS.unregister(this);
                 this.dynamite.discard();
             }

@@ -1,0 +1,18 @@
+{
+  "structures": [
+    {
+      "structure": "craftplusplus:cotton_farm",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 475093214,
+
+    "spacing": 20,
+
+
+    "separation": 6,
+
+    "type": "minecraft:random_spread"
+  }
+}

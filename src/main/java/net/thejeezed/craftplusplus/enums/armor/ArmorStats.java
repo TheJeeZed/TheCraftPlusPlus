@@ -11,7 +11,7 @@ import net.thejeezed.craftplusplus.enums.tools.ToolStats;
 
 @MethodsReturnNonnullByDefault
 public enum ArmorStats implements ArmorMaterial {
-    COPPER("copper", 15, new int[] {2, 5, 5, 2}, ToolStats.COPPER.getEnchantmentValue(),
+    COPPER("copper", 12, new int[] {2, 5, 5, 2}, ToolStats.COPPER.getEnchantmentValue(),
             SoundEvents.ARMOR_EQUIP_IRON, 0.0f,
             0.0f, ToolStats.COPPER.getRepairIngredient());
 

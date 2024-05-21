@@ -1,27 +1,51 @@
 {
   "variants": {
-    "age=0": {
+    "age=0,picked=false": {
       "model": "craftplusplus:block/cotton_stage0"
     },
-    "age=1": {
+    "age=0,picked=true": {
+      "model": "craftplusplus:block/cotton_stage7"
+    },
+    "age=1,picked=false": {
       "model": "craftplusplus:block/cotton_stage1"
     },
-    "age=2": {
+    "age=1,picked=true": {
+      "model": "craftplusplus:block/cotton_stage7"
+    },
+    "age=2,picked=false": {
       "model": "craftplusplus:block/cotton_stage2"
     },
-    "age=3": {
+    "age=2,picked=true": {
+      "model": "craftplusplus:block/cotton_stage7"
+    },
+    "age=3,picked=false": {
       "model": "craftplusplus:block/cotton_stage3"
     },
-    "age=4": {
+    "age=3,picked=true": {
+      "model": "craftplusplus:block/cotton_stage7"
+    },
+    "age=4,picked=false": {
       "model": "craftplusplus:block/cotton_stage4"
     },
-    "age=5": {
+    "age=4,picked=true": {
+      "model": "craftplusplus:block/cotton_stage7"
+    },
+    "age=5,picked=false": {
       "model": "craftplusplus:block/cotton_stage5"
     },
-    "age=6": {
+    "age=5,picked=true": {
+      "model": "craftplusplus:block/cotton_stage7"
+    },
+    "age=6,picked=false": {
       "model": "craftplusplus:block/cotton_stage6"
     },
-    "age=7": {
+    "age=6,picked=true": {
+      "model": "craftplusplus:block/cotton_stage7"
+    },
+    "age=7,picked=false": {
+      "model": "craftplusplus:block/cotton_stage7"
+    },
+    "age=7,picked=true": {
       "model": "craftplusplus:block/cotton_stage7"
     }
   }

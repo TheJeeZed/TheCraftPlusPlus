@@ -1,4 +1,4 @@
-// 1.20.1	2024-05-13T09:40:01.821578	Block States: craftplusplus
+// 1.20.1	2024-05-21T18:08:05.6993816	Block States: craftplusplus
 6444a667dc2f469708e51fe5ee79b713b9c093cb assets/craftplusplus/blockstates/amethyst_brick.json
 131a2c2d35e064df4c5a95c8a1fffaad62e1952d assets/craftplusplus/blockstates/amethyst_brick_slab.json
 c0a1c9d66049f888de7c1843427b25ebd04f7341 assets/craftplusplus/blockstates/amethyst_brick_stairs.json
@@ -6,7 +6,7 @@ fa560d26dd5ce9f05c24f58447b529827e1051ae assets/craftplusplus/blockstates/amethy
 23bb0ce9e127e76cbe81bf1978e23626a232c0eb assets/craftplusplus/blockstates/amethyst_slab.json
 1af1105fcb499901a60bdb4aaa409826f6a41249 assets/craftplusplus/blockstates/amethyst_stairs.json
 c0b95af00394a06fa0caabefb8fea546a2cd722e assets/craftplusplus/blockstates/amethyst_wall.json
-899f28246ff662c7fe0425e55297dec38674a66b assets/craftplusplus/blockstates/cotton_crop.json
+f20b2f7859d16737f8913b6de5be08490a3cb0d9 assets/craftplusplus/blockstates/cotton_crop.json
 1ebd03fa8696c19f0eb43837ca698822ee971867 assets/craftplusplus/blockstates/smooth_amethyst.json
 fd458ba91f9d16f2a2cd453ee391dac7df4746a6 assets/craftplusplus/blockstates/smooth_amethyst_slab.json
 cb00e7b3d831328aefc1a7c654cad1eccf87325d assets/craftplusplus/blockstates/smooth_amethyst_stairs.json

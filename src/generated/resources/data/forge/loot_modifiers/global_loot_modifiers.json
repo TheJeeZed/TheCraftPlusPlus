@@ -1,6 +1,8 @@
 {
   "entries": [
     "craftplusplus:raw_tentacle_from_squid",
+    "craftplusplus:magic_mirror_from_stronghold_corridor",
+    "craftplusplus:magic_mirror_from_desert_pyramid"
   ],
   "replace": false
 }

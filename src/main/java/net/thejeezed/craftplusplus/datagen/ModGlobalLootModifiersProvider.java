@@ -20,7 +20,9 @@ public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
     protected void start() {
         add("raw_tentacle_from_squid", new AddItemModifier(new LootItemCondition[] {
                 new LootTableIdCondition.Builder(new ResourceLocation("entities/squid")).build(),LootItemRandomChanceCondition.randomChance(0.90f).build() }, ModItems.RAW_TENTACLE.get()));
-        add("string_from_strafer.json", new AddItemModifier(new LootItemCondition[] {
-                new LootTableIdCondition.Builder(new ResourceLocation("entities/strafer")).build(),LootItemRandomChanceCondition.randomChance(1f).build() }, Items.STRING));
+        add("magic_mirror_from_desert_pyramid", new AddItemModifier(new LootItemCondition[] {
+                new LootTableIdCondition.Builder(new ResourceLocation("chests/desert_pyramid")).build(),LootItemRandomChanceCondition.randomChance(0.15F).build() }, ModItems.MAGIC_MIRROR.get()));
+        add("magic_mirror_from_stronghold_corridor", new AddItemModifier(new LootItemCondition[] {
+                new LootTableIdCondition.Builder(new ResourceLocation("chests/stronghold_corridor")).build(),LootItemRandomChanceCondition.randomChance(0.25F).build() }, ModItems.MAGIC_MIRROR.get()));
     }
 }

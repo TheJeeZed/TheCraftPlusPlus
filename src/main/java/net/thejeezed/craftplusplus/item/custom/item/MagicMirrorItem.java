@@ -1,6 +1,7 @@
 package net.thejeezed.craftplusplus.item.custom.item;
 
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -11,8 +12,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import net.thejeezed.craftplusplus.client.gui.MessageRenderer;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
 import java.util.Optional;
 
 public class MagicMirrorItem extends Item {
@@ -31,42 +34,57 @@ public class MagicMirrorItem extends Item {
                 player.getCooldowns().addCooldown(this, 1200);
             }
 
-            if (serverPlayer.getRespawnPosition() != null) {
+            BlockPos spawnpoint = serverPlayer.getRespawnPosition();
+            BlockPos worldSpawn = world.getSharedSpawnPos();
+            if (serverPlayer.isPassenger()) {
+                MessageRenderer.renderMessage("Is Riding"); // TODO: MessageRenderer calls are for debugging and should be removed when we build.
+                serverPlayer.stopRiding();
+            } else {
+                MessageRenderer.renderMessage("Not Riding");
+            }
+
+            if (spawnpoint != null)
+            {
                 Optional<Vec3> respawnPosition = Player.findRespawnPositionAndUseSpawnBlock(
                         world,
-                        serverPlayer.getRespawnPosition(),
+                        Objects.requireNonNull(serverPlayer.getRespawnPosition()),
                         serverPlayer.getYRot(),
                         serverPlayer.isRespawnForced(),
                         true
                 );
 
-                if (respawnPosition.isPresent()) {
-                    ServerLevel respawnWorld = world.getServer().getLevel(serverPlayer.getRespawnDimension());
-
-                    if (respawnWorld != null) {
-                        serverPlayer.teleportTo(
-                                respawnWorld,
-                                respawnPosition.get().x,
-                                respawnPosition.get().y,
-                                respawnPosition.get().z,
-                                serverPlayer.getYRot(),
-                                serverPlayer.getXRot()
-                        );
-
-                        if (!player.isCreative())
-                        {
-                            serverPlayer.getCooldowns().addCooldown(this, 200);
-                        }
-
-                        player.getItemInHand(pUsedHand).hurtAndBreak(1, player,
-                                player1 -> player.broadcastBreakEvent(player.getUsedItemHand()));
-                    }
-                } else {
-                    serverPlayer.displayClientMessage(Component.translatable("magic_mirror.craftplusplus.failure_to_teleport").withStyle(ChatFormatting.RED), false);
+                if (serverPlayer.getRespawnDimension() != serverPlayer.serverLevel().dimension())
+                {
+                    ServerLevel targetWorld = serverPlayer.server.getLevel(serverPlayer.getRespawnDimension());
+                    assert targetWorld != null;
+                    serverPlayer.changeDimension(targetWorld);
                 }
-            } else {
-                serverPlayer.displayClientMessage(Component.translatable("magic_mirror.craftplusplus.failure_to_teleport").withStyle(ChatFormatting.RED), false);
+
+                double x;
+                double y;
+                double z;
+                if (respawnPosition.isPresent())
+                {
+                    x = respawnPosition.get().x;
+                    y = respawnPosition.get().y;
+                    z = respawnPosition.get().z;
+
+                } else {
+                    x = worldSpawn.getX();
+                    y = worldSpawn.getY();
+                    z = worldSpawn.getZ();
+                }
+                serverPlayer.teleportTo(x, y, z);
             }
+
+            serverPlayer.setDeltaMovement(0, 0, 0);
+
+            if (!player.isCreative())
+            {
+                serverPlayer.getCooldowns().addCooldown(this, 200);
+            }
+
+            player.getItemInHand(pUsedHand).hurtAndBreak(1, serverPlayer, (player1) -> player.broadcastBreakEvent(player.getUsedItemHand()));
         }
         return super.use(pLevel, player, pUsedHand);
     }

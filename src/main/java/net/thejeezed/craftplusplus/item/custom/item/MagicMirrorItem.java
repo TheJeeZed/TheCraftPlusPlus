@@ -1,8 +1,6 @@
 package net.thejeezed.craftplusplus.item.custom.item;
 
-import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -12,7 +10,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import net.thejeezed.craftplusplus.client.gui.MessageRenderer;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;

@@ -36,11 +36,9 @@ public class MagicMirrorItem extends Item {
 
             BlockPos spawnpoint = serverPlayer.getRespawnPosition();
             BlockPos worldSpawn = world.getSharedSpawnPos();
+
             if (serverPlayer.isPassenger()) {
-                MessageRenderer.renderMessage("Is Riding"); // TODO: MessageRenderer calls are for debugging and should be removed when we build.
                 serverPlayer.stopRiding();
-            } else {
-                MessageRenderer.renderMessage("Not Riding");
             }
 
             if (spawnpoint != null)
@@ -53,28 +51,29 @@ public class MagicMirrorItem extends Item {
                         true
                 );
 
+                double x;
+                double y;
+                double z;
+
                 if (serverPlayer.getRespawnDimension() != serverPlayer.serverLevel().dimension())
                 {
                     ServerLevel targetWorld = serverPlayer.server.getLevel(serverPlayer.getRespawnDimension());
                     assert targetWorld != null;
                     serverPlayer.changeDimension(targetWorld);
                 }
-
-                double x;
-                double y;
-                double z;
                 if (respawnPosition.isPresent())
                 {
                     x = respawnPosition.get().x;
                     y = respawnPosition.get().y;
                     z = respawnPosition.get().z;
+                    serverPlayer.teleportTo(x, y, z);
 
                 } else {
                     x = worldSpawn.getX();
                     y = worldSpawn.getY();
                     z = worldSpawn.getZ();
+                    serverPlayer.teleportTo(x, y, z);
                 }
-                serverPlayer.teleportTo(x, y, z);
             }
 
             serverPlayer.setDeltaMovement(0, 0, 0);

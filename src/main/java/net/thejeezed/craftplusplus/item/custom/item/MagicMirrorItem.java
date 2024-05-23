@@ -10,6 +10,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import net.thejeezed.craftplusplus.client.gui.MessageRenderer;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
@@ -48,28 +49,33 @@ public class MagicMirrorItem extends Item {
                         true
                 );
 
-                double x;
-                double y;
-                double z;
-
                 if (serverPlayer.getRespawnDimension() != serverPlayer.serverLevel().dimension())
                 {
+                    MessageRenderer.renderMessage("Not in same world!");
                     ServerLevel targetWorld = serverPlayer.server.getLevel(serverPlayer.getRespawnDimension());
                     assert targetWorld != null;
                     serverPlayer.changeDimension(targetWorld);
-                }
-                if (respawnPosition.isPresent())
-                {
-                    x = respawnPosition.get().x;
-                    y = respawnPosition.get().y;
-                    z = respawnPosition.get().z;
-                    serverPlayer.teleportTo(x, y, z);
+
+                    double x;
+                    double y;
+                    double z;
+
+                    if (respawnPosition.isPresent())
+                    {
+                        x = respawnPosition.get().x;
+                        y = respawnPosition.get().y;
+                        z = respawnPosition.get().z;
+                        serverPlayer.teleportTo(x, y, z);
+                    } else {
+                        Vec3 worldedSpawn = worldSpawn.getCenter();
+                        x = worldedSpawn.x;
+                        y = worldedSpawn.y;
+                        z = worldedSpawn.z;
+                        serverPlayer.teleportTo(x, y, z);
+                    }
 
                 } else {
-                    x = worldSpawn.getX();
-                    y = worldSpawn.getY();
-                    z = worldSpawn.getZ();
-                    serverPlayer.teleportTo(x, y, z);
+                    teleportToSpawn(serverPlayer, respawnPosition, worldSpawn.getCenter());
                 }
             }
 
@@ -83,5 +89,23 @@ public class MagicMirrorItem extends Item {
             player.getItemInHand(pUsedHand).hurtAndBreak(1, serverPlayer, (player1) -> player.broadcastBreakEvent(player.getUsedItemHand()));
         }
         return super.use(pLevel, player, pUsedHand);
+    }
+
+    private static void teleportToSpawn(ServerPlayer player, Optional<Vec3> respawnPosition, Vec3 worldSpawn)
+    {
+        double x;
+        double y;
+        double z;
+        if (respawnPosition.isPresent())
+        {
+            x = respawnPosition.get().x;
+            y = respawnPosition.get().y;
+            z = respawnPosition.get().z;
+        } else {
+            x = worldSpawn.x;
+            y = worldSpawn.y;
+            z = worldSpawn.z;
+        }
+        player.teleportTo(x ,y, z);
     }
 }

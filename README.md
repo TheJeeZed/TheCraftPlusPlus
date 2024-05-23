@@ -6,7 +6,7 @@ We have a [Discord](https://discord.gg/pp3TacNa22) Where you can chat with the d
 
 # Dependencies
 Optional Dependencies:
-- None
+- [JEI](https://www.curseforge.com/minecraft/mc-mods/jei)
 
 # Contributing
 If you feel like Contributing to our mod, there are many ways to do so. Look [here](CONTRIBUTING.md)

@@ -1,5 +1,6 @@
 package net.thejeezed.craftplusplus.item.custom.item;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -58,10 +59,10 @@ public class MagicMirrorItem extends Item {
                                 player1 -> player.broadcastBreakEvent(player.getUsedItemHand()));
                     }
                 } else {
-                    serverPlayer.displayClientMessage(Component.translatable("magic_mirror.craftplusplus.failure_to_teleport"), false);
+                    serverPlayer.displayClientMessage(Component.translatable("magic_mirror.craftplusplus.failure_to_teleport").withStyle(ChatFormatting.RED), false);
                 }
             } else {
-                serverPlayer.displayClientMessage(Component.translatable("magic_mirror.craftplusplus.failure_to_teleport"), false);
+                serverPlayer.displayClientMessage(Component.translatable("magic_mirror.craftplusplus.failure_to_teleport").withStyle(ChatFormatting.RED), false);
             }
         }
         return super.use(pLevel, player, pUsedHand);

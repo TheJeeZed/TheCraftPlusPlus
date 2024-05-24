@@ -1,4 +1,4 @@
-// 1.20.1	2024-05-13T09:40:01.8235825	Loot Tables
+// 1.20.1	2024-05-24T17:13:33.0810476	Loot Tables
 324afc6dee169fb3a46d2b09aa7dbef39c80fdd9 data/craftplusplus/loot_tables/blocks/amethyst_brick.json
 607e833d8a5882e039ade086d5251de75565dfb1 data/craftplusplus/loot_tables/blocks/amethyst_brick_slab.json
 28b822cd187558de4fd41a73fdc508d1a52de1a7 data/craftplusplus/loot_tables/blocks/amethyst_brick_stairs.json
@@ -7,6 +7,7 @@ b302ae76d00460c24ec00ca8e87e969c9d236fea data/craftplusplus/loot_tables/blocks/a
 134c078724acc098646c72f079628cae84415869 data/craftplusplus/loot_tables/blocks/amethyst_stairs.json
 5b931197771f59d8906a467d018fcc46cf5a6e42 data/craftplusplus/loot_tables/blocks/amethyst_wall.json
 02b2e5da877362ac3db577e650d4fd78379a3bef data/craftplusplus/loot_tables/blocks/charcoal_block.json
+1a3835aa02962a16628252289bcce6f4abbc70bb data/craftplusplus/loot_tables/blocks/chisled_amethyst.json
 f20f34c91f3a8759a81bd5b79e815fbdf80dd541 data/craftplusplus/loot_tables/blocks/compressed_copper.json
 7415269ae21a8ff93bedd9f8213dbcb13aa52837 data/craftplusplus/loot_tables/blocks/compressed_sulphur.json
 9cad45e8dcec76a1f7be44b0158ad1d9ae5fd535 data/craftplusplus/loot_tables/blocks/cotton_crop.json

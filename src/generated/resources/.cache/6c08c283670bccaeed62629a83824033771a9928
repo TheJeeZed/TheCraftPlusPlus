@@ -1,4 +1,4 @@
-// 1.20.1	2024-05-21T18:08:05.6993816	Block States: craftplusplus
+// 1.20.1	2024-05-24T17:13:33.0800474	Block States: craftplusplus
 6444a667dc2f469708e51fe5ee79b713b9c093cb assets/craftplusplus/blockstates/amethyst_brick.json
 131a2c2d35e064df4c5a95c8a1fffaad62e1952d assets/craftplusplus/blockstates/amethyst_brick_slab.json
 c0a1c9d66049f888de7c1843427b25ebd04f7341 assets/craftplusplus/blockstates/amethyst_brick_stairs.json
@@ -6,6 +6,7 @@ fa560d26dd5ce9f05c24f58447b529827e1051ae assets/craftplusplus/blockstates/amethy
 23bb0ce9e127e76cbe81bf1978e23626a232c0eb assets/craftplusplus/blockstates/amethyst_slab.json
 1af1105fcb499901a60bdb4aaa409826f6a41249 assets/craftplusplus/blockstates/amethyst_stairs.json
 c0b95af00394a06fa0caabefb8fea546a2cd722e assets/craftplusplus/blockstates/amethyst_wall.json
+adc252aa7f33bbcd6d696d4e0f259426fe37e933 assets/craftplusplus/blockstates/chisled_amethyst.json
 f20b2f7859d16737f8913b6de5be08490a3cb0d9 assets/craftplusplus/blockstates/cotton_crop.json
 1ebd03fa8696c19f0eb43837ca698822ee971867 assets/craftplusplus/blockstates/smooth_amethyst.json
 fd458ba91f9d16f2a2cd453ee391dac7df4746a6 assets/craftplusplus/blockstates/smooth_amethyst_slab.json
@@ -28,6 +29,7 @@ e61b10e4399c21d62e3bc4147095160b9c56bb07 assets/craftplusplus/models/block/ameth
 b4a6c06ba56331ff83de41558dd9efb48ddb9887 assets/craftplusplus/models/block/amethyst_wall_post.json
 20b1d81a52277942fb7f4afed892bb1d7ad980b3 assets/craftplusplus/models/block/amethyst_wall_side.json
 003254e8bd04248b61af274adcc05e5478c77e05 assets/craftplusplus/models/block/amethyst_wall_side_tall.json
+1f0e54677f2ce58226fe31bc8a6c49328bd79a22 assets/craftplusplus/models/block/chisled_amethyst.json
 681d3a5de3c65d2e56560264468c864125ac44ab assets/craftplusplus/models/block/cotton_stage0.json
 ef0fe140a21b3833ef323dd276ca1a6c7faed654 assets/craftplusplus/models/block/cotton_stage1.json
 b5fe8c0f9bcf8cd80ba6cc94f3e6dd16d84ffd7f assets/craftplusplus/models/block/cotton_stage2.json
@@ -46,4 +48,5 @@ b5241d0c336f32e8378d4cf0506f8996c3d11463 assets/craftplusplus/models/block/smoot
 e5773790d2aca40ae0f90ab274b663335a8274b0 assets/craftplusplus/models/block/smooth_amethyst_wall_side.json
 fbee3aaf8f5c46c2fd64c5364853a4f7265a65a3 assets/craftplusplus/models/block/smooth_amethyst_wall_side_tall.json
 464f6bc3c4747fb5fa6ab444d8b1ff88bb019427 assets/craftplusplus/models/item/amethyst_brick.json
+c5144bafbc3f2aee8b20416edc2483ec147d0c1f assets/craftplusplus/models/item/chisled_amethyst.json
 acb27c054bfd2823e8221b5ce155780efb032aba assets/craftplusplus/models/item/smooth_amethyst.json

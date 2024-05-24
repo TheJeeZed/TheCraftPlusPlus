@@ -28,6 +28,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.SMOOTH_AMETHYST);
         blockWithItem(ModBlocks.AMETHYST_BRICK);
+        blockWithItem(CHISLED_AMETHYST);
 
         slabBlock(((SlabBlock) ModBlocks.AMETHYST_SLAB.get()), blockTexture(Blocks.AMETHYST_BLOCK), blockTexture(Blocks.AMETHYST_BLOCK));
         slabBlock(((SlabBlock) ModBlocks.AMETHYST_BRICK_SLAB.get()), blockTexture(ModBlocks.AMETHYST_BRICK.get()), blockTexture(ModBlocks.AMETHYST_BRICK.get()));

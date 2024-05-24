@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "farming",
+  "key": {
+    "C": {
+      "item": "craftplusplus:cotton"
+    }
+  },
+  "pattern": [
+    "C",
+    "C"
+  ],
+  "result": {
+    "item": "minecraft:string"
+  },
+  "show_notification": true
+}

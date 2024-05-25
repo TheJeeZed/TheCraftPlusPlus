@@ -42,34 +42,40 @@ public class EchoBlasterItem extends Item {
     //TODO Make particles client side!!!!
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player player, InteractionHand hand) {
-        player.playSound(SoundEvents.WARDEN_SONIC_BOOM, 3.0F, 1.0F);
+        if (!player.getCooldowns().isOnCooldown(this)) { // Check if the item is not on cooldown
+            player.playSound(SoundEvents.WARDEN_SONIC_BOOM, 3.0F, 1.0F);
 
-        Vec3 $$3 = player.position().add(0.0, player.getEyeHeight(), 0.0);
-        Vec3 $$4 = player.getLookAngle();
-        Vec3 $$5 = $$4.normalize();
+            Vec3 $$3 = player.position().add(0.0, player.getEyeHeight(), 0.0);
+            Vec3 $$4 = player.getLookAngle();
+            Vec3 $$5 = $$4.normalize();
 
-        if (!pLevel.isClientSide) {
-            double $$8 = 0.5 * (1.0 - player.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
-            double $$9 = 2.5 * (1.0 - player.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
-            player.push($$5.x() * $$9, $$5.y() * $$8, $$5.z() * $$9);
+            if (!pLevel.isClientSide) {
+                double $$8 = 0.5 * (1.0 - player.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
+                double $$9 = 2.5 * (1.0 - player.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
+                player.push($$5.x() * $$9, $$5.y() * $$8, $$5.z() * $$9);
 
-            for(int $$6 = 1; $$6 < Mth.floor($$4.length()) + 12; ++$$6) {
-                Vec3 $$7 = $$3.add($$5.scale((double)$$6));
-                List<Entity> entities = pLevel.getEntities(player, new AABB($$7.x - 1.0, $$7.y - 1.0, $$7.z - 1.0, $$7.x + 1.0, $$7.y + 1.0, $$7.z + 1.0)); // Increased the range of entities that can be damaged
-                for (Entity entity : entities) {
-                    if (entity instanceof LivingEntity) {
-                        ((LivingEntity) entity).hurt(pLevel.damageSources().sonicBoom(player), 20.0F);
+                for(int $$6 = 1; $$6 < Mth.floor($$4.length()) + 12; ++$$6) {
+                    Vec3 $$7 = $$3.add($$5.scale((double)$$6));
+                    List<Entity> entities = pLevel.getEntities(player, new AABB($$7.x - 1.0, $$7.y - 1.0, $$7.z - 1.0, $$7.x + 1.0, $$7.y + 1.0, $$7.z + 1.0)); // Increased the range of entities that can be damaged
+                    for (Entity entity : entities) {
+                        if (entity instanceof LivingEntity) {
+                            ((LivingEntity) entity).hurt(pLevel.damageSources().sonicBoom(player), 20.0F);
+                        }
                     }
                 }
+            } else {
+                for(int $$6 = 1; $$6 < Mth.floor($$4.length()) + 12; ++$$6) {
+                    Vec3 $$7 = $$3.add($$5.scale((double)$$6));
+                    pLevel.addParticle(ParticleTypes.SONIC_BOOM, $$7.x, $$7.y, $$7.z, 1, 0.0, 0.0);
+                }
             }
+            player.getCooldowns().addCooldown(this, 60);
+            return InteractionResultHolder.success(player.getItemInHand(hand));
         } else {
-            for(int $$6 = 1; $$6 < Mth.floor($$4.length()) + 12; ++$$6) {
-                Vec3 $$7 = $$3.add($$5.scale((double)$$6));
-                pLevel.addParticle(ParticleTypes.SONIC_BOOM, $$7.x, $$7.y, $$7.z, 1, 0.0, 0.0);
-            }
+            return InteractionResultHolder.pass(player.getItemInHand(hand));
         }
-        return InteractionResultHolder.success(player.getItemInHand(hand));
     }
+
 
 
     @Override

@@ -27,6 +27,7 @@
   "item.craftplusplus.cotton": "Cotton",
   "item.craftplusplus.copper_milk_bucket": "Copper Milk Bucket",
   "item.craftplusplus.dynamite": "Dynamite",
+  "item.craftplusplus.echo_blaster": "Echo Blaster",
 
   "block.craftplusplus.charcoal_block": "Block of Charcoal",
   "block.craftplusplus.compressed_copper": "Compressed Copper",
@@ -45,6 +46,9 @@
   "block.craftplusplus.smooth_amethyst_slab": "Smooth Amethyst Slab",
   "block.craftplusplus.smooth_amethyst_wall": "Smooth Amethyst Wall",
   "block.craftplusplus.chisled_amethyst": "Chisled Amethyst",
+
+  "tooltip.craftplusplus.shift_for_info": "Press [§9SHIFT§r] for Information",
+  "tooltip.craftplusplus.echo_blaster.shift": "Shoots The Wardens Sonic Boom! Takes [Insert Item Here] To Shoot!",
 
   "entity.craftplusplus.strafer": "Strafer",
 

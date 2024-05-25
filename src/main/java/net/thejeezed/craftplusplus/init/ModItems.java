@@ -14,10 +14,7 @@ import net.thejeezed.craftplusplus.entity.ModEntities;
 import net.thejeezed.craftplusplus.enums.tools.ToolStats;
 import net.thejeezed.craftplusplus.init.ModFoods;
 import net.thejeezed.craftplusplus.item.custom.armor.CopperArmor;
-import net.thejeezed.craftplusplus.item.custom.item.CopperBucketItem;
-import net.thejeezed.craftplusplus.item.custom.item.CopperMilkBucketItem;
-import net.thejeezed.craftplusplus.item.custom.item.DynamiteItem;
-import net.thejeezed.craftplusplus.item.custom.item.MagicMirrorItem;
+import net.thejeezed.craftplusplus.item.custom.item.*;
 
 import static net.thejeezed.craftplusplus.CraftPlusPlus.MOD_ID;
 
@@ -72,6 +69,7 @@ public class ModItems {
 
     //NLE CHOPPA
     public static final RegistryObject<Item> DYNAMITE = ITEMS.register("dynamite", () -> new DynamiteItem(new Item.Properties()));
+    public static final RegistryObject<Item> ECHO_BLASTER = ITEMS.register("echo_blaster", () -> new EchoBlasterItem(new Item.Properties().rarity(Rarity.EPIC)));
 
     //ORES
     public static final RegistryObject<Item> SULPHUR_CHUNK = ITEMS.register("sulphur_chunk", () -> new Item(new Item.Properties()));

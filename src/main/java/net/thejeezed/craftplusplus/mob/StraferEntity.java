@@ -310,12 +310,14 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
         }
     }
 
+    @Override
     public void tick() {
         super.tick();
 
         if(this.level().isClientSide()) {
             setupAnimationStates();
         }
+
         if (this.isBeingTempted() && this.random.nextInt(140) == 0) {
             this.playSound(SoundEvents.STRIDER_HAPPY, 1.0F, this.getVoicePitch());
         } else if (this.isPanicking() && this.random.nextInt(60) == 0) {

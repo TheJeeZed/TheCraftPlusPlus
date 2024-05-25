@@ -64,6 +64,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.SULPHUR_CHUNK.get());
                         pOutput.accept(ModItems.COTTON.get());
                         pOutput.accept(ModItems.DYNAMITE.get());
+                        pOutput.accept(ModItems.ECHO_BLASTER.get());
                     })
                     .build());
 

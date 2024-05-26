@@ -2,6 +2,7 @@ package net.thejeezed.craftplusplus.item.custom.item;
 
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -9,17 +10,17 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraftforge.server.command.TextComponentHelper;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
+import java.awt.*;
 import java.util.List;
 
 public class EchoBlasterItem extends Item {
@@ -39,7 +40,7 @@ public class EchoBlasterItem extends Item {
         * Prolly some of the worst code ive written in a while but kinda proud, showed my dad he didn't undertsand shit but thought it was pretty cool
      */
 
-    //TODO Make particles client side!!!!
+    //TODO Make particles server side!!!!
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player player, InteractionHand hand) {
         if (!player.getCooldowns().isOnCooldown(this) || player.isCreative()) {
@@ -54,7 +55,7 @@ public class EchoBlasterItem extends Item {
                 double $$9 = 2.5 * (1.0 - player.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
                 player.push($$5.x() * $$9, $$5.y() * $$8, $$5.z() * $$9);
 
-                for(int $$6 = 1; $$6 < Mth.floor($$4.length()) + 12; ++$$6) {
+                for(int $$6 = 1; $$6 < Mth.floor($$4.length()) + 15; ++$$6) {
                     Vec3 $$7 = $$3.add($$5.scale((double)$$6));
                     List<Entity> entities = pLevel.getEntities(player, new AABB($$7.x - 1.0, $$7.y - 1.0, $$7.z - 1.0, $$7.x + 1.0, $$7.y + 1.0, $$7.z + 1.0));
                     for (Entity entity : entities) {
@@ -64,19 +65,29 @@ public class EchoBlasterItem extends Item {
                     }
                 }
             } else {
-                for(int $$6 = 1; $$6 < Mth.floor($$4.length()) + 12; ++$$6) {
+                for(int $$6 = 1; $$6 < Mth.floor($$4.length()) + 15; ++$$6) {
                     Vec3 $$7 = $$3.add($$5.scale((double)$$6));
                     pLevel.addParticle(ParticleTypes.SONIC_BOOM, $$7.x, $$7.y, $$7.z, 1, 0.0, 0.0);
                 }
             }
             if (!player.isCreative()) {
                 player.getCooldowns().addCooldown(this, 60);
+                boolean hasEchoShard = player.getInventory().contains(new ItemStack(Items.ECHO_SHARD));
+                if (hasEchoShard) {
+                    for (ItemStack itemStack : player.getInventory().items) {
+                        if (itemStack.getItem() == Items.ECHO_SHARD) {
+                            itemStack.shrink(1);
+                            break;
+                        }
+                    }
+                }
             }
             return InteractionResultHolder.success(player.getItemInHand(hand));
         } else {
             return InteractionResultHolder.pass(player.getItemInHand(hand));
         }
     }
+
 
     @Override
     public boolean isEnchantable(@NotNull ItemStack pStack) {return false;}

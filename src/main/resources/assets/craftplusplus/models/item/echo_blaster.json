@@ -6,7 +6,7 @@
   },
   "perspectives": {
     "gui": {
-      "parent": "craftplusplus:item/echo_blaster_3d"
+      "parent": "craftplusplus:item/echo_blaster_2d"
     },
     "ground": {
       "parent": "craftplusplus:item/echo_blaster_3d"

@@ -50,7 +50,6 @@ public class DynamiteProjectileEntity extends ThrowableItemProjectile {
             MinecraftForge.EVENT_BUS.register(new DelayedExplosion(serverLevel, hitPos.getX(), hitPos.getY(), hitPos.getZ(), this));
             explosionRegistered = true;
         }
-        this.setDeltaMovement(0, 0, 0);
     }
 
     @Override
@@ -64,7 +63,6 @@ public class DynamiteProjectileEntity extends ThrowableItemProjectile {
             MinecraftForge.EVENT_BUS.register(new DelayedExplosion(serverLevel, hitX, hitY, hitZ, this));
             explosionRegistered = true;
         }
-        this.setDeltaMovement(0, 0, 0);
     }
 
     @Override

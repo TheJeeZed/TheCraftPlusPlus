@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "farming",
+  "key": {
+    "X": {
+      "item": "minecraft:echo_shard"
+    },
+    "/": {
+      "item": "minecraft:iron_ingot"
+    },
+    "#": {
+      "item": "minecraft:sculk_catalyst"
+    }
+  },
+  "pattern": [
+    "#",
+    "/",
+    "X"
+  ],
+  "result": {
+    "item": "craftplusplus:echo_blaster"
+  },
+  "show_notification": true
+}

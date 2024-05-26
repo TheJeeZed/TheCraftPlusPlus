@@ -69,7 +69,7 @@ public class ModItems {
 
     //NLE CHOPPA
     public static final RegistryObject<Item> DYNAMITE = ITEMS.register("dynamite", () -> new DynamiteItem(new Item.Properties()));
-    public static final RegistryObject<Item> ECHO_BLASTER = ITEMS.register("echo_blaster", () -> new EchoBlasterItem(new Item.Properties().rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> ECHO_BLASTER = ITEMS.register("echo_blaster", () -> new EchoBlasterItem(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)));
 
     //ORES
     public static final RegistryObject<Item> SULPHUR_CHUNK = ITEMS.register("sulphur_chunk", () -> new Item(new Item.Properties()));

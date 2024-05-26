@@ -42,7 +42,7 @@ public class EchoBlasterItem extends Item {
     //TODO Make particles client side!!!!
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player player, InteractionHand hand) {
-        if (!player.getCooldowns().isOnCooldown(this)) { // Check if the item is not on cooldown
+        if (!player.getCooldowns().isOnCooldown(this) || player.isCreative()) {
             player.playSound(SoundEvents.WARDEN_SONIC_BOOM, 3.0F, 1.0F);
 
             Vec3 $$3 = player.position().add(0.0, player.getEyeHeight(), 0.0);
@@ -56,7 +56,7 @@ public class EchoBlasterItem extends Item {
 
                 for(int $$6 = 1; $$6 < Mth.floor($$4.length()) + 12; ++$$6) {
                     Vec3 $$7 = $$3.add($$5.scale((double)$$6));
-                    List<Entity> entities = pLevel.getEntities(player, new AABB($$7.x - 1.0, $$7.y - 1.0, $$7.z - 1.0, $$7.x + 1.0, $$7.y + 1.0, $$7.z + 1.0)); // Increased the range of entities that can be damaged
+                    List<Entity> entities = pLevel.getEntities(player, new AABB($$7.x - 1.0, $$7.y - 1.0, $$7.z - 1.0, $$7.x + 1.0, $$7.y + 1.0, $$7.z + 1.0));
                     for (Entity entity : entities) {
                         if (entity instanceof LivingEntity) {
                             ((LivingEntity) entity).hurt(pLevel.damageSources().sonicBoom(player), 20.0F);
@@ -69,14 +69,14 @@ public class EchoBlasterItem extends Item {
                     pLevel.addParticle(ParticleTypes.SONIC_BOOM, $$7.x, $$7.y, $$7.z, 1, 0.0, 0.0);
                 }
             }
-            player.getCooldowns().addCooldown(this, 60);
+            if (!player.isCreative()) {
+                player.getCooldowns().addCooldown(this, 60);
+            }
             return InteractionResultHolder.success(player.getItemInHand(hand));
         } else {
             return InteractionResultHolder.pass(player.getItemInHand(hand));
         }
     }
-
-
 
     @Override
     public boolean isEnchantable(@NotNull ItemStack pStack) {return false;}

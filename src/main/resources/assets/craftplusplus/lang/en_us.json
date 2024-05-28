@@ -53,6 +53,10 @@
   "message.failure_to_shoot": "You Don't Have A Echo Shard In Your Inventory!",
   "message.echo_shard_consume": "Consumed 1 Echo Shard",
 
+  "enchantment.craftplusplus.screaming": "Screaming",
+  "enchantment.craftplusplus.quick_shock": "Quick Shock",
+  "enchantment.craftplusplus.self_charging": "Self Charging",
+
   "entity.craftplusplus.strafer": "Strafer",
 
   "creativetab.craft_tab": "Craft++",

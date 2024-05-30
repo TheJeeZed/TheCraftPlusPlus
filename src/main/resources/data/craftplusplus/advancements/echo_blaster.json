@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "craftplusplus:echo_blaster"
+    },
+    "title": "Echo Blaster",
+    "description": "Did the warden drop its weapon? What is this?",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "craftplusplus:echo_blaster"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

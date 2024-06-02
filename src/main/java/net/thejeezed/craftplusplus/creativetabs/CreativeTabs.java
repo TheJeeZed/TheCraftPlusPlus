@@ -65,6 +65,7 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.COTTON.get());
                         pOutput.accept(ModItems.DYNAMITE.get());
                         pOutput.accept(ModItems.ECHO_BLASTER.get());
+                        pOutput.accept(ModItems.COPPER_NUGGET.get());
                     })
                     .build());
 

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "craftplusplus:sulphur_ore"
+  },
+  "result": "craftplusplus:sulphur_chunk"
+}

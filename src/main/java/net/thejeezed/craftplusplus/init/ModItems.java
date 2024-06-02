@@ -22,6 +22,9 @@ public class ModItems {
         public static final DeferredRegister<Item> ITEMS =
                 DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
 
+    //GENERIC
+    public static final RegistryObject<Item> COPPER_NUGGET = ITEMS.register("copper_nugger", () -> new Item(new Item.Properties()));
+
     //COPPER BUCKET
     public static final RegistryObject<Item> COPPER_BUCKET = ITEMS.register("copper_bucket", ()-> new CopperBucketItem(()-> Fluids.EMPTY, new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> COPPER_WATER_BUCKET = ITEMS.register("copper_water_bucket", ()-> new CopperBucketItem(()-> Fluids.WATER, new Item.Properties().craftRemainder(COPPER_BUCKET.get()).stacksTo(1)));

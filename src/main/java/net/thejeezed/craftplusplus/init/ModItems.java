@@ -77,6 +77,11 @@ public class ModItems {
     //ORES
     public static final RegistryObject<Item> SULPHUR_CHUNK = ITEMS.register("sulphur_chunk", () -> new Item(new Item.Properties()));
 
+    //MUSIC DISCS
+    public static final RegistryObject<Item> CALM_NIGHT_MUSIC_DISC = ITEMS.register("calm_night_music_disc", () -> new RecordItem(6, ModSounds.CALM_NIGHT, new Item.Properties().stacksTo(1), 1240));
+    public static final RegistryObject<Item> COUNTRY_ROAD_MUSIC_DISC = ITEMS.register("country_road_music_disc", () -> new RecordItem(6, ModSounds.CALM_NIGHT, new Item.Properties().stacksTo(1), 3420));
+
+
     public static void register(IEventBus eventBus) {
             ITEMS.register(eventBus);
         }

@@ -1,10 +1,11 @@
-// 1.20.1	2024-05-13T09:40:01.8235825	Item Models: craftplusplus
+// 1.20.1	2024-06-08T14:02:00.321394	Item Models: craftplusplus
 cb1c131a912cd6789d57633500ed4e230524936e assets/craftplusplus/models/item/amethyst_brick_slab.json
 f3f0b099193e343f2494d3fb6eea088ecc552c51 assets/craftplusplus/models/item/amethyst_brick_stairs.json
 072c6a8f511b84131253e3b98c331b68b483938b assets/craftplusplus/models/item/amethyst_brick_wall.json
 36703abdfd9e9c63f9b88241915a71b4cb90797b assets/craftplusplus/models/item/amethyst_slab.json
 c1caaff5d0678efb3b0781663ad9042393c8ecf3 assets/craftplusplus/models/item/amethyst_stairs.json
 072c6a8f511b84131253e3b98c331b68b483938b assets/craftplusplus/models/item/amethyst_wall.json
+d75e93e08dc8d2ed68ac106371399573b214c4f4 assets/craftplusplus/models/item/calm_night_music_disc.json
 83a9a538afc9fcdf7c734ec4cd67dedf56aa15e7 assets/craftplusplus/models/item/copper_boots.json
 ce2f21ae7ea35cf0d600668a256c8ba32f301f78 assets/craftplusplus/models/item/copper_boots_amethyst_trim.json
 bf2d9c64ca713f6fa53c96e3ab87013f21ca7c16 assets/craftplusplus/models/item/copper_boots_copper_trim.json
@@ -50,6 +51,7 @@ d281764ac19331311b5a62de1ce28276da4fa15b assets/craftplusplus/models/item/copper
 ff1a2e47fa801e72497732a5eac028fbe20b2110 assets/craftplusplus/models/item/copper_leggings_quartz_trim.json
 4ad7f54608ca98a3ff664d2b02e0e09ae7c34d5f assets/craftplusplus/models/item/copper_leggings_redstone_trim.json
 150d7d151861bca441ebf44bf9619fba29740332 assets/craftplusplus/models/item/cotton_seeds.json
+4dfb3530f02316dd85056b74023e43a1dd66bd9e assets/craftplusplus/models/item/country_road_music_disc.json
 0573e5a1616a40bf45e56f0747c68a1f54b3742b assets/craftplusplus/models/item/smooth_amethyst_slab.json
 eea2afbf2d569cc4b8af6bf044bd7d3cf1350a97 assets/craftplusplus/models/item/smooth_amethyst_stairs.json
 12e5e7d533a0245a73b103e92ed6c8718b604589 assets/craftplusplus/models/item/smooth_amethyst_wall.json

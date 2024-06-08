@@ -20,6 +20,7 @@ import net.thejeezed.craftplusplus.creativetabs.CreativeTabs;
 import net.thejeezed.craftplusplus.entity.ModEntities;
 import net.thejeezed.craftplusplus.init.ModItems;
 import net.thejeezed.craftplusplus.datagen.loot.ModLootModifiers;
+import net.thejeezed.craftplusplus.init.ModSounds;
 import net.thejeezed.craftplusplus.mob.client.StraferRenderer;
 import net.thejeezed.craftplusplus.mob.client.SulphurZombieRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
@@ -36,6 +37,7 @@ public class CraftPlusPlus {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModSounds.register(modEventBus);
         CreativeTabs.register(modEventBus);
         ModLootModifiers.register(modEventBus);
         ModEntities.register(modEventBus);

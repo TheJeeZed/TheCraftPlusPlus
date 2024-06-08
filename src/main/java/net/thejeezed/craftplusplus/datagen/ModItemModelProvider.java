@@ -52,6 +52,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         wallItem(SMOOTH_AMETHYST_WALL, SMOOTH_AMETHYST);
 
         simpleItem(COTTON_SEEDS);
+        simpleItem(CALM_NIGHT_MUSIC_DISC);
+        simpleItem(COUNTRY_ROAD_MUSIC_DISC);
 
 
         //trimmedArmorItem for trims

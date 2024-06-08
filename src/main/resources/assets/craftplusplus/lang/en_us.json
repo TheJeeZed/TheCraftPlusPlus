@@ -30,6 +30,11 @@
   "item.craftplusplus.dynamite": "Dynamite",
   "item.craftplusplus.echo_blaster": "Echo Blaster",
 
+  "item.craftplusplus.calm_night_music_disc": "Calm Night Music Disc",
+  "item.craftplusplus.calm_night_music_disc.desc": "Dalto - Calm Night (CC BY-SA)",
+  "item.craftplusplus.country_road_music_disc": "Country Road Music Disc",
+  "item.craftplusplus.country_road_music_disc.desc": "Henry Jackman & Matthew Margeson - No Time for Emotion (UMG) ℗ 2017 Twentieth Century Fox Film Corporation",
+
   "block.craftplusplus.charcoal_block": "Block of Charcoal",
   "block.craftplusplus.compressed_copper": "Compressed Copper",
   "block.craftplusplus.compressed_sulphur": "Compressed Sulphur",

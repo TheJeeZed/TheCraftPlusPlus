@@ -1,0 +1,18 @@
+{
+  "calm_night": {
+    "sounds": [
+      {
+        "name": "craftplusplus:calm_night",
+        "stream": true
+      }
+    ]
+  },
+  "country_road": {
+    "sounds": [
+      {
+        "name": "craftplusplus:country_road",
+        "stream": true
+      }
+    ]
+  }
+}

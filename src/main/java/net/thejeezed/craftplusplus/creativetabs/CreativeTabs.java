@@ -66,6 +66,8 @@ public class CreativeTabs {
                         pOutput.accept(ModItems.DYNAMITE.get());
                         pOutput.accept(ModItems.ECHO_BLASTER.get());
                         pOutput.accept(ModItems.COPPER_NUGGET.get());
+                        pOutput.accept(ModItems.CALM_NIGHT_MUSIC_DISC.get());
+                        pOutput.accept(ModItems.COUNTRY_ROAD_MUSIC_DISC.get());
                     })
                     .build());
 

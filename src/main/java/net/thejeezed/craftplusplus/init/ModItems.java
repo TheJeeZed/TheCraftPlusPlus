@@ -23,7 +23,7 @@ public class ModItems {
                 DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
 
     //GENERIC
-    public static final RegistryObject<Item> COPPER_NUGGET = ITEMS.register("copper_nugger", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> COPPER_NUGGET = ITEMS.register("copper_nugget", () -> new Item(new Item.Properties()));
 
     //COPPER BUCKET
     public static final RegistryObject<Item> COPPER_BUCKET = ITEMS.register("copper_bucket", ()-> new CopperBucketItem(()-> Fluids.EMPTY, new Item.Properties().stacksTo(16)));
@@ -79,7 +79,7 @@ public class ModItems {
 
     //MUSIC DISCS
     public static final RegistryObject<Item> CALM_NIGHT_MUSIC_DISC = ITEMS.register("calm_night_music_disc", () -> new RecordItem(6, ModSounds.CALM_NIGHT, new Item.Properties().stacksTo(1), 1240));
-    public static final RegistryObject<Item> COUNTRY_ROAD_MUSIC_DISC = ITEMS.register("country_road_music_disc", () -> new RecordItem(6, ModSounds.CALM_NIGHT, new Item.Properties().stacksTo(1), 3420));
+    public static final RegistryObject<Item> COUNTRY_ROAD_MUSIC_DISC = ITEMS.register("country_road_music_disc", () -> new RecordItem(6, ModSounds.COUNTRY_ROAD, new Item.Properties().stacksTo(1), 3420));
 
 
     public static void register(IEventBus eventBus) {

@@ -34,8 +34,15 @@ public class CopperMilkBucketItem extends Item
             serverplayer.awardStat(Stats.ITEM_USED.get(this));
         }
 
-        if (pEntityLiving instanceof Player && !((Player)pEntityLiving).getAbilities().instabuild) {
+        if (pEntityLiving instanceof Player && !((Player)pEntityLiving).getAbilities().instabuild && pStack.getCount() == 1)
+        {
             pStack.shrink(1);
+        }
+
+        if (pEntityLiving instanceof Player && !((Player)pEntityLiving).getAbilities().instabuild && pStack.getCount() == 2)
+        {
+            pStack.shrink(1);
+            ((Player) pEntityLiving).addItem(new ItemStack(ModItems.COPPER_BUCKET.get()));
         }
 
         return pStack.isEmpty() ? new ItemStack(ModItems.COPPER_BUCKET.get()) : pStack;

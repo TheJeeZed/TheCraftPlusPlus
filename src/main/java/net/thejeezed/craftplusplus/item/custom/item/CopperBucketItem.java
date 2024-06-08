@@ -38,7 +38,6 @@ import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fluids.capability.wrappers.FluidBucketWrapper;
-import net.thejeezed.craftplusplus.client.gui.MessageRenderer;
 import net.thejeezed.craftplusplus.util.ItemUtils;
 import net.thejeezed.craftplusplus.init.ModItems;
 import org.jetbrains.annotations.NotNull;
@@ -58,7 +57,7 @@ public class CopperBucketItem extends Item implements DispensibleContainerItem
         this.fluidSupplier = supplier;
     }
 
-    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, Player pPlayer, @NotNull InteractionHand pHand) {
         ItemStack itemstack = pPlayer.getItemInHand(pHand);
         BlockHitResult blockhitresult = getPlayerPOVHitResult(pLevel, pPlayer, this.content == Fluids.EMPTY ? net.minecraft.world.level.ClipContext.Fluid.SOURCE_ONLY : net.minecraft.world.level.ClipContext.Fluid.NONE);
         InteractionResultHolder<ItemStack> ret = ForgeEventFactory.onBucketUse(pPlayer, pLevel, itemstack, blockhitresult);
@@ -120,21 +119,36 @@ public class CopperBucketItem extends Item implements DispensibleContainerItem
     }
 
     @Override
-    public @NotNull InteractionResult interactLivingEntity(@NotNull ItemStack itemStack, @NotNull Player pPlayer, @NotNull LivingEntity pLivingEntity, @NotNull InteractionHand pHand) {
-        if (pLivingEntity instanceof Cow cow && !cow.isBaby()) {
+    public @NotNull InteractionResult interactLivingEntity(@NotNull ItemStack itemStack, @NotNull Player pPlayer, @NotNull LivingEntity pLivingEntity, @NotNull InteractionHand pHand)
+    {
+        if (pLivingEntity instanceof Cow cow && !cow.isBaby() && itemStack.getItem() == ModItems.COPPER_BUCKET.get())
+        {
             pPlayer.playSound(SoundEvents.COW_MILK, 1.0F, 1.0F);
-            ItemStack milk_bucket = ItemUtils.createMilkResult(itemStack, pPlayer, ModItems.COPPER_MILK_BUCKET.get(), false);
-            if (!pPlayer.addItem(milk_bucket)) {
-                pPlayer.drop(milk_bucket, false);
-            } else {
-                MessageRenderer.renderMessage("message.copper_bucket.milked");
-            }
-            pPlayer.awardStat(Stats.ITEM_USED.get(this));
-            return InteractionResult.sidedSuccess(cow.level().isClientSide());
-        }
 
+            if (!pPlayer.isCreative())
+            {
+                if (itemStack.getCount() == 1)
+                {
+                    pPlayer.setItemInHand(pHand, new ItemStack(ModItems.COPPER_MILK_BUCKET.get()));
+                } else {
+                    itemStack.shrink(1);
+                    pPlayer.addItem(new ItemStack(ModItems.COPPER_MILK_BUCKET.get()));
+                }
+            } else {
+                itemStack.shrink(1);
+
+                ItemStack milk_bucket = new ItemStack(ModItems.COPPER_MILK_BUCKET.get());
+
+                if (!pPlayer.addItem(milk_bucket)) {
+                    pPlayer.drop(milk_bucket, false);
+                }
+            }
+
+            return InteractionResult.sidedSuccess(pPlayer.level().isClientSide());
+        }
         return super.interactLivingEntity(itemStack, pPlayer, pLivingEntity, pHand);
     }
+
 
     public static ItemStack getEmptySuccessItem(ItemStack pBucketStack, Player pPlayer) {
         return !pPlayer.getAbilities().instabuild ? new ItemStack(ModItems.COPPER_BUCKET.get()) : pBucketStack;

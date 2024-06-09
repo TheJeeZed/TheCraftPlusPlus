@@ -1,6 +1,7 @@
 package net.thejeezed.craftplusplus;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -15,6 +16,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.thejeezed.craftplusplus.enchant.ModEnchants;
+import net.thejeezed.craftplusplus.init.ModBlockEntities;
 import net.thejeezed.craftplusplus.init.ModBlocks;
 import net.thejeezed.craftplusplus.creativetabs.CreativeTabs;
 import net.thejeezed.craftplusplus.entity.ModEntities;
@@ -24,6 +26,7 @@ import net.thejeezed.craftplusplus.init.ModSounds;
 import net.thejeezed.craftplusplus.mob.client.StraferRenderer;
 import net.thejeezed.craftplusplus.mob.client.SulphurZombieRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.thejeezed.craftplusplus.recipe.ModRecipes;
 import net.thejeezed.craftplusplus.util.ModEntitySpawn;
 import org.slf4j.Logger;
 
@@ -42,10 +45,12 @@ public class CraftPlusPlus {
         ModLootModifiers.register(modEventBus);
         ModEntities.register(modEventBus);
         ModEntitySpawn.SERIALIZER.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
         ModEnchants.ENCHANTMENTS.register(modEventBus);
+        ModRecipes.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

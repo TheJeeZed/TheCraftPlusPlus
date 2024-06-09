@@ -26,6 +26,7 @@ public class ModEntities {
     public static final RegistryObject<EntityType<DynamiteProjectileEntity>> DYNAMITE_PROJECTILE =
             ENTITY_TYPES.register("dynamite_projectile", () -> EntityType.Builder.<DynamiteProjectileEntity>of(DynamiteProjectileEntity::new, MobCategory.MISC)
                     .sized(0.5f, 0.5f).build("dynamite_projectile"));
+
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
     }

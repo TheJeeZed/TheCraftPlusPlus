@@ -5,6 +5,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.thejeezed.craftplusplus.init.ModBlockEntities;
@@ -14,7 +15,7 @@ import java.util.Optional;
 
 public class KilnBlockEntity extends AbstractFurnaceBlockEntity {
     public KilnBlockEntity(BlockPos pPos, BlockState pBlockState) {
-        super(ModBlockEntities.KILN_BE.get(), pPos, pBlockState, ModRecipes.KILN_SERIALIZER.get());
+        super(ModBlockEntities.KILN_BE.get(), pPos, pBlockState, RecipeType.BLASTING);
     }
 
 

@@ -18,6 +18,13 @@ If you feel like Contributing to our mod, there are many ways to do so. Look [he
 [**wolfieboy09**](https://github.com/wolfieboy09) Dev <br>
 
 # Contributors
+
+<a href="https://github.com/TheJeeZed/TheCraftPlusPlus/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=TheJeeZed/TheCraftPlusPlus" />
+</a>
+
+
+
 **GF 👀** - Textures/Models <br>
 **-Ghoul-** - Textures/Models <br>
 **カテル** - Textures/Models <br>

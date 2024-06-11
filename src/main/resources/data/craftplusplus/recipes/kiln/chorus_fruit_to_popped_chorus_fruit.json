@@ -1,0 +1,10 @@
+{
+  "type": "craftplusplus:kiln",
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 0.25,
+  "ingredient": {
+    "item": "minecraft:chorus_fruit"
+  },
+  "result": "minecraft:popped_chorus_fruit"
+}

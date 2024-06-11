@@ -5,10 +5,12 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.fluids.capability.wrappers.FluidBucketWrapper;
@@ -36,7 +38,17 @@ public class CopperMilkBucketItem extends Item
 
         if (pEntityLiving instanceof Player && !((Player)pEntityLiving).getAbilities().instabuild && pStack.getCount() == 1)
         {
-            pStack.shrink(1);
+            if (pStack.getItem() == ModItems.COPPER_MILK_BUCKET.get()) {
+                if (pStack.getCount() > 1) {
+                    pStack.shrink(1);
+                    ItemStack newBucket = new ItemStack(ModItems.COPPER_BUCKET.get());
+                    if (!((Player)pEntityLiving).getInventory().add(newBucket)) {
+                        ((Player)pEntityLiving).drop(newBucket, false);
+                    }
+                } else {
+                    return new ItemStack(ModItems.COPPER_BUCKET.get());
+                }
+            }
         }
 
         if (pEntityLiving instanceof Player && !((Player)pEntityLiving).getAbilities().instabuild && pStack.getCount() == 2)

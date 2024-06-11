@@ -54,6 +54,7 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.level.pathfinder.PathComputationType;
@@ -544,5 +545,13 @@ public class StraferEntity extends Animal implements ItemSteerable, Saddleable {
         public boolean isStableDestination(BlockPos pPos) {
             return this.level.getBlockState(pPos).is(Blocks.WATER) || super.isStableDestination(pPos);
         }
+    }
+
+    @Override
+    public boolean isInWaterRainOrBubble() {
+        if (this.isInWater()) {
+            return false;
+        }
+        return super.isInWaterRainOrBubble();
     }
 }

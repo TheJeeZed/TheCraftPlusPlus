@@ -1,0 +1,11 @@
+{
+  "type": "craftplusplus:kiln",
+  "category": "misc",
+  "cookingtime": 50,
+  "experience": 0.25,
+  "group": "sand",
+  "ingredient": {
+    "item": "minecraft:sandstone"
+  },
+  "result": "minecraft:smooth_sandstone"
+}

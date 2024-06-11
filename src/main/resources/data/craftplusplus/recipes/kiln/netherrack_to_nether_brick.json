@@ -1,0 +1,11 @@
+{
+  "type": "craftplusplus:kiln",
+  "category": "misc",
+  "cookingtime": 50,
+  "experience": 0.25,
+  "group": "nether",
+  "ingredient": {
+    "item": "minecraft:netherrack"
+  },
+  "result": "minecraft:nether_brick"
+}

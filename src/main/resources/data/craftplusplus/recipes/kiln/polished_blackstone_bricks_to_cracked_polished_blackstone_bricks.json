@@ -1,0 +1,11 @@
+{
+  "type": "craftplusplus:kiln",
+  "category": "misc",
+  "cookingtime": 50,
+  "experience": 0.25,
+  "group": "blackstone",
+  "ingredient": {
+    "item": "minecraft:polished_blackstone_bricks"
+  },
+  "result": "minecraft:cracked_polished_blackstone_bricks"
+}

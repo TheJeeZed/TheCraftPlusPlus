@@ -53,32 +53,26 @@ public class CraftPlusPlus {
         ModRecipes.SERIALIZERS.register(modEventBus);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
+    private void commonSetup(final FMLCommonSetupEvent event) {
 
     }
 
-    private void addCreative(BuildCreativeModeTabContentsEvent event)
-    {
-        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS)
-        {
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ModBlocks.CHARCOAL_BLOCK);
         }
 
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
-        {
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.COMPRESSED_COPPER);
         }
 
-        if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS)
-        {
+        if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(ModItems.RAW_TENTACLE);
             event.accept(ModItems.COOKED_TENTACLE);
             event.accept(ModItems.SEA_SOUP);
         }
 
-        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES)
-        {
+        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.COPPER_SHOVEL);
             event.accept(ModItems.COPPER_PICKAXE);
             event.accept(ModItems.COPPER_AXE);
@@ -89,8 +83,7 @@ public class CraftPlusPlus {
             event.accept(ModItems.MAGIC_MIRROR);
         }
 
-        if (event.getTabKey() == CreativeModeTabs.COMBAT)
-        {
+        if (event.getTabKey() == CreativeModeTabs.COMBAT) {
             event.accept(ModItems.COPPER_SWORD);
             event.accept(ModItems.COPPER_AXE);
             event.accept(ModItems.COPPER_HELMET);
@@ -101,10 +94,8 @@ public class CraftPlusPlus {
     }
 
     @SubscribeEvent
-    public void onFuelBurnTimeEvent(FurnaceFuelBurnTimeEvent event)
-    {
-        if (event.getItemStack().getItem() == ModBlocks.CHARCOAL_BLOCK.get().asItem())
-        {
+    public void onFuelBurnTimeEvent(FurnaceFuelBurnTimeEvent event) {
+        if (event.getItemStack().getItem() == ModBlocks.CHARCOAL_BLOCK.get().asItem()) {
             event.setBurnTime(16000);
         }
     }
@@ -118,12 +109,15 @@ public class CraftPlusPlus {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             MenuScreens.register(ModMenuTypes.KILN_MENU.get(), KilnScreen::new);
+            event.enqueueWork(() -> {
+            });
         }
-    }
-    @SubscribeEvent
-    public static void registerRenderers(FMLClientSetupEvent event) {
-        EntityRenderers.register(ModEntities.STRAFER.get(), StraferRenderer::new);
-        EntityRenderers.register(ModEntities.SULPHUR_ZOMBIE.get(), SulphurZombieRenderer::new);
-        EntityRenderers.register(ModEntities.DYNAMITE_PROJECTILE.get(), ThrownItemRenderer::new);
+
+        @SubscribeEvent
+        public static void registerRenderers(FMLClientSetupEvent event) {
+            EntityRenderers.register(ModEntities.STRAFER.get(), StraferRenderer::new);
+            EntityRenderers.register(ModEntities.SULPHUR_ZOMBIE.get(), SulphurZombieRenderer::new);
+            EntityRenderers.register(ModEntities.DYNAMITE_PROJECTILE.get(), ThrownItemRenderer::new);
+        }
     }
 }

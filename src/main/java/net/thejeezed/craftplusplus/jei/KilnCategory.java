@@ -27,7 +27,6 @@ public class KilnCategory implements IRecipeCategory<KilnRecipe> {
 
     private final IDrawable background;
     private final IDrawable icon;
-    private int renderProgress = 0;
 
     public KilnCategory(IGuiHelper helper) {
         this.background = helper.createDrawable(TEXTURE, 0, 0, 170, 80);

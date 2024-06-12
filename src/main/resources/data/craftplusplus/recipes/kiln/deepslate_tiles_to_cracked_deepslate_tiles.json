@@ -2,7 +2,7 @@
   "type": "craftplusplus:kiln",
   "category": "misc",
   "cookingtime": 50,
-  "experience": 0.25,
+  "experience": 0.50,
   "group": "stone",
   "ingredient": {
     "item": "minecraft:deepslate_tiles"

@@ -9,6 +9,7 @@ import net.minecraft.util.GsonHelper;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.thejeezed.craftplusplus.init.ModBlocks;
+import net.thejeezed.craftplusplus.util.ModTags;
 
 public class KilnRecipe extends AbstractCookingRecipe {
     public KilnRecipe(ResourceLocation pId, String pGroup, CookingBookCategory pCategory, Ingredient pIngredient, ItemStack pResult, float pExperience, int pCookingTime) {
@@ -82,5 +83,9 @@ public class KilnRecipe extends AbstractCookingRecipe {
             pBuffer.writeFloat(pRecipe.experience);
             pBuffer.writeVarInt(pRecipe.cookingTime);
         }
+    }
+
+    public Ingredient getFuelItem() {
+        return Ingredient.of(ModTags.Items.KILN_FUEL);
     }
 }

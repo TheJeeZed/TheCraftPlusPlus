@@ -11,6 +11,8 @@ import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.thejeezed.craftplusplus.init.ModBlockEntities;
 import net.thejeezed.craftplusplus.recipe.KilnRecipe;
+import net.thejeezed.craftplusplus.util.ModTags;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 
@@ -37,4 +39,6 @@ public class KilnBlockEntity extends AbstractFurnaceBlockEntity  {
     protected int getBurnDuration(ItemStack pFuel) {
         return BURN_DURATION_MAP.getOrDefault(pFuel.getItem(), 0);
     }
+    public static boolean isFuelItem(@NotNull ItemStack itemStack){
+        return itemStack.is(ModTags.Items.KILN_FUEL); }
 }

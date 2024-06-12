@@ -1,21 +1,33 @@
 package net.thejeezed.craftplusplus.kiln;
 
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractFurnaceMenu;
 import net.minecraft.world.inventory.ContainerData;
-import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.RecipeBookType;
-import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.ItemStack;
+import net.thejeezed.craftplusplus.init.ModMenuTypes;
 import net.thejeezed.craftplusplus.recipe.KilnRecipe;
-import net.thejeezed.craftplusplus.recipe.ModRecipes;
 
 public class KilnMenu extends AbstractFurnaceMenu {
-    public KilnMenu(int pContainerId, Inventory pPlayerInventory) {
-        super(MenuType.BLAST_FURNACE, KilnRecipe.Type.INSTANCE, RecipeBookType.BLAST_FURNACE, pContainerId, pPlayerInventory);
+
+
+    public KilnMenu(int pContainerId, Inventory pPlayerInventory, Container container, ContainerData containerData) {
+        super(ModMenuTypes.KILN_MENU.get(), KilnRecipe.Type.INSTANCE, RecipeBookType.FURNACE, pContainerId, pPlayerInventory, container, containerData);
     }
 
-    public KilnMenu(int pContainerId, Inventory pPlayerInventory, Container pBlastFurnaceContainer, ContainerData pBlastFurnaceData) {
-        super(MenuType.BLAST_FURNACE, KilnRecipe.Type.INSTANCE, RecipeBookType.BLAST_FURNACE, pContainerId, pPlayerInventory, pBlastFurnaceContainer, pBlastFurnaceData);
+    public KilnMenu(int pContainerId, Inventory pPlayerInventory) {
+        super(ModMenuTypes.KILN_MENU.get(), KilnRecipe.Type.INSTANCE, RecipeBookType.FURNACE, pContainerId, pPlayerInventory);
+    }
+
+    public KilnMenu(int pCpntainerId, Inventory pPlayerinventory, FriendlyByteBuf pBuffer) {
+        this(pCpntainerId, pPlayerinventory);
+    }
+
+
+    @Override
+    protected boolean isFuel(ItemStack pStack) {
+        return true;
     }
 }

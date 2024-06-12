@@ -1,6 +1,7 @@
 package net.thejeezed.craftplusplus;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -15,13 +16,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.thejeezed.craftplusplus.enchant.ModEnchants;
-import net.thejeezed.craftplusplus.init.ModBlockEntities;
-import net.thejeezed.craftplusplus.init.ModBlocks;
+import net.thejeezed.craftplusplus.init.*;
 import net.thejeezed.craftplusplus.creativetabs.CreativeTabs;
 import net.thejeezed.craftplusplus.entity.ModEntities;
-import net.thejeezed.craftplusplus.init.ModItems;
 import net.thejeezed.craftplusplus.datagen.loot.ModLootModifiers;
-import net.thejeezed.craftplusplus.init.ModSounds;
+import net.thejeezed.craftplusplus.kiln.KilnScreen;
 import net.thejeezed.craftplusplus.mob.client.StraferRenderer;
 import net.thejeezed.craftplusplus.mob.client.SulphurZombieRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
@@ -50,6 +49,8 @@ public class CraftPlusPlus {
         modEventBus.addListener(this::addCreative);
         ModEnchants.ENCHANTMENTS.register(modEventBus);
         ModRecipes.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+        ModRecipes.SERIALIZERS.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
@@ -116,9 +117,13 @@ public class CraftPlusPlus {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            EntityRenderers.register(ModEntities.STRAFER.get(), StraferRenderer::new);
-            EntityRenderers.register(ModEntities.SULPHUR_ZOMBIE.get(), SulphurZombieRenderer::new);
-            EntityRenderers.register(ModEntities.DYNAMITE_PROJECTILE.get(), ThrownItemRenderer::new);
+            MenuScreens.register(ModMenuTypes.KILN_MENU.get(), KilnScreen::new);
         }
+    }
+    @SubscribeEvent
+    public static void registerRenderers(FMLClientSetupEvent event) {
+        EntityRenderers.register(ModEntities.STRAFER.get(), StraferRenderer::new);
+        EntityRenderers.register(ModEntities.SULPHUR_ZOMBIE.get(), SulphurZombieRenderer::new);
+        EntityRenderers.register(ModEntities.DYNAMITE_PROJECTILE.get(), ThrownItemRenderer::new);
     }
 }

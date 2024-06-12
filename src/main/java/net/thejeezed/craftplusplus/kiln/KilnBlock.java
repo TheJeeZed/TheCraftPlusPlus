@@ -12,6 +12,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.AbstractFurnaceBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -21,6 +22,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.network.NetworkHooks;
 import net.thejeezed.craftplusplus.init.ModBlockEntities;
+import net.thejeezed.craftplusplus.util.ModTags;
 import org.jetbrains.annotations.Nullable;
 
 public class KilnBlock extends AbstractFurnaceBlock {
@@ -80,5 +82,7 @@ public class KilnBlock extends AbstractFurnaceBlock {
         return createFurnaceTicker(pLevel, pBlockEntityType, ModBlockEntities.KILN_BE.get());
     }
 
-
+    public Ingredient getFuelItem() {
+        return Ingredient.of(ModTags.Items.KILN_FUEL);
+    }
 }

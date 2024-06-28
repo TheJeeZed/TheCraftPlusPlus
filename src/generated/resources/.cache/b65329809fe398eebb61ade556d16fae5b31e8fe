@@ -1,5 +1,6 @@
-// 1.20.1	2024-05-21T18:56:48.2709916	Global Loot Modifiers : craftplusplus
+// 1.20.1	2024-06-25T20:08:42.6062781	Global Loot Modifiers : craftplusplus
 0cd250b1ec0ad3d8afa981d7a73fe3c4f01b8688 data/craftplusplus/loot_modifiers/magic_mirror_from_desert_pyramid.json
 5e7451643f0e8c2a9cc5ef88ac8bf7d8eda1ef68 data/craftplusplus/loot_modifiers/magic_mirror_from_stronghold_corridor.json
+f79fc754c62a0495761f5264cf7755bf3d1fb738 data/craftplusplus/loot_modifiers/quick_shock_from_ancient_city.json
 c791dd669d4291eca7f21b66704c5a18dec262c6 data/craftplusplus/loot_modifiers/raw_tentacle_from_squid.json
-f00f6cf0f48bc1e827b5cc0c9d6800d1c6caad91 data/forge/loot_modifiers/global_loot_modifiers.json
+32066f27ef1be1b4ff7ec7d0879da7d96037bb98 data/forge/loot_modifiers/global_loot_modifiers.json

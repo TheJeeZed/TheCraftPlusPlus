@@ -77,7 +77,7 @@ public class ModBlocks
     //CROPS
     public static final RegistryObject<Block> COTTON_CROP = BLOCKS.register("cotton_crop", ()-> new CottonCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion()));
 
-    public static final RegistryObject<Block> KILN = registerBlock("kiln", ()->  new KilnBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.5F).lightLevel((p_152677_) -> {return 14;})));
+    public static final RegistryObject<Block> KILN = registerBlock("kiln", ()->  new KilnBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.5F).lightLevel((p_152677_) -> {return 14;}).destroyTime(0.1f)));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

@@ -4,6 +4,19 @@
     "craftplusplus:compressed_sulphur",
     "craftplusplus:charcoal_block",
     "craftplusplus:sulphur_ore",
-    "craftplusplus:sulphur_block"
+    "craftplusplus:sulphur_block",
+    "craftplusplus:kiln",
+    "craftplusplus:amethyst_stairs",
+    "craftplusplus:amethyst_slab",
+    "craftplusplus:amethyst_wall",
+    "craftplusplus:amethyst_brick",
+    "craftplusplus:amethyst_brick_stairs",
+    "craftplusplus:amethyst_brick_slab",
+    "craftplusplus:amethyst_brick_wall",
+    "craftplusplus:smooth_amethyst",
+    "craftplusplus:smooth_amethyst_stairs",
+    "craftplusplus:smooth_amethyst_slab",
+    "craftplusplus:smooth_amethyst_wall",
+    "craftplusplus:chisled_amethyst"
   ]
 }

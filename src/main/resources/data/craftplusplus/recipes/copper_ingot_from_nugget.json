@@ -12,7 +12,7 @@
     "###"
   ],
   "result": {
-    "item": "minecraft:copper_nugget"
+    "item": "craftplusplus:copper_nugget"
   },
   "show_notification": true
 }

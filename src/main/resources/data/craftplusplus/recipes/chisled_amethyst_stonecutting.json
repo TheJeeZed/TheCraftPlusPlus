@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "count": 1,
   "ingredient": {
-    "item": "minecraft:amethyst_slab"
+    "item": "minecraft:amethyst_block"
   },
   "result": "craftplusplus:chisled_amethyst"
 }

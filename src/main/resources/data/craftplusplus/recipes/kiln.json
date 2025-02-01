@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "/": {
+      "item": "minecraft:furnace"
+    },
+    "#": {
+      "item": "minecraft:brick"
+    }
+  },
+  "pattern": [
+    "###",
+    "#/#",
+    "###"
+  ],
+  "result": {
+    "item": "craftplusplus:kiln"
+  },
+  "show_notification": true
+}

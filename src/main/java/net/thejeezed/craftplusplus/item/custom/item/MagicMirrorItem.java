@@ -1,6 +1,9 @@
 package net.thejeezed.craftplusplus.item.custom.item;
 
+import net.minecraft.client.particle.Particle;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleType;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -73,7 +76,6 @@ public class MagicMirrorItem extends Item {
                         z = worldedSpawn.z;
                         serverPlayer.teleportTo(x, y, z);
                     }
-
                 } else {
                     teleportToSpawn(serverPlayer, respawnPosition, worldSpawn.getCenter());
                 }

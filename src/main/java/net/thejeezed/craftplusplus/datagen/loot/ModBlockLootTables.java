@@ -45,7 +45,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.AMETHYST_BRICK_SLAB.get());
         this.dropSelf(ModBlocks.AMETHYST_BRICK_WALL.get());
         this.dropSelf(ModBlocks.SMOOTH_AMETHYST.get());
-        this.dropSelf(ModBlocks.CHISLED_AMETHYST.get());
+        this.dropSelf(ModBlocks.CHISELED_AMETHYST.get());
         this.dropSelf(ModBlocks.SMOOTH_AMETHYST_STAIRS.get());
         this.dropSelf(ModBlocks.SMOOTH_AMETHYST_SLAB.get());
         this.dropSelf(ModBlocks.SMOOTH_AMETHYST_WALL.get());

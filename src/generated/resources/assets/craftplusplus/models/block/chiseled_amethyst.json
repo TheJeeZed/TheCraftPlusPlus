@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "craftplusplus:block/chisled_amethyst"
+    "all": "craftplusplus:block/chiseled_amethyst"
   }
 }

@@ -71,7 +71,7 @@ public class ModBlocks
     public static final RegistryObject<Block> SMOOTH_AMETHYST_WALL = registerBlock("smooth_amethyst_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST).strength(1f).requiresCorrectToolForDrops()));
 
-    public static final RegistryObject<Block> CHISLED_AMETHYST = registerBlock("chisled_amethyst",
+    public static final RegistryObject<Block> CHISELED_AMETHYST = registerBlock("chiseled_amethyst",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST).strength(1f).requiresCorrectToolForDrops()));
 
     //CROPS

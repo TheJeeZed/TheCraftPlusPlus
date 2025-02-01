@@ -35,7 +35,7 @@ public class CreativeTabs {
                         pOutput.accept(ModBlocks.SMOOTH_AMETHYST_STAIRS.get());
                         pOutput.accept(ModBlocks.SMOOTH_AMETHYST_SLAB.get());
                         pOutput.accept(ModBlocks.SMOOTH_AMETHYST_WALL.get());
-                        pOutput.accept(ModBlocks.CHISLED_AMETHYST.get());
+                        pOutput.accept(ModBlocks.CHISELED_AMETHYST.get());
                         pOutput.accept(ModBlocks.KILN.get());
                         pOutput.accept(ModItems.COPPER_BUCKET.get());
                         pOutput.accept(ModItems.COPPER_WATER_BUCKET.get());

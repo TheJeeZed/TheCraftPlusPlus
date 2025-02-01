@@ -1,6 +1,6 @@
 {
-  "item.craftplusplus.raw_tentacle": "Raw Squid Tentacle",
-  "item.craftplusplus.cooked_tentacle": "Cooked Squid Tentacle",
+  "item.craftplusplus.raw_tentacle": "Squid Tentacle",
+  "item.craftplusplus.cooked_tentacle": "Calemari",
   "item.craftplusplus.sea_soup": "Soup Of The Seas",
   "item.craftplusplus.netherite_horse_armor": "Netherite Horse Armor",
   "item.craftplusplus.copper_horse_armor": "Copper Horse Armor",
@@ -51,7 +51,7 @@
   "block.craftplusplus.smooth_amethyst_stairs": "Smooth Amethyst Stairs",
   "block.craftplusplus.smooth_amethyst_slab": "Smooth Amethyst Slab",
   "block.craftplusplus.smooth_amethyst_wall": "Smooth Amethyst Wall",
-  "block.craftplusplus.chisled_amethyst": "Chisled Amethyst",
+  "block.craftplusplus.chiseled_amethyst": "Chiseled Amethyst",
   "block.craftplusplus.kiln": "Kiln",
 
   "tooltip.craftplusplus.shift_for_info": "Press [§9SHIFT§r] for Information",

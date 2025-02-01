@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "craftplusplus:chisled_amethyst"
+          "name": "craftplusplus:chiseled_amethyst"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "craftplusplus:blocks/chisled_amethyst"
+  "random_sequence": "craftplusplus:blocks/chiseled_amethyst"
 }

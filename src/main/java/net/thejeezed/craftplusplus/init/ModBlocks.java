@@ -22,6 +22,16 @@ public class ModBlocks
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, CraftPlusPlus.MOD_ID);
 
+    //smooth stone tile sets;
+
+    public static final RegistryObject<Block> SMOOTH_STONE_STAIRS = registerBlock("smooth_stone_stairs",
+            () -> new StairBlock(() -> ModBlocks.AMETHYST_BRICK.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(2f).requiresCorrectToolForDrops()));
+
+
+    public static final RegistryObject<Block> SMOOTH_STONE_WALL = registerBlock("smooth_stone_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(2f).requiresCorrectToolForDrops()));
+
+    // standard mod blocks
 
     public static final RegistryObject<Block> CHARCOAL_BLOCK = registerBlock("charcoal_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.COAL_BLOCK).destroyTime(3))); // TODO: ADD CUSTOM TAB HERE; THIS IS WHAT BROKE MY COMMIT!

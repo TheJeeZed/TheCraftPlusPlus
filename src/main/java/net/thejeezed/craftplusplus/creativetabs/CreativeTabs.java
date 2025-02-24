@@ -19,6 +19,8 @@ public class CreativeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(Blocks.CRAFTING_TABLE))
                     .title(Component.translatable("creativetab.craft_tab"))
                     .displayItems((pParameters, pOutput) -> {
+                        pOutput.accept(ModBlocks.SMOOTH_STONE_STAIRS.get());
+                        pOutput.accept(ModBlocks.SMOOTH_STONE_WALL.get());
                         pOutput.accept(ModBlocks.CHARCOAL_BLOCK.get());
                         pOutput.accept(ModBlocks.COMPRESSED_COPPER.get());
                         pOutput.accept(ModBlocks.SULPHUR_ORE.get());

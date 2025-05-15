@@ -22,7 +22,7 @@ public class ModBlocks
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, CraftPlusPlus.MOD_ID);
 
-    //smooth stone tile sets;
+    //expanding vanilla tile sets;
 
     public static final RegistryObject<Block> SMOOTH_STONE_STAIRS = registerBlock("smooth_stone_stairs",
             () -> new StairBlock(() -> ModBlocks.AMETHYST_BRICK.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(2f).requiresCorrectToolForDrops()));
@@ -31,6 +31,8 @@ public class ModBlocks
     public static final RegistryObject<Block> SMOOTH_STONE_WALL = registerBlock("smooth_stone_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(2f).requiresCorrectToolForDrops()));
 
+    public static final RegistryObject<Block> STONE_WALL = registerBlock("stone_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(2f).requiresCorrectToolForDrops()));
     // standard mod blocks
 
     public static final RegistryObject<Block> CHARCOAL_BLOCK = registerBlock("charcoal_block",

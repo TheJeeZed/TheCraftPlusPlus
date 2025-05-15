@@ -19,17 +19,20 @@ public class CreativeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(Blocks.CRAFTING_TABLE))
                     .title(Component.translatable("creativetab.craft_tab"))
                     .displayItems((pParameters, pOutput) -> {
+                        pOutput.accept(ModBlocks.CHARCOAL_BLOCK.get());
+                        pOutput.accept(ModBlocks.COMPRESSED_COPPER.get());
+                        pOutput.accept(ModBlocks.SULPHUR_ORE.get());
+                        pOutput.accept(ModBlocks.COMPRESSED_SULPHUR.get());
+                        pOutput.accept(ModBlocks.SULPHUR_BLOCK.get());
                         pOutput.accept(ModBlocks.SMOOTH_STONE_STAIRS.get());
                         pOutput.accept(ModBlocks.SMOOTH_STONE_WALL.get());
                         pOutput.accept(ModBlocks.STONE_WALL.get());
                         pOutput.accept(ModBlocks.END_STONE_STAIRS.get());
                         pOutput.accept(ModBlocks.END_STONE_SLAB.get());
                         pOutput.accept(ModBlocks.END_STONE_WALL.get());
-                        pOutput.accept(ModBlocks.CHARCOAL_BLOCK.get());
-                        pOutput.accept(ModBlocks.COMPRESSED_COPPER.get());
-                        pOutput.accept(ModBlocks.SULPHUR_ORE.get());
-                        pOutput.accept(ModBlocks.COMPRESSED_SULPHUR.get());
-                        pOutput.accept(ModBlocks.SULPHUR_BLOCK.get());
+                        pOutput.accept(ModBlocks.DRIPSTONE_STAIRS.get());
+                        pOutput.accept(ModBlocks.DRIPSTONE_SLAB.get());
+                        pOutput.accept(ModBlocks.DRIPSTONE_WALL.get());
                         pOutput.accept(ModBlocks.AMETHYST_STAIRS.get());
                         pOutput.accept(ModBlocks.AMETHYST_SLAB.get());
                         pOutput.accept(ModBlocks.AMETHYST_WALL.get());

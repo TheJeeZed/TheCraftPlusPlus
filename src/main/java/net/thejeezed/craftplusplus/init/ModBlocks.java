@@ -31,6 +31,15 @@ public class ModBlocks
     public static final RegistryObject<Block> SMOOTH_STONE_WALL = registerBlock("smooth_stone_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(2f).requiresCorrectToolForDrops()));
 
+    public static final RegistryObject<Block> END_STONE_STAIRS = registerBlock("end_stone_stairs",
+            () -> new StairBlock(() -> ModBlocks.AMETHYST_BRICK.get().defaultBlockState(),BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(2f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> END_STONE_SLAB = registerBlock("end_stone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(2f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> END_STONE_WALL = registerBlock("end_stone_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(2f).requiresCorrectToolForDrops()));
+
     public static final RegistryObject<Block> STONE_WALL = registerBlock("stone_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(2f).requiresCorrectToolForDrops()));
     // standard mod blocks

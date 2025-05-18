@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {"item": "minecraft:white_concrete"},
+  "result": "craftplusplus:white_concrete_stairs"
+}

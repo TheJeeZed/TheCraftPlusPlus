@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.25,
+  "ingredient": {
+    "item": "minecraft:red_nether_bricks"
+  },
+  "result": "craftplusplus:cracked_red_nether_bricks"
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {"item": "minecraft:yellow_concrete"}
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "craftplusplus:yellow_concrete_stairs"
+  },
+  "show_notification": true
+}

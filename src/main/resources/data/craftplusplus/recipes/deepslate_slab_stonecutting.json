@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {"item": "minecraft:deepslate"},
+  "result": "craftplusplus:deepslate_slab"
+}

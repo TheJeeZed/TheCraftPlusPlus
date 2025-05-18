@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "craftplusplus:block/cracked_stone_bricks_slab"
+    },
+    "type=double": {
+      "model": "minecraft:block/cracked_stone_bricks"
+    },
+    "type=top": {
+      "model": "craftplusplus:block/cracked_stone_bricks_slab_top"
+    }
+  }
+}

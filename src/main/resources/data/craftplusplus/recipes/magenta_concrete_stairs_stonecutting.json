@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {"item": "minecraft:magenta_concrete"},
+  "result": "craftplusplus:magenta_concrete_stairs"
+}

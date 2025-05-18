@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "craftplusplus:block/cracked_red_nether_bricks",
+    "side": "craftplusplus:block/cracked_red_nether_bricks",
+    "top": "craftplusplus:block/cracked_red_nether_bricks"
+  }
+}

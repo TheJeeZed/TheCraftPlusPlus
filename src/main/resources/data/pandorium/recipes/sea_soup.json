@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "minecraft:cooked_salmon"
+    },
+    {
+      "item": "minecraft:cooked_cod"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "item": "pandorium:cooked_tentacle"
+    }
+  ],
+  "result": {
+    "item": "pandorium:sea_soup"
+  }
+}

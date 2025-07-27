@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "pandorium:block/smooth_amethyst_slab"
+    },
+    "type=double": {
+      "model": "pandorium:block/smooth_amethyst"
+    },
+    "type=top": {
+      "model": "pandorium:block/smooth_amethyst_slab_top"
+    }
+  }
+}

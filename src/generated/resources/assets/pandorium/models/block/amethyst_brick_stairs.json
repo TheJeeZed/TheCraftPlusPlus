@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "pandorium:block/amethyst_brick",
+    "side": "pandorium:block/amethyst_brick",
+    "top": "pandorium:block/amethyst_brick"
+  }
+}

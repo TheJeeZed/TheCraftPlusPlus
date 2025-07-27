@@ -5,7 +5,7 @@ function initializeCoreMod() {
         'copperbucketitem': {
             'target': {
                 'type': 'CLASS',
-                'name': 'net.thejeezed.craftplusplus.item.custom.item.CopperBucketItem'
+                'name': 'net.thejeezed.pandorium.item.custom.item.CopperBucketItem'
             },
             'transformer': function(classNode) {
                 ASMAPI.redirectFieldToMethod(classNode, 'content', 'getFluid')

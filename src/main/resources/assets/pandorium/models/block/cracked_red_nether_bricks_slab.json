@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "pandorium:block/cracked_red_nether_bricks",
+    "side": "pandorium:block/cracked_red_nether_bricks",
+    "top": "pandorium:block/cracked_red_nether_bricks"
+  }
+}

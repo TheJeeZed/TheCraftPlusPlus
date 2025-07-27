@@ -1,0 +1,18 @@
+{
+  "calm_night": {
+    "sounds": [
+      {
+        "name": "pandorium:calm_night",
+        "stream": true
+      }
+    ]
+  },
+  "country_road": {
+    "sounds": [
+      {
+        "name": "pandorium:country_road",
+        "stream": true
+      }
+    ]
+  }
+}

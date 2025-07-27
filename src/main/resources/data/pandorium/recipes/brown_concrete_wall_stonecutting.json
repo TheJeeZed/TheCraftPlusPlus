@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {"item": "minecraft:brown_concrete"},
+  "result": "pandorium:brown_concrete_wall"
+}

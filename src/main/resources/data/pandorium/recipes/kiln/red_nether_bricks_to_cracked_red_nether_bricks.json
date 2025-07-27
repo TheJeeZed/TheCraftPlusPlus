@@ -1,0 +1,11 @@
+{
+  "type": "pandorium:kiln",
+  "category": "misc",
+  "cookingtime": 50,
+  "experience": 0.50,
+  "group": "blackstone",
+  "ingredient": {
+    "item": "minecraft:red_nether_bricks"
+  },
+  "result": "pandorium:cracked_red_nether_bricks"
+}

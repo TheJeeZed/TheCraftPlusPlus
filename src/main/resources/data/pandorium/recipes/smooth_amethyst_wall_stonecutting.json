@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "pandorium:smooth_amethyst"
+  },
+  "result": "pandorium:smooth_amethyst_wall"
+}

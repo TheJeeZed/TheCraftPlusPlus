@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "pandorium:block/charcoal_block"
+    }
+  }
+}

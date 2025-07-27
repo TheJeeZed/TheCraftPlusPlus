@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {"item": "minecraft:blue_concrete"},
+  "result": "pandorium:blue_concrete_stairs"
+}

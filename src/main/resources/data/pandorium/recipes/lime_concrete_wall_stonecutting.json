@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {"item": "minecraft:lime_concrete"},
+  "result": "pandorium:lime_concrete_wall"
+}

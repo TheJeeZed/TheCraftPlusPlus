@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {"item": "minecraft:cracked_nether_bricks"},
+  "result": "pandorium:cracked_nether_bricks_wall"
+}

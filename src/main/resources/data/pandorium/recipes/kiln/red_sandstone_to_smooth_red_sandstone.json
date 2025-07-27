@@ -1,0 +1,11 @@
+{
+  "type": "pandorium:kiln",
+  "category": "misc",
+  "cookingtime": 50,
+  "experience": 0.50,
+  "group": "sand",
+  "ingredient": {
+    "item": "minecraft:red_sandstone"
+  },
+  "result": "minecraft:smooth_red_sandstone"
+}

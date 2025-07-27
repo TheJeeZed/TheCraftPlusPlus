@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": [
+    {
+      "item": "pandorium:copper_pickaxe"
+    },
+    {
+      "item": "pandorium:copper_shovel"
+    },
+    {
+      "item": "pandorium:copper_axe"
+    },
+    {
+      "item": "pandorium:copper_hoe"
+    },
+    {
+      "item": "pandorium:copper_sword"
+    },
+    {
+      "item": "pandorium:copper_helmet"
+    },
+    {
+      "item": "pandorium:copper_chestplate"
+    },
+    {
+      "item": "pandorium:copper_leggings"
+    },
+    {
+      "item": "pandorium:copper_boots"
+    },
+    {
+      "item": "pandorium:copper_horse_armor"
+    },
+    {
+      "item": "pandorium:copper_bucket"
+    }
+  ],
+  "result": "pandorium:copper_nugget"
+}

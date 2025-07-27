@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "pandorium:block/amethyst_brick_slab"
+    },
+    "type=double": {
+      "model": "pandorium:block/amethyst_brick"
+    },
+    "type=top": {
+      "model": "pandorium:block/amethyst_brick_slab_top"
+    }
+  }
+}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/orientable",
-  "textures": {
-    "front": "craftplusplus:block/kiln_front",
-    "side": "craftplusplus:block/kiln_side",
-    "top": "craftplusplus:block/kiln_top"
-  }
-}

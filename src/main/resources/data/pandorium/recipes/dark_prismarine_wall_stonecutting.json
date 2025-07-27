@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {"item": "minecraft:dark_prismarine"},
+  "result": "pandorium:dark_prismarine_wall"
+}

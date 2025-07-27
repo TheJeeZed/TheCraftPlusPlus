@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {"item": "minecraft:quartz_bricks"},
+  "result": "pandorium:quartz_bricks_stairs"
+}
